@@ -1,0 +1,25 @@
+.edition-list {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.edition__list-item {
+  background: var(--bg-color);
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--box-shadow-default);
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.edition__content {
+  padding: var(--gap);
+}
+
+.edition__content .h3 {
+  font-size: 1.25rem;
+}

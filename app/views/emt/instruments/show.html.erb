@@ -1,0 +1,20 @@
+<% content_for(:page_title, @instrument.name) %>
+
+<%= render Global::HeroComponent.new(title: @instrument.name) %>
+
+<section class="section">
+  <div class="wrapper wrapper--text">
+    <div class="text-container"><%= markdown(@instrument.description) %></div>
+    <div class="sessions">
+    <% @sessions_by_city_and_day.each do |city_and_day, sessions| %>
+      <% city, day = city_and_day %>
+      <h2><%= city.name %></h2>
+      <h3><%= day %></h3>
+      <% sessions.each do |session| %>
+        <p>
+          Entre <%= time(session.start_time) %> et <%= time(session.end_time) %> avec <%= link_to session.instrument_class.teacher.name, emt_teacher_path(session.instrument_class.teacher) %>
+        </p>
+      <% end %>
+    <% end %>
+  </div>
+</section>

@@ -1,0 +1,39 @@
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  font-weight: 500;
+  margin: 0;
+}
+
+.h2 {
+  font-size: 3rem;
+}
+
+.h3 {
+  font-size: 2rem;
+}
+
+.h4 {
+  font-size: 1.5rem;
+}
+
+.with-image {
+  align-items: center;
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 2fr 1fr;
+}
+
+.with-image--left {
+  grid-template-columns: 1fr 2fr;
+}
+
+.with-image img {
+  width: 100%;
+}
+
+address {
+  font-style: normal;
+}

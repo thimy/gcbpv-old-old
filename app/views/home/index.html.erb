@@ -1,0 +1,36 @@
+<%= stylesheet_link_tag "pages/home" %>
+<% content_for(:page_class, "home") %>
+
+<section class="hero">
+  <div class="hero__main">
+    <h1 class="hero__title">Bienvenue sur le site du<br /><mark>Groupement Culturel Breton<br /> des <span>Pays de Vilaine</span></mark></h1>
+  </div>
+  <%= link_to events_path, class: "hero__column hero__column--events" do %>
+    <h2 class="hero__column-title">La Bogue d’Or et les événements</h2>
+  <% end %>
+  <%= link_to emt_path, class: "hero__column hero__column--emt" do %>
+    <h2 class="hero__column-title">L'école de musique traditionnelle</h2>
+  <% end %>
+  <%= link_to resources_path, class: "hero__column hero__column--resources" do %>
+    <h2 class="hero__column-title">Le centre de ressources</h2>
+  <% end %>
+  <div class="hero__background"></div>
+</section>
+
+<section class="section events" data-scheme="dark">
+  <div class="wrapper">
+    <div class="section__header">
+      <h3 class="h3">Les prochains événements à venir</h3>
+      <%= link_to "Voir tous les événements", events_path, class: "event__link" %>
+    </div>
+  </div>
+</section>
+
+<section class="section posts">
+  <div class="wrapper">
+    <div class="section__header">
+      <h3 class="h3">Dernières actualités</h3>
+      <%= link_to "Voir tous les articles", posts_path, class: "post__link" %>
+    </div>
+  </div>
+</section>

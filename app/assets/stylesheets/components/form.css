@@ -1,0 +1,17 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.input {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+}
+
+.boolean {
+  display: flex;
+  gap: var(--spacing-2);
+}

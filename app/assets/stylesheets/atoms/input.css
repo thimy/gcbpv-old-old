@@ -1,0 +1,9 @@
+input {
+  font-size: 1em;
+  margin: 0;
+}
+
+input:not([type="checkbox"], [type="radio"], [type="button"], [type="submit"]) {
+  height: 2.25em;
+  padding-inline: var(--spacing-3);
+}

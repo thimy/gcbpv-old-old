@@ -1,0 +1,19 @@
+<% content_for(:page_title, @edition.name) %>
+<% content_for(:page_class, "edition") %>
+
+<%= render Global::HeroComponent.new(title: @edition.name) %>
+
+<section class="section">
+  <div class="wrapper text-container">
+    <div class="edition__container">
+      <div class="edition__cover">
+        <%= image_tag(@edition.image) %>
+      </div>
+      <div class="edition__description">
+        <h3 class="h3"><%= @edition.name %></h3>
+        <div><%= @edition.format %> - <%= @edition.price %>€</div>
+        <p><%= @edition.description %></p>
+      </div>
+    </div>
+  </div>
+</section>

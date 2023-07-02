@@ -1,0 +1,13 @@
+<% content_for(:page_title, @workshop.name) %>
+
+<%= render Global::HeroComponent.new(title: @workshop.name) %>
+
+<section class="section">
+  <div class="wrapper wrapper--text">
+    <%= render Global::CardComponent.new(title: "Animé par #{@workshop.teacher.name}", url: emt_teacher_path(@workshop.teacher_id)) %>
+    <div class="text-container">
+      <p><%= @workshop.workshop_day %> - de <%= time(@workshop.start_time) %> à <%= time(@workshop.end_time) %>.</p>
+      <%= markdown(@workshop.description) %>
+    </div>
+  </div>
+</section>

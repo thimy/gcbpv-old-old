@@ -1,0 +1,17 @@
+/* Entry point for your PostCSS build */
+@import "colors.css";
+@import "spacings.css";
+@import "fonts.css";
+@import "variables.css";
+@import "typography.css";
+@import "utility.css";
+@import "main.css";
+
+/* atoms */
+@import "atoms/index.css";
+
+/* components */
+@import "components/index.css";
+
+/* pages */
+@import "pages/index.css";

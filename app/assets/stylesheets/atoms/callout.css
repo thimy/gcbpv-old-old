@@ -1,0 +1,37 @@
+.callout {
+  --callout-border-color: var(--info-border-color);
+  --callout-bg-color: var(--info-bg-color);
+  --callout-text-color: var(--info-text-color);
+
+  background-color: var(--callout-bg-color);
+  border: 2px solid var(--callout-border-color);
+  border-radius: var(--border-radius-small);
+  color: var(--callout-text-color);
+  padding: var(--spacing-3) var(--spacing-5);
+}
+
+.callout.full {
+  border-radius: 0;
+}
+
+.callout p {
+  margin: 0;
+}
+
+.callout[data-notice="success"] {
+  --callout-border-color: var(--success-border-color);
+  --callout-bg-color: var(--success-bg-color);
+  --callout-text-color: var(--success-text-color);
+}
+
+.callout[data-notice="warning"] {
+  --callout-border-color: var(--warning-border-color);
+  --callout-bg-color: var(--warning-bg-color);
+  --callout-text-color: var(--warning-text-color);
+}
+
+.callout[data-notice="error"] {
+  --callout-border-color: var(--error-border-color);
+  --callout-bg-color: var(--error-bg-color);
+  --callout-text-color: var(--error-text-color);
+}

@@ -1,0 +1,10 @@
+<% content_for(:page_title, "Événements") %>
+<% content_for(:page_class, "events") %>
+
+<%= render Global::HeroComponent.new(title: "Événements") %>
+
+<section class="section">
+  <div class="wrapper">
+    <%= render Events::EventListComponent.new(events: @events) %>
+  </div>
+</section>

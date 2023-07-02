@@ -1,0 +1,7 @@
+.workshop-list {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.workshop-list .card {
+  height: calc(var(--spacing-40) * 2);
+}

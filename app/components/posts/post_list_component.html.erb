@@ -1,0 +1,16 @@
+<ul class="post-list">
+  <% @posts.each do |post| %>
+    <% unless post.archived? %>
+      <li class="post-list__item">
+          <div class="post__img"></div>
+          <div class="post__content">
+            <h4 class="card__title">
+              <%= link_to post.title, post %>
+            </h4>
+            <p class="post__description"><%= post.content.truncate(300, separator: /\n/) %></p>
+            <%= link_to "↪︎ Voir l’article complet", post %>
+          </div>
+      </li>
+    <% end %>
+  <% end %>
+</ul>

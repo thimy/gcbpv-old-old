@@ -1,0 +1,59 @@
+:root {
+  color-scheme: light dark; /* both supported */
+
+  --brand: #ae9d7c;
+  --brand-gradient: linear-gradient(145deg, var(--blue-60), var(--brand));
+
+  --global-padding: var(--spacing-8);
+  --content-width: 120ch;
+  --gap: var(--spacing-6);
+
+  --text-color: var(--black);
+
+  --text-font-family: "Montserrat";
+  --text-font-weight: 400;
+
+  --title-font-family: "Mohr";
+  --title-font-weight: 500;
+
+  --link-hover-color: var(--blue-20-a);
+
+  --bg-color: var(--white);
+  --bg-color-transparent: rgba(var(--white-rgb), 0.9);
+  --bg-color-secondary: var(--gray-20);
+
+  --border-default: 1px solid var(--text-color);
+
+  --box-shadow-default: 0 var(--spacing-1) 4px 4px rgba(0, 0, 0, 0.1);
+
+  --border-radius-small: var(--spacing-1);
+  --border-radius-medium: var(--spacing-4);
+  --border-radius-large: var(--spacing-6);
+
+  --light-bg-color: var(--gray-20-a);
+
+  --info-bg-color: var(--blue-10-a);
+  --info-border-color: var(--blue-20-a);
+  --info-text-color: var(--blue-60);
+
+  --success-bg-color: var(--green-10-a);
+  --success-border-color: var(--green-20-a);
+  --success-text-color: var(--green-70);
+
+  --warning-bg-color: var(--yellow-10-a);
+  --warning-border-color: var(--yellow-20-a);
+  --warning-text-color: var(--yellow-70);
+
+  --error-bg-color: var(--red-10-a);
+  --error-border-color: var(--red-20-a);
+  --error-text-color: var(--red-70);
+
+  @media (prefers-color-scheme: dark) {
+    --bg-color: var(--black);
+    --bg-color-transparent: rgba(var(--black-rgb), 0.9);
+    --bg-color-secondary: var(--gray-80);
+    --text-color: var(--white);
+    --link-hover-color: var(--blue-60-a);
+    
+  }
+}

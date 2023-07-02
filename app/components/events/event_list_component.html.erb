@@ -1,0 +1,24 @@
+<% unless @events.empty? %>
+  <ul class="card-list event-list">
+    <% @events.each do |event| %>
+      <li>
+        <%= link_to event, class: "card event-list__item" do %>
+          <div class="card__header">
+            <div class="card__badge event__date">
+              <span class="event__day"><%= event.start_date.strftime("%d") %></span>
+              <span class="event__month"><%= event.start_date.strftime("%b") %></span>
+            </div>
+            <h4 class="card__title"><%= event.name %></h4>
+          </div>
+          <div class="card__content">
+            <%= event.city %>
+          </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <div>
+    Aucun événement prévu prochainement.
+  </div>
+<% end %>

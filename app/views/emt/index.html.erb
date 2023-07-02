@@ -1,0 +1,17 @@
+<% content_for(:page_title, "L’école de Musique Traditionnelle") %>
+<% content_for(:page_class, "emt") %>
+
+<%= render Global::HeroComponent.new(title: "L’école de Musique Traditionnelle") %>
+
+<section class="section">
+  <div class="wrapper">
+    <h2 class="h2">La musique traditionnelle</h2>
+    <p>En Bretagne, la musique s’est principalement partagée au travers des générations par transmission orale. </p>
+    <div class="card-list">
+      <%= render Global::CardComponent.new(title: "Les instruments enseignés", url: emt_instruments_path) %>
+      <%= render Global::CardComponent.new(title: "Les ateliers", url: emt_workshops_path) %>
+      <%= render Global::CardComponent.new(title: "Les enseignants", url: emt_teachers_path) %>
+      <%= render Global::CardComponent.new(title: "Les tarifs", url: "") %>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,15 @@
+<% content_for(:page_title, "Les enseignants") %>
+<% content_for(:page_class, "teachers") %>
+
+<%= render Global::HeroComponent.new(title: "Les enseignants") %>
+
+<section class="section">
+  <div class="wrapper">
+    <ul class="card-list teacher-list">
+      <% @teachers.each do |teacher| %>
+        <li>
+          <%= render Global::CardComponent.new(title: teacher.name, url: emt_teacher_path(teacher.id), tags: teacher.instruments) %>
+        </li>
+      <% end %>
+  </div>
+</section>

@@ -1,0 +1,196 @@
+fr:
+  time:
+    am: am
+    formats:
+      default: "%d %B %Y %Hh %Mmin %Ss"
+      long: "%d/%m/%Y %H:%M"
+      short: "%d %b %Hh%M"
+      hour_details: "%Hh%M"
+  activerecord:
+    models:
+      category:
+        one: "Catégorie"
+        other: "Catégories"
+      city:
+        one: "Ville"
+        other: "Villes"
+      edition:
+        one: "Édition"
+        other: "Éditions"
+      event:
+        one: "Événement"
+        other: "Événements"
+      instrument_class:
+        one: "Cours"
+        other: "Cours"
+      payor:
+        one: "Responsable légal"
+        other: "Responsables légaux"
+      plan:
+        one: "Formule"
+        other: "Formules"
+      post:
+        one: "Article"
+        other: "Articles"
+      season:
+        one: "Année scolaire"
+        other: "Années scolaires"
+      session:
+        one: "Cours par ville"
+        other: "Cours par ville"
+      student:
+        one: "Élève"
+        other: "Élèves"
+      subscription:
+        one: "Inscription"
+        other: "Inscriptions"
+      teacher:
+        one: "Professeur"
+        other: "Professeurs"
+      user:
+        one: "Utilisateur"
+        other: "Utilisateurs"
+      workshop:
+        one: "Atelier"
+        other: "Ateliers"
+    attributes:
+      active: "Actif"
+      inactive: "Inactif"
+      hidden: "Caché"
+      monday: "lundi"
+      tuesday: "mardi"
+      wednesday: "mercredi"
+      thursday: "jeudi"
+      friday: "vendredi"
+      category:
+        name: "Nom"
+        created_at: "Créé le"
+        updated_at: "Modifié le"
+      city:
+        name: "Nom"
+        created_at: "Créé le"
+        updated_at: "Modifié le"
+      edition:
+        name: "Nom"
+        price: "Prix"
+        created_at: "Créé le"
+        updated_at: "Modifié le"
+      event:
+        name: "Nom"
+        content: "Description"
+        street: "Complément d’adresse"
+        city: "Ville"
+        start_date: "Jour et heure de début"
+        end_date: "Jour et heure de fin"
+        created_at: "Créé le"
+        updated_at: "Modifié le"
+      instrument:
+        name: "Nom"
+        teachers: "Professeurs"
+        instrument_classes: "Cours par instrument"
+        created_at: "Créé le"
+        updated_at: "Modifié le"
+      instrument_class:
+        class_day: "Jour du cours"
+        city: "Ville"
+        teacher: "Professeur"
+        teacher_id: "Professeur"
+        start_time: "Heure de début"
+        end_time: "Heure de fin"
+        created_at: "Créé le"
+        updated_at: "Modifié le"
+      plan:
+        name: "Nom"
+        class_price: "Prix du cours"
+        workshop_price: "Prix de l’atelier"
+        awakening_price: "Prix de l’éveil musical"
+        kids_discovery_price: "Prix de l’atelier découverte enfants"
+        discovery_price: "Prix de l’atelier découverte adultes"
+        obc_markup: "Majoration OBC"
+        outbounds_markup: "Majoration hors-agglo"
+        created_at: "Créé le"
+        updated_at: "Modifié le"
+      post:
+        title: "Titre"
+        category: "Catégorie"
+        category_id: "Catégorie"
+        content: "Contenu"
+        event: "Événement lié"
+        status: "Statut"
+        created_at: "Créé le"
+        updated_at: "Modifié le"
+      season:
+        name: "Année"
+        start_year: "Année de début"
+        plan: "Formule"
+        plan_id: "Formule"
+        instrument_class: "Cours"
+        workshop: "Ateliers"
+        teacher: "Professeur"
+        subscription: "Élèves"
+        student: "Nom"
+        amount: "Montant"
+        amount_paid: "Montant réglé"
+        season: "Année scolaire"
+        created_at: "Créé le"
+        updated_at: "Modifié le"
+      session:
+        instrument_class: "Cours par professeur"
+        instrument_class_id: "Cours par professeur"
+        city: "Ville"
+        city_id: "Ville"
+        day: "Jour"
+        start_time: "Heure de début"
+        end_time: "Heure de fin"
+        created_at: "Créé le"
+        updated_at: "Modifié le"
+      student:
+        last_name: "Nom"
+        first_name: "Prénom"
+        birthyear: "Année de naissance"
+        payor: "Payeur"
+        payor_id: "Payeur"
+        status: "Statut"
+        created_at: "Créé le"
+        updated_at: "Modifié le"
+      subscription:
+        season: "Année scolaire"
+        season_id: "Année scolaire"
+        student: "Élève"
+        student_id: "Élève"
+        amount: "Montant"
+        amount_paid: "Montant réglé"
+        workshop: "Ateliers"
+        instrument_class: "Cours"
+        payor: "Responsable légal"
+        created_at: "Créé le"
+        updated_at: "Modifié le"
+      teacher:
+        name: "Nom"
+        picture: "Photo"
+        status: "Statut"
+        instrument_classes: "Cours par instrument"
+        instrument_class:
+          class_day: "Journée du cours"
+        created_at: "Créé le"
+        updated_at: "Modifié le"
+      user:
+        first_name: "Prénom"
+        last_name: "Nom"
+        role: "Rôle"
+        admin: "Admin"
+        active: "Actif"
+        invitation_sent_at: "Invitation envoyée le"
+        invitation_accepted_at: "Invitation acceptée le"
+        phone: "Téléphone"
+        address: "Adresse"
+        created_at: "Créé le"
+        updated_at: "Modifié le"
+      workshop:
+        location: "Lieu"
+        workshop_day: "Jour"
+        start_time: "Heure de début"
+        end_time: "Heure de fin"
+        created_at: "Créé le"
+        updated_at: "Modifié le"
+      

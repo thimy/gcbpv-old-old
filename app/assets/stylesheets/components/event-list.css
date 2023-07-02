@@ -1,0 +1,31 @@
+.event-list {
+  align-items: stretch;
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.event__date {
+  align-items: center;
+  background-image: linear-gradient(var(--pink-30), var(--yellow-50));
+  border-radius: var(--border-radius-small);
+  color: var(--black);
+  display: flex;
+  flex-direction: column;
+  height: 3rem;
+  justify-content: center;
+  text-align: center;
+  width: 3rem;
+}
+
+.event__day {
+  font-size: 1.5em;
+}
+
+.event__day,
+.event__month {
+  line-height: 1;
+}

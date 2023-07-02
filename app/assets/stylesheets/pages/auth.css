@@ -1,0 +1,17 @@
+.auth__form {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  justify-content: center;
+  padding-block: var(--spacing-20);
+}
+
+.auth__title {
+  margin: 0;
+  text-align: center;
+}
+
+.auth__extra {
+  font-size: 0.875rem;
+}

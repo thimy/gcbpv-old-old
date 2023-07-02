@@ -1,0 +1,10 @@
+<a class="card" href="<%= @url %>">
+  <h3 class="card__title"><%= @title %></h3>
+  <% if @tags.present? %>
+    <ul class="tag-list">
+      <% @tags.each do |tag| %>
+        <li class="tag"><%= tag.name %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</a>

@@ -1,0 +1,26 @@
+<% content_for(:page_title, @event.name) %>
+
+<%= render Global::HeroComponent.new(title: @event.name) do |component| %>
+  <% component.extra do %>
+    <p class="hero__extra">
+      <% if @event.end_date.present? %>
+        <%= "Du #{I18n.l(@event.start_date, format: "%d %B %Y")} au #{I18n.l(@event.end_date, format: "%d %B %Y")}" %>
+      <% else %>
+        <%= "Le #{I18n.l(@event.start_date, format: "%d %B %Y")}" %>
+      <% end %>
+    </p>
+  <% end %>
+<% end %>
+
+<section class="section">
+  <div class="wrapper wrapper--text">
+    <div class="text-container"><%= markdown(@event.content) %></div>
+
+    <div>
+      <%= link_to "Edit this event", edit_event_path(@event) %> |
+      <%= link_to "Back to events", events_path %>
+
+      <%= button_to "Destroy this event", @event, method: :delete %>
+    </div>
+  </div>
+</section>

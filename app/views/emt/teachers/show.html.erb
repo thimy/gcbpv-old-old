@@ -1,0 +1,23 @@
+<% content_for(:page_title, @teacher.name) %>
+
+<%= render Global::HeroComponent.new(title: @teacher.name) %>
+
+<section class="section">
+  <div class="wrapper wrapper--text">
+    <ul class="card-list">
+      <% @teacher.instruments.each do |instrument| %>
+        <li>
+          <%= render Global::CardComponent.new(title: "Cours de #{instrument.name}", url: emt_instrument_path(instrument))%>
+        </li>
+      <% end %>
+      <% @teacher.workshops.each do |workshop| %>
+        <li>
+          <%= render Global::CardComponent.new(title: "#{workshop.name}", url: emt_workshop_path(workshop))%>
+        </li>
+      <% end %>
+    </ul>
+    <div class="text-container">
+      <%= markdown(@teacher.description) %>
+    </div>
+  </div>
+</section>

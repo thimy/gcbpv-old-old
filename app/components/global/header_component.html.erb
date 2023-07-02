@@ -1,0 +1,59 @@
+<header class="main-header">
+  <div class="main-header__title">
+    <%= link_to root_path do %>
+      <%= inline_svg "chestnut"  %>
+    <% end %>
+  </div>
+  <nav class="nav">
+    <%= render Global::MenuButtonComponent.new %>
+    <ul class="nav__links">
+      <li class="nav__item">
+        <%= link_to "Le groupement", groupement_path %>
+      </li>
+      <li class="nav__item">
+        <%= link_to "École de musique traditionnelle", emt_path %>
+        <ul class="nav__sub-links">
+          <li class="nav__sub-item">
+            <%= link_to "Les instruments", emt_instruments_path %>
+          </li>
+          <li class="nav__sub-item">
+            <%= link_to "Les ateliers", emt_workshops_path %>
+          </li>
+          <li class="nav__sub-item">
+            <%= link_to "Les professeurs", emt_teachers_path %>
+          </li>
+        </ul>
+      </li>
+      <li class="nav__item">
+        <%= link_to "Événements", events_path  %>
+        <ul class="nav__sub-links">
+          <li class="nav__sub-item">
+            <%= link_to "La Bogue d’Or", bogue_path %>
+          </li>
+        </ul>
+      </li>
+      <li class="nav__item">
+        <%= link_to "Le centre de ressources", resources_path %>
+        <ul class="nav__sub-links">
+          <li class="nav__sub-item">
+            <%= link_to "Éditions", editions_path %>
+          </li>
+        </ul>
+      </li>
+      <% if user_signed_in? %> 
+        <li class="nav__item user">
+          <div class="nav__welcome">Bienvenue <%= current_user.email %></div>
+          <%= inline_svg "icons/user-icon" %>
+          <ul class="nav__sub-links">
+            <li class="nav__sub-item">  
+            <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %> 
+            </li>
+          </ul>
+        <% else %>
+        <li class="nav__item user">
+          <%= link_to "Se connecter", new_user_session_path, class: "button" %> 
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+</header>

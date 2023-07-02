@@ -1,0 +1,47 @@
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("Montserrat/Montserrat-VF.woff2") format("woff2-variations");
+}
+
+@font-face {
+  font-family: "Mohr";
+  font-weight: 100;
+  src: url("Mohr/MohrAlt-ExtraLight.otf");
+}
+
+@font-face {
+  font-family: "Mohr";
+  font-weight: 200;
+  src: url("Mohr/MohrAlt-Light.otf");
+}
+
+@font-face {
+  font-family: "Mohr";
+  font-weight: 300;
+  src: url("Mohr/MohrAlt-Regular.otf");
+}
+
+@font-face {
+  font-family: "Mohr";
+  font-weight: 400;
+  src: url("Mohr/MohrAlt-Medium.otf");
+}
+
+@font-face {
+  font-family: "Mohr";
+  font-weight: 500;
+  src: url("Mohr/MohrAlt-SemiBold.otf");
+}
+
+@font-face {
+  font-family: "Mohr";
+  font-weight: 600;
+  src: url("Mohr/MohrAlt-Bold.otf");
+}
+
+@font-face {
+  font-family: "Mohr";
+  font-weight: 800;
+  src: url("Mohr/MohrAlt-Black.otf");
+}

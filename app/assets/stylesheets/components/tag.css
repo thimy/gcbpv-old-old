@@ -1,0 +1,21 @@
+.tag-list {
+  align-items: start;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: 0.875rem;
+  gap: var(--spacing-3);
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tag {
+  --tag-bg-color: var(--light-bg-color);
+  --tag-text-color: var(--black);
+
+  background-color: var(--tag-bg-color);
+  border-radius: var(--border-radius-small);
+  color: var(--black);
+  padding: var(--spacing-1) var(--spacing-2);
+}

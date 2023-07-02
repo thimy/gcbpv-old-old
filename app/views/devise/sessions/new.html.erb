@@ -1,0 +1,28 @@
+<main class="main wrapper wrapper--form">
+  <div class="auth__form">
+    <h1 class="h1 auth__title">Connexion à votre espace</h1>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= render "layouts/flash" %>
+      <div class="input">
+        <%= f.label :email, "Adresse email" %>
+        <%= f.input_field :email,
+                          required: false,
+                          autofocus: true,
+                          input_html: { autocomplete: "email" } %>
+      </div>
+      <div class="input">
+        <%= f.label :password, "Mot de passe" %>
+        <%= f.input_field :password,
+                          required: false,
+                          input_html: { autocomplete: "current-password" } %>
+      </div>
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Se connecter", class: "button" %>
+      </div>
+
+      <%= render "devise/shared/links" %>
+    <% end %>
+  </div>
+</main>

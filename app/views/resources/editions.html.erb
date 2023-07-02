@@ -1,0 +1,22 @@
+<% content_for(:page_title, "Le centre de ressources · Les éditions") %>
+<% content_for(:page_class, "resources") %>
+
+<%= render Global::HeroComponent.new(title: "Les éditions") %>
+
+<section class="section">
+  <div class="wrapper wrapper--text text-container">
+    <p>CDs, ouvrages… tous contribuent à valoriser le patrimoine culturel.  Certains d’entre eux sont édités directement par le Groupement Culturel Breton ou en co-édition. D’autres sont l’œuvre  d’artistes locaux… mais tous sont en vente dans nos locaux ou sur commande.</p>
+  </div>
+  <div class="wrapper">
+    <ul class="edition-list">
+      <% @editions.each do |edition| %>
+        <%= render Resources::EditionComponent.new(edition: edition) %>
+        <%= render Resources::EditionComponent.new(edition: edition) %>
+        <%= render Resources::EditionComponent.new(edition: edition) %>
+        <%= render Resources::EditionComponent.new(edition: edition) %>
+        <%= render Resources::EditionComponent.new(edition: edition) %>
+        <%= render Resources::EditionComponent.new(edition: edition) %>
+      <% end %>
+    </ul>
+  </div>
+</section>

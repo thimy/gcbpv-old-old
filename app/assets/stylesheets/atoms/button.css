@@ -1,0 +1,19 @@
+.button,
+a.button,
+input.button {
+  --button-border-radius: var(--border-radius-small);
+  --button-text-color: var(--black);
+
+  background-color: var(--brand);
+  border: 0;
+  border-radius: var(--button-border-radius);
+  color: var(--button-text-color);
+  cursor: pointer;
+  display: flex;
+  font-family: var(--title-font-family);
+  font-size: 0.875em;
+  padding: var(--spacing-2) var(--spacing-6) var(--spacing-1);
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+}

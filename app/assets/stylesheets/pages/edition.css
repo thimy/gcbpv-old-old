@@ -1,0 +1,10 @@
+.edition__container {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 400px auto;
+}
+
+.edition__cover img {
+  height: 100%;
+  width: 100%;
+}

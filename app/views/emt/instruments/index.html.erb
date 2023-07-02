@@ -1,0 +1,16 @@
+<% content_for(:page_title, "Les instruments pratiqués à l’EMT") %>
+<% content_for(:page_class, "instruments") %>
+
+<%= render Global::HeroComponent.new(title: "Les instruments pratiqués à l’EMT") %>
+
+<section class="section">
+  <div class="wrapper">
+    <ul class="card-list instrument-list">
+      <% @instruments.each do |instrument| %>
+        <li>
+          <%= render Global::CardComponent.new(title: instrument.name, url: emt_instrument_path(instrument.id)) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</section>
