@@ -3,6 +3,7 @@ class Season < ApplicationRecord
   has_many :subscription
   has_and_belongs_to_many :instrument_class
   has_and_belongs_to_many :workshop
+  has_and_belongs_to_many :project
   belongs_to :plan
 
   validates :start_year, presence: true

@@ -1,0 +1,2 @@
+class Discovery < ApplicationRecord
+end

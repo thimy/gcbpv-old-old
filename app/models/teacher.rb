@@ -5,12 +5,12 @@ class Teacher < ApplicationRecord
   has_one_attached :picture
 
   validates :name, presence: true
-  validates :description, presence: true
+  validates :description, presence: true, allow_blank: true
 
   VALID_STATUSES = [
-    "actif",
-    "inactif",
-    "caché"
+    "active",
+    "inactive",
+    "hidden"
   ]
   validates :status, inclusion: { in: VALID_STATUSES }
 

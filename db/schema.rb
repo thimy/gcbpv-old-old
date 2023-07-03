@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_02_174700) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_03_221012) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -55,6 +55,31 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_02_174700) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "d_classes", force: :cascade do |t|
+    t.bigint "discovery_id", null: false
+    t.bigint "teacher_id", null: false
+    t.boolean "archived"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["discovery_id"], name: "index_d_classes_on_discovery_id"
+    t.index ["teacher_id"], name: "index_d_classes_on_teacher_id"
+  end
+
+  create_table "d_classes_subscriptions", id: false, force: :cascade do |t|
+    t.bigint "d_class_id", null: false
+    t.bigint "subscription_id", null: false
+    t.index ["d_class_id", "subscription_id"], name: "index_d_classes_subscriptions_on_d_class_id_and_subscription_id"
+    t.index ["subscription_id", "d_class_id"], name: "index_d_classes_subscriptions_on_subscription_id_and_d_class_id"
+  end
+
+  create_table "discoveries", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "editions", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -70,12 +95,26 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_02_174700) do
     t.text "content"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.string "address_first"
-    t.string "address_second"
-    t.string "street"
     t.string "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
+  end
+
+  create_table "group_works", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "archived"
+  end
+
+  create_table "group_works_seasons", id: false, force: :cascade do |t|
+    t.bigint "group_work_id", null: false
+    t.bigint "season_id", null: false
+    t.index ["group_work_id", "season_id"], name: "index_group_works_seasons_on_group_work_id_and_season_id"
+    t.index ["season_id", "group_work_id"], name: "index_group_works_seasons_on_season_id_and_group_work_id"
   end
 
   create_table "instrument_classes", force: :cascade do |t|
@@ -83,9 +122,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_02_174700) do
     t.bigint "teacher_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "class_day"
-    t.time "start_time"
-    t.time "end_time"
+    t.boolean "archived"
     t.index ["instrument_id"], name: "index_instrument_classes_on_instrument_id"
     t.index ["teacher_id"], name: "index_instrument_classes_on_teacher_id"
   end
@@ -109,6 +146,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_02_174700) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "archived"
+  end
+
+  create_table "meetings", force: :cascade do |t|
+    t.string "name"
+    t.integer "amount"
+    t.string "meeting_day"
+    t.text "description"
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "archived"
   end
 
   create_table "payors", force: :cascade do |t|
@@ -131,9 +180,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_02_174700) do
     t.decimal "outbounds_markup"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.decimal "awakening_price", default: "0.0"
-    t.decimal "kids_discovery_price", default: "0.0"
-    t.decimal "discovery_price", default: "0.0"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -146,6 +192,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_02_174700) do
     t.bigint "category_id"
     t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["event_id"], name: "index_posts_on_event_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "archived"
+  end
+
+  create_table "projects_seasons", id: false, force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.bigint "season_id", null: false
+    t.index ["project_id", "season_id"], name: "index_projects_seasons_on_project_id_and_season_id"
+    t.index ["season_id", "project_id"], name: "index_projects_seasons_on_season_id_and_project_id"
   end
 
   create_table "seasons", force: :cascade do |t|
@@ -171,6 +232,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_02_174700) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "day"
+    t.boolean "archived"
     t.index ["city_id"], name: "index_sessions_on_city_id"
     t.index ["instrument_class_id"], name: "index_sessions_on_instrument_class_id"
   end
@@ -183,6 +245,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_02_174700) do
     t.datetime "updated_at", null: false
     t.string "mail", default: "f"
     t.integer "birthyear"
+    t.string "email"
     t.index ["payor_id"], name: "index_students_on_payor_id"
   end
 
@@ -193,13 +256,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_02_174700) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "amount_paid"
-    t.bigint "instrument_class_id"
-    t.bigint "workshop_id"
     t.string "status"
-    t.index ["instrument_class_id"], name: "index_subscriptions_on_instrument_class_id"
     t.index ["season_id"], name: "index_subscriptions_on_season_id"
     t.index ["student_id"], name: "index_subscriptions_on_student_id"
-    t.index ["workshop_id"], name: "index_subscriptions_on_workshop_id"
   end
 
   create_table "subscriptions_workshops", id: false, force: :cascade do |t|
@@ -240,12 +299,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_02_174700) do
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "workshop_type"
+    t.boolean "archived"
     t.index ["teacher_id"], name: "index_workshops_on_teacher_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "d_classes", "discoveries"
+  add_foreign_key "d_classes", "teachers"
   add_foreign_key "instrument_classes", "instruments"
   add_foreign_key "instrument_classes", "teachers"
   add_foreign_key "posts", "categories"
@@ -254,9 +315,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_02_174700) do
   add_foreign_key "sessions", "cities"
   add_foreign_key "sessions", "instrument_classes"
   add_foreign_key "students", "payors"
-  add_foreign_key "subscriptions", "instrument_classes"
   add_foreign_key "subscriptions", "seasons"
   add_foreign_key "subscriptions", "students"
-  add_foreign_key "subscriptions", "workshops"
   add_foreign_key "workshops", "teachers"
 end

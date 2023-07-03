@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :content, presence: true, length: { minimum: 10 }
 
-  VALID_STATUSES = ["privé", "public", "archivé"]
+  VALID_STATUSES = ["private", "public", "archived"]
   validates :status, presence: true, inclusion: { in: VALID_STATUSES }
 
   belongs_to :event, optional: true

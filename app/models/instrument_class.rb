@@ -5,17 +5,6 @@ class InstrumentClass < ApplicationRecord
   has_and_belongs_to_many :subscription
   has_and_belongs_to_many :season
 
-  CLASS_DAYS = [
-    "monday",
-    "tuesday",
-    "wednesday",
-    "thursday",
-    "friday"
-  ]
-  validates :class_day, presence: true, inclusion: { in: CLASS_DAYS }
-  validates :start_time, presence: true
-  validates :end_time, presence: true
-
   def name
     "#{instrument.name} avec #{teacher.name}"
   end
