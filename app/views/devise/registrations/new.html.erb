@@ -2,7 +2,6 @@
   <div class="auth__form">
     <h1 class="h1 auth__title">Création de votre compte</h1>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "layouts/flash" %>
       <div class="input">
         <%= f.label :email, "Adresse email" %>
         <%= f.input_field :email,

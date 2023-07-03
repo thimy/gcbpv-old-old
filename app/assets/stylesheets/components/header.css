@@ -222,7 +222,7 @@
 
   .nav__item.user {
     align-items: start;
-    justify-content: start;
+    justify-content: flex-start;
   }
 
   .nav__item.user svg {

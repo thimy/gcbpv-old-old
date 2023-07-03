@@ -372,6 +372,11 @@ entities@^4.2.0:
   resolved "https://registry.npmjs.org/entities/-/entities-4.5.0.tgz#5d268ea5e7113ec74c4d033b79ea5a35a488fb48"
   integrity sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==
 
+es-module-shims@^1.7.3:
+  version "1.7.3"
+  resolved "https://registry.npmjs.org/es-module-shims/-/es-module-shims-1.7.3.tgz#ad6069a7965d09c02882027bfa6f8c883afdcda6"
+  integrity sha512-RntbjDrPCciiM3MEfnnr43u82/gRZ2ukS7zlUJOPMgorN1xqQ12uxCsvEPWTi/ozaOHBrpxJHd3qvhUQnN6XfQ==
+
 esbuild@^0.18.11:
   version "0.18.11"
   resolved "https://registry.npmjs.org/esbuild/-/esbuild-0.18.11.tgz#cbf94dc3359d57f600a0dbf281df9b1d1b4a156e"
