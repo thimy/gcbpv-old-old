@@ -3,7 +3,7 @@
 <%= render Global::HeroComponent.new(title: @instrument.name) %>
 
 <section class="section">
-  <div class="wrapper wrapper--text">
+  <div class="wrapper wrapper--text"></aside>
     <div class="text-container"><%= markdown(@instrument.description) %></div>
     <div class="sessions">
     <% @sessions_by_city_and_day.each do |city_and_day, sessions| %>

@@ -4,20 +4,38 @@
 
 <section class="section">
   <div class="wrapper wrapper--text">
-    <ul class="card-list">
-      <% @teacher.instruments.each do |instrument| %>
-        <li>
-          <%= render Global::CardComponent.new(title: "Cours de #{instrument.name}", url: emt_instrument_path(instrument))%>
-        </li>
-      <% end %>
-      <% @teacher.workshops.each do |workshop| %>
-        <li>
-          <%= render Global::CardComponent.new(title: "#{workshop.name}", url: emt_workshop_path(workshop))%>
-        </li>
-      <% end %>
-    </ul>
     <div class="text-container">
-      <%= markdown(@teacher.description) %>
+      <% if @teacher.description.present? %>
+        <%= markdown(@teacher.description) %>
+      <% else %>
+        Disponible prochainement
+      <% end %>
     </div>
+    <aside data-aside-position="left">
+      <nav>
+        <% if @teacher.instruments.present? %>
+          <h4 class="h4">Instruments</h4>
+          <% @teacher.instruments.each do |instrument| %>
+            <%= link_to instrument.name, emt_instrument_path(instrument) %>
+          <% end %>
+        <% end %>
+        <% if @teacher.workshops.present? %>
+          <h4 class="h4">Ateliers</h4>
+          <% @teacher.workshops.each do |workshop| %>
+            <%= link_to workshop.name, emt_workshop_path(workshop) %>
+          <% end %>
+        <% end %>
+      </nav>
+    </aside>
+    <aside data-aside-position="right">
+      <nav>
+        <h4 class="h4">Autres professeurs</h4>
+        <% @teachers.each do |teacher| %>
+          <% if teacher != @teacher %>
+            <%= link_to teacher.name, emt_teacher_path(teacher) %>
+          <% end %>
+        <% end %>
+      </nav>
+    </aside>
   </div>
 </section>

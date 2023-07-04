@@ -1,7 +1,7 @@
 .wrapper {
   display: grid;
   gap: var(--gap);
-  grid-template-columns: 1fr Min(var(--content-width), calc(100% - var(--spacing-16))) 1fr;
+  grid-template-columns: 1fr min(var(--content-width), calc(100% - var(--spacing-16))) 1fr;
   grid-column-gap: var(--spacing-8);
 }
 
@@ -14,7 +14,37 @@
 }
 
 .wrapper > * {
+  align-self: start;
   grid-column: 2;
+}
+
+.wrapper > aside {
+  border: 1px solid var(--gray-50-a);
+  border-radius: var(--border-radius-small);
+  display: flex;
+  flex-direction: column;
+  grid-row: 1 / span 10;
+  max-width: 35ch;
+  padding-block: var(--spacing-4);
+  width: 100%;
+}
+
+.wrapper > aside[data-aside-position="left"] {
+  grid-column: 1;
+  justify-self: end;
+  margin-left: var(--spacing-4);
+}
+
+.wrapper > aside[data-aside-position="right"] {
+  grid-column: 3;
+  margin-right: var(--spacing-4);
+}
+
+.wrapper > aside nav {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  padding-inline: var(--spacing-6);
 }
 
 .full-bleed {

@@ -27,8 +27,8 @@
   --box-shadow-default: 0 var(--spacing-1) 4px 4px rgba(0, 0, 0, 0.1);
 
   --border-radius-small: var(--spacing-1);
-  --border-radius-medium: var(--spacing-4);
-  --border-radius-large: var(--spacing-6);
+  --border-radius-medium: var(--spacing-2);
+  --border-radius-large: var(--spacing-4);
 
   --light-bg-color: var(--gray-20-a);
 
