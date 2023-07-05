@@ -13,12 +13,9 @@ class WorkshopDashboard < Administrate::BaseDashboard
     end_time: Field::Time,
     location: Field::String,
     name: Field::String,
-    season: Field::HasMany,
     start_time: Field::Time,
-    subscription: Field::HasMany,
     teacher: Field::BelongsTo,
     workshop_day: Field::String,
-    workshop_type: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -30,25 +27,24 @@ class WorkshopDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    description
-    end_time
+    name
+    workshop_day
     location
+    start_time
+    end_time
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
+    name
+    teacher
     description
+    workshop_day
+    start_time
     end_time
     location
-    name
-    season
-    start_time
-    subscription
-    teacher
-    workshop_day
-    workshop_type
     created_at
     updated_at
   ].freeze
@@ -61,12 +57,9 @@ class WorkshopDashboard < Administrate::BaseDashboard
     end_time
     location
     name
-    season
     start_time
-    subscription
     teacher
     workshop_day
-    workshop_type
   ].freeze
 
   # COLLECTION_FILTERS
@@ -84,7 +77,7 @@ class WorkshopDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how workshops are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(workshop)
-  #   "Workshop ##{workshop.id}"
-  # end
+  def display_resource(workshop)
+    workshop.name
+  end
 end

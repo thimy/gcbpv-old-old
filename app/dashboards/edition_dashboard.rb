@@ -11,11 +11,9 @@ class EditionDashboard < Administrate::BaseDashboard
     id: Field::Number,
     description: Field::String,
     format: Field::String,
-    image: Field::String,
-    image_attachment: Field::HasOne,
-    image_blob: Field::HasOne,
     name: Field::String,
     price: Field::String.with_options(searchable: false),
+    image: Field::Image,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -27,21 +25,19 @@ class EditionDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    description
+    name
     format
-    image
+    price
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
+    image
+    name
     description
     format
-    image
-    image_attachment
-    image_blob
-    name
     price
     created_at
     updated_at
@@ -51,12 +47,10 @@ class EditionDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
+    image
+    name
     description
     format
-    image
-    image_attachment
-    image_blob
-    name
     price
   ].freeze
 
@@ -75,7 +69,7 @@ class EditionDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how editions are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(edition)
-  #   "Edition ##{edition.id}"
-  # end
+  def display_resource(edition)
+    edition.name
+  end
 end

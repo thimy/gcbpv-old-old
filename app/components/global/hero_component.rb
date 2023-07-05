@@ -3,8 +3,9 @@
 class Global::HeroComponent < ViewComponent::Base
   renders_one :extra
 
-  def initialize(title:)
+  def initialize(title:, subtitle: nil)
     @title = title
+    @subtitle = subtitle
   end
 
 end

@@ -1,9 +1,11 @@
+require "redcarpet"
+require "redcarpet/render_strip"
+
 module ApplicationHelper
   def markdown(content)
     if content.present?
-      content_tag(:div, class: "markdown-content") do
-        markdown_parser(markdown_renderer).render(content.to_s).html_safe
-      end
+      markdown_to_html = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+      markdown_to_html.render(content).html_safe
     end
   end
 end

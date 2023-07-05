@@ -3,7 +3,6 @@
   background-color: var(--bg-color);
   display: flex;
   flex-direction: column;
-  gap: var(--gap);
   justify-content: center;
   min-height: 15rem;
 }

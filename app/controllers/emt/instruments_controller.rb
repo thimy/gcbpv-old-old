@@ -6,7 +6,7 @@ class Emt::InstrumentsController < ApplicationController
   end
 
   def show
-    @sessions = Session.joins(:instrument_class).where(instrument_class: {instrument: @instrument})
+    @sessions = @instrument.sessions
     @sessions_by_city_and_day = @sessions.order(:start_time).group_by{ |session| [session.city, session.day] }
   end
 

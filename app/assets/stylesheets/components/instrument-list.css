@@ -1,7 +1,0 @@
-.instrument-list {
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-}
-
-.instrument-list .card {
-  height: calc(var(--spacing-40) * 2);
-}

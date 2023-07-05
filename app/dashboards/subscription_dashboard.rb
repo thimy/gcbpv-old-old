@@ -29,24 +29,20 @@ class SubscriptionDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
+    student
     amount
     amount_paid
-    instrument_class
+    season
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
+    student
+    season
     amount
     amount_paid
-    instrument_class
-    instrument_class_id
-    season
-    status
-    student
-    workshop
-    workshop_id
     created_at
     updated_at
   ].freeze
@@ -81,7 +77,7 @@ class SubscriptionDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how subscriptions are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(subscription)
-  #   "Subscription ##{subscription.id}"
-  # end
+  def display_resource(subscription)
+    "Inscription de #{subscription.student.full_name}"
+  end
 end

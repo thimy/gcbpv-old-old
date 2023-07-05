@@ -1,12 +1,14 @@
 .wrapper {
   display: grid;
-  gap: var(--gap);
+  gap: var(--spacing-12);
   grid-template-columns: 1fr min(var(--content-width), calc(100% - var(--spacing-16))) 1fr;
   grid-column-gap: var(--spacing-8);
+  padding-inline: var(--global-padding);
 }
 
 .wrapper--text {
   --content-width: 65ch;
+  line-height: 1.5;
 }
 
 .wrapper--form {
@@ -19,13 +21,11 @@
 }
 
 .wrapper > aside {
-  border: 1px solid var(--gray-50-a);
   border-radius: var(--border-radius-small);
   display: flex;
   flex-direction: column;
   grid-row: 1 / span 10;
   max-width: 35ch;
-  padding-block: var(--spacing-4);
   width: 100%;
 }
 
@@ -36,6 +36,7 @@
 }
 
 .wrapper > aside[data-aside-position="right"] {
+  align-items: end;
   grid-column: 3;
   margin-right: var(--spacing-4);
 }
@@ -44,7 +45,6 @@
   display: inline-flex;
   flex-direction: column;
   gap: var(--spacing-2);
-  padding-inline: var(--spacing-6);
 }
 
 .full-bleed {
@@ -54,4 +54,15 @@
 
 .text-container p {
   line-height: 1.75;
+}
+
+.horizontal-flow {
+  display: flex;
+  gap: var(--gap);
+}
+
+.vertical-flow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
 }

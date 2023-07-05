@@ -2,7 +2,7 @@
   color-scheme: light dark; /* both supported */
 
   --brand: #ae9d7c;
-  --brand-gradient: linear-gradient(145deg, var(--blue-60), var(--brand));
+  --brand-gradient: linear-gradient(145deg, var(--blue-60-a), var(--brand));
 
   --global-padding: var(--spacing-8);
   --content-width: 120ch;

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :students
     resources :subscriptions
     resources :teachers
+    resources :availabilities
     resources :instruments
     resources :instrument_classes
     resources :sessions
@@ -31,9 +32,11 @@ Rails.application.routes.draw do
 
   get "/emt", to: "emt#index"
   namespace :emt do
+    resources :discoveries
     resources :workshops
     resources :teachers
     resources :instruments
+    resources :meetings
   end
 
   get "/groupement", to: "groupement#index"

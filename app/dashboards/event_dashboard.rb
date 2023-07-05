@@ -9,10 +9,24 @@ class EventDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    address_first: Field::String,
-    address_second: Field::String,
     city: Field::String,
-    content: Field::Text,
+    content: Field::SimpleMarkdown.with_options({
+      safe_links_only: true,
+      filter_html: true,
+      with_toc_data: true,
+      hard_wrap: true,
+      link_attributes: { rel: 'follow' },
+      autolink: true,
+      tables: true,
+      no_intra_emphasis: true,
+      strikethrough: true,
+      highlight: true,
+      space_after_headers: true,
+      easymde_options: {
+        spell_checker: false,
+        hide_icons: %w[guide heading]
+      }
+    }),
     end_date: Field::DateTime,
     name: Field::String,
     posts: Field::HasMany,
@@ -29,8 +43,8 @@ class EventDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    address_first
-    address_second
+    name
+    start_date
     city
   ].freeze
 
@@ -38,15 +52,12 @@ class EventDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    address_first
-    address_second
-    city
-    content
-    end_date
     name
-    posts
-    start_date
+    content
     street
+    city
+    start_date
+    end_date
     created_at
     updated_at
   ].freeze
@@ -55,13 +66,12 @@ class EventDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    address_first
-    address_second
-    city
-    content
-    end_date
     name
-    posts
+    content
+    street
+    city
+    start_date
+    end_date
     start_date
     street
   ].freeze
@@ -81,7 +91,7 @@ class EventDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how events are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(event)
-  #   "Event ##{event.id}"
-  # end
+  def display_resource(event)
+    event.name
+  end
 end

@@ -69,7 +69,7 @@ class SeasonDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how seasons are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(season)
-  #   "Season ##{season.id}"
-  # end
+  def display_resource(season)
+    season.name
+  end
 end

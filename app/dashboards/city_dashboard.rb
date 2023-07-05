@@ -57,7 +57,7 @@ class CityDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how cities are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(city)
-  #   "City ##{city.id}"
-  # end
+  def display_resource(city)
+    city.name
+  end
 end

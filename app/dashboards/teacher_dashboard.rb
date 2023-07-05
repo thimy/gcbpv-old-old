@@ -29,24 +29,19 @@ class TeacherDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    description
-    instrument_classes
-    instruments
+    name
+    status
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    description
-    instrument_classes
-    instruments
     name
+    description
+    instruments
     picture
-    picture_attachment
-    picture_blob
     status
-    workshops
     created_at
     updated_at
   ].freeze
@@ -55,15 +50,11 @@ class TeacherDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    description
-    instrument_classes
-    instruments
     name
+    description
+    instruments
     picture
-    picture_attachment
-    picture_blob
     status
-    workshops
   ].freeze
 
   # COLLECTION_FILTERS
@@ -81,7 +72,7 @@ class TeacherDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how teachers are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(teacher)
-  #   "Teacher ##{teacher.id}"
-  # end
+  def display_resource(teacher)
+    teacher.name
+  end
 end

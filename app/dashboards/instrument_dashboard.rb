@@ -9,8 +9,24 @@ class InstrumentDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    description: Field::Text,
-    instrument_classes: Field::HasMany,
+    description: Field::SimpleMarkdown.with_options({
+      safe_links_only: true,
+      filter_html: true,
+      with_toc_data: true,
+      hard_wrap: true,
+      link_attributes: { rel: 'follow' },
+      autolink: true,
+      tables: true,
+      no_intra_emphasis: true,
+      strikethrough: true,
+      highlight: true,
+      space_after_headers: true,
+      easymde_options: {
+        spell_checker: false,
+        hide_icons: %w[guide heading]
+      }
+    }),
+    classes: Field::HasMany,
     name: Field::String,
     teachers: Field::HasMany,
     created_at: Field::DateTime,
@@ -24,8 +40,8 @@ class InstrumentDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    description
-    instrument_classes
+    name
+    teachers
     name
   ].freeze
 
@@ -33,9 +49,8 @@ class InstrumentDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    description
-    instrument_classes
     name
+    description
     teachers
     created_at
     updated_at
@@ -45,9 +60,8 @@ class InstrumentDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    description
-    instrument_classes
     name
+    description
     teachers
   ].freeze
 
@@ -66,7 +80,7 @@ class InstrumentDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how instruments are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(instrument)
-  #   "Instrument ##{instrument.id}"
-  # end
+  def display_resource(instrument)
+    instrument.name
+  end
 end

@@ -5,12 +5,34 @@
 
 <section class="section">
   <div class="wrapper">
-    <ul class="card-list workshop-list">
-      <% @workshops.each do |workshop| %>
-        <li>
-          <%= render Global::CardComponent.new(title: workshop.name, url: emt_workshop_path(workshop.id)) %>
-        </li>
-      <% end %>
-    </ul>
+    <div class="vertical-flow">
+      <h2 class="h2">Les ateliers découverte</h2>
+      <p>Premiers contacts avec les instruments afin de choisir lequel conviendra le mieux, pour tous les âges.</p>
+      <ul class="card-list workshop-list">
+        <% @discoveries.each do |discovery| %>
+          <li>
+            <%= render Global::CardComponent.new(title: discovery.name, url: emt_discovery_path(discovery.id)) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="vertical-flow">
+      <h2 class="h2">Les ateliers de pratique</h2>
+      <div class="callout">
+        Durée et fréquence : 45min hebdomadaire ou 1h30 tous les 15 jours.
+        <ul>
+          <li>1 atelier inclus lors de l’inscription à un cours individuel</li>
+          <li>Atelier seul = 108 euros/an + maj. hors Redon Agglo</li>
+        </ul>
+      </div>
+      <p>Parce-que jouer ensemble est essentiel à la formation du musicien, nous proposons de multiples ateliers de pratique d’ensemble. Ces ateliers peuvent être choisis indépendamment d’une pratique instrumentale individuelle.</p>
+      <ul class="card-list workshop-list">
+        <% @workshops.each do |workshop| %>
+          <li>
+            <%= render Global::CardComponent.new(title: workshop.name, url: emt_workshop_path(workshop.id)) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </section>

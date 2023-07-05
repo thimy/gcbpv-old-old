@@ -11,11 +11,16 @@
 }
 
 .tag {
-  --tag-bg-color: var(--light-bg-color);
+  --tag-bg-color: var(--brand);
   --tag-text-color: var(--black);
 
   background-color: var(--tag-bg-color);
   border-radius: var(--border-radius-small);
   color: var(--black);
   padding: var(--spacing-1) var(--spacing-2);
+}
+
+.tag:hover {
+  background-color: var(--link-hover-color);
+  text-decoration: none;
 }

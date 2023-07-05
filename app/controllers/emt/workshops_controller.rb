@@ -2,6 +2,7 @@ class Emt::WorkshopsController < ApplicationController
   before_action :set_workshop, only: %i[ show edit update destroy ]
 
   def index
+    @discoveries = Discovery.all
     @workshops = Workshop.all
   end
 

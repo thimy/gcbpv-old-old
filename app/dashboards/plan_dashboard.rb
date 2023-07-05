@@ -27,7 +27,7 @@ class PlanDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    id
+    name
     awakening_price
     class_price
     discovery_price
@@ -37,14 +37,14 @@ class PlanDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    awakening_price
-    class_price
-    discovery_price
-    kids_discovery_price
     name
+    class_price
+    workshop_price
+    awakening_price
+    kids_discovery_price
+    discovery_price
     obc_markup
     outbounds_markup
-    workshop_price
     created_at
     updated_at
   ].freeze
@@ -53,14 +53,14 @@ class PlanDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    awakening_price
-    class_price
-    discovery_price
-    kids_discovery_price
     name
+    class_price
+    workshop_price
+    awakening_price
+    kids_discovery_price
+    discovery_price
     obc_markup
     outbounds_markup
-    workshop_price
   ].freeze
 
   # COLLECTION_FILTERS
@@ -78,7 +78,7 @@ class PlanDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how plans are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(plan)
-  #   "Plan ##{plan.id}"
-  # end
+  def display_resource(plan)
+    plan.name
+  end
 end

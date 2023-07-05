@@ -1,4 +1,7 @@
 <section class="hero full-bleed">
+  <% if @subtitle.present? %>
+    <div class="h4"><%= @subtitle %></div>
+  <% end %>
   <h1 class="hero__title"><%= @title %></h1>
   <%= extra %>
 </section>
