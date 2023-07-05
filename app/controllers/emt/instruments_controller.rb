@@ -6,8 +6,11 @@ class Emt::InstrumentsController < ApplicationController
   end
 
   def show
-    # @sessions = @instrument.sessions
-    # @sessions_by_city_and_day = @sessions.order(:start_time).group_by{ |session| [session.city, session.day] }
+    @slots = Slot.all.order(:city_id).group_by{ |slot| [slot.city, slot.day]}
+    @courses = Course.where(instrument: @instrument).group_by{|course| [course.teacher, course.instrument]}
+    # @slots_by_city_and_day = @instrument.slots.order(:start_time).group_by{ |slot| [slot.city, slot.day] }
+    # @teachers = Teacher.joins(:courses, :instrument).where(course: {instrument: self})
+    # @slots = Slot.joins(:teachers, :courses).where(course: {instrument: self})
   end
 
   private

@@ -11,7 +11,7 @@ class SlotDashboard < Administrate::BaseDashboard
     id: Field::Number,
     teacher: Field::BelongsTo,
     city: Field::BelongsTo,
-    day: Field::I18nEnum.with_options(class_name: "Slot"),
+    day: Field::String,
     start_time: Field::Time,
     end_time: Field::Time,
     created_at: Field::DateTime,

@@ -5,6 +5,18 @@
 <section class="section">
   <div class="wrapper wrapper--text"></aside>
     <div class="text-container"><%= markdown(@instrument.description) %></div>
-    <div class="sessions"></div>
+    <div class="slot">
+      <% @slots.each do |city_and_day, slots| %>
+        <% city, day = city_and_day %>
+        <% if city != @city %>
+          <h2 class="h3"><%= city.name %></h2>
+        <% end %>
+        <% @city = city %>
+        <h3 class="h4"><%= day %></h3>
+          <% slots.each do |slot| %>
+            <p><%= "#{slot.teacher.name} #{slot.time_as_text}" %></p>
+          <% end %>
+      <% end %>
+    </div>
   </div>
 </section>

@@ -7,6 +7,7 @@ class Teacher < ApplicationRecord
   has_one_attached :picture
 
   enum teacher_status: ["Actif", "Inactif", "Caché"]
+
   validates :name, presence: true
   validates :description, presence: true, allow_blank: true
 

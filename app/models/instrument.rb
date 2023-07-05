@@ -7,4 +7,8 @@ class Instrument < ApplicationRecord
   # def sessions
   #   Session.joins(:course).where(course: {instrument: self})
   # end
+
+  def slots
+    Slot.joins(:teacher).where(teacher: {instrument: self})
+  end
 end
