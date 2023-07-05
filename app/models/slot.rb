@@ -8,6 +8,10 @@ class Slot < ApplicationRecord
     "#{teacher.name} à #{city.name} #{day_as_text} #{time_as_text}"
   end
 
+  def name_without_city
+    "#{teacher.name} #{day_as_text} #{time_as_text}"
+  end
+
   def day_as_text
     if day.present?
       "le #{day}"

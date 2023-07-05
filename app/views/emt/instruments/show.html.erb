@@ -8,16 +8,21 @@
     <div class="slot">
       <% @slots.each do |city_and_day, slots| %>
         <% city, day = city_and_day %>
-        <% if city != @city %>
-          <h2 class="h3"><%= city.name %></h2>
-        <% end %>
-        <% @city = city %>
-        <h3 class="h4"><%= day %></h3>
-          <ul>
-            <% slots.each do |slot| %>
-              <li><%= "#{slot.teacher.name} #{slot.time_as_text}" %></li>
+        <% slots.each do |slot| %>
+          <% courses = slot.teacher.courses.where(instrument_id: @instrument.id) %>
+          <% courses.each do |course| %>
+            <% if course.teacher == slot.teacher && city != @city %>
+              <h3 class="h4"><%= city.name %></h3>
+              <% @city = city %>
             <% end %>
+            <ul>
+              <% if course.teacher == slot.teacher %>
+                <li><%= slot.name_without_city %></li>
+              <% end %>
+            </ul>
+          <% end %>
           </ul>
+        <% end %>
       <% end %>
     </div>
   </div>
