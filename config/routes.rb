@@ -5,10 +5,9 @@ Rails.application.routes.draw do
     resources :students
     resources :subscriptions
     resources :teachers
-    resources :availabilities
+    resources :slots
     resources :instruments
-    resources :instrument_classes
-    resources :sessions
+    resources :courses
     resources :workshops
     resources :seasons
     resources :plans

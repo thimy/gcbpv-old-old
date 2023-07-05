@@ -31,7 +31,7 @@ class EventDashboard < Administrate::BaseDashboard
     name: Field::String,
     posts: Field::HasMany,
     start_date: Field::DateTime,
-    street: Field::String,
+    address: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -54,7 +54,7 @@ class EventDashboard < Administrate::BaseDashboard
     id
     name
     content
-    street
+    address
     city
     start_date
     end_date
@@ -68,12 +68,10 @@ class EventDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     name
     content
-    street
+    address
     city
     start_date
     end_date
-    start_date
-    street
   ].freeze
 
   # COLLECTION_FILTERS

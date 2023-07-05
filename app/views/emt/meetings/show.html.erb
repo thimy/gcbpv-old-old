@@ -1,0 +1,18 @@
+<% content_for(:page_title, @meeting.name) %>
+
+<%= render Global::HeroComponent.new(title: @meeting.name, subtitle: "Les rendez-vous") %>
+
+<section class="section">
+  <div class="wrapper wrapper--text">
+    <div class="text-container">
+      <h2 class="h4">Description</h2>
+      <p><%= @meeting.description %></p>
+    </div>
+    <dl>
+      <dt><h3 class="h5">Nombre de séances</h3></dt>
+      <dd><%= "#{@meeting.amount} séances" %></dd>
+      <dt><h3 class="h5">Prix</h3></dt>
+      <dd><%= @meeting.price %></dd>
+    </dl>
+  </div>
+</section>

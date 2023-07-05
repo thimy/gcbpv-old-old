@@ -1,24 +1,22 @@
 class Teacher < ApplicationRecord
-  has_many :instrument_classes
-  has_many :instruments, through: :instrument_classes
+  default_scope { order(created_at: :desc) }
+
+  has_many :courses
+  has_many :instruments, through: :courses
   has_many :workshops
   has_one_attached :picture
 
+  enum teacher_status: ["Actif", "Inactif", "Caché"]
   validates :name, presence: true
   validates :description, presence: true, allow_blank: true
 
-  VALID_STATUSES = [
-    "active",
-    "inactive",
-    "hidden"
-  ]
-  validates :status, inclusion: { in: VALID_STATUSES }
+  validates :status, inclusion: { in: teacher_statuses.keys }
 
   def active?
-    status == "active"
+    status == "Actif"
   end
 
   def inactive?
-    status == "inactive"
+    status == "Inactif"
   end
 end

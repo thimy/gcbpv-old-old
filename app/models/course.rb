@@ -1,16 +1,16 @@
-class InstrumentClass < ApplicationRecord
+class Course < ApplicationRecord
   # association table to link teachers to many instruments
   belongs_to :instrument
   belongs_to :teacher
-  has_and_belongs_to_many :subscription
   has_and_belongs_to_many :season
+  has_and_belongs_to_many :subscription
 
   def name
     "#{instrument.name} avec #{teacher.name}"
   end
 
   def self.suggestions
-    InstrumentClass.all.map { |instrument_class| { value: instrument_class.id, label: instrument_class.name }} 
+    Course.all.map { |course| { value: course.id, label: course.name }}
   end
 
   def self.ransackable_attributes(auth_object = nil)

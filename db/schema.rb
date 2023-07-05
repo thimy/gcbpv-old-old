@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_03_221012) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_05_192342) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -53,6 +53,31 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_03_221012) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.bigint "instrument_id", null: false
+    t.bigint "teacher_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "archived"
+    t.string "description"
+    t.index ["instrument_id"], name: "index_courses_on_instrument_id"
+    t.index ["teacher_id"], name: "index_courses_on_teacher_id"
+  end
+
+  create_table "courses_seasons", id: false, force: :cascade do |t|
+    t.bigint "course_id", null: false
+    t.bigint "season_id", null: false
+    t.index ["course_id", "season_id"], name: "index_courses_seasons_on_course_id_and_season_id"
+    t.index ["season_id", "course_id"], name: "index_courses_seasons_on_season_id_and_course_id"
+  end
+
+  create_table "courses_subscriptions", id: false, force: :cascade do |t|
+    t.bigint "course_id", null: false
+    t.bigint "subscription_id", null: false
+    t.index ["course_id", "subscription_id"], name: "index_courses_subscriptions_on_course_id_and_subscription_id"
+    t.index ["subscription_id", "course_id"], name: "index_courses_subscriptions_on_subscription_id_and_course_id"
   end
 
   create_table "d_classes", force: :cascade do |t|
@@ -115,30 +140,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_03_221012) do
     t.bigint "season_id", null: false
     t.index ["group_work_id", "season_id"], name: "index_group_works_seasons_on_group_work_id_and_season_id"
     t.index ["season_id", "group_work_id"], name: "index_group_works_seasons_on_season_id_and_group_work_id"
-  end
-
-  create_table "instrument_classes", force: :cascade do |t|
-    t.bigint "instrument_id", null: false
-    t.bigint "teacher_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean "archived"
-    t.index ["instrument_id"], name: "index_instrument_classes_on_instrument_id"
-    t.index ["teacher_id"], name: "index_instrument_classes_on_teacher_id"
-  end
-
-  create_table "instrument_classes_seasons", id: false, force: :cascade do |t|
-    t.bigint "season_id", null: false
-    t.bigint "instrument_class_id", null: false
-    t.index ["instrument_class_id"], name: "index_instrument_classes_seasons_on_instrument_class_id"
-    t.index ["season_id"], name: "index_instrument_classes_seasons_on_season_id"
-  end
-
-  create_table "instrument_classes_subscriptions", id: false, force: :cascade do |t|
-    t.bigint "instrument_class_id", null: false
-    t.bigint "subscription_id", null: false
-    t.index ["instrument_class_id"], name: "index_instrument_classes_subscriptions_on_instrument_class_id"
-    t.index ["subscription_id"], name: "index_instrument_classes_subscriptions_on_subscription_id"
   end
 
   create_table "instruments", force: :cascade do |t|
@@ -225,16 +226,33 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_03_221012) do
   end
 
   create_table "sessions", force: :cascade do |t|
-    t.bigint "instrument_class_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "archived"
+    t.bigint "slot_id"
+    t.bigint "course_id"
+    t.index ["course_id"], name: "index_sessions_on_course_id"
+    t.index ["slot_id"], name: "index_sessions_on_slot_id"
+  end
+
+  create_table "sessions_subscriptions", id: false, force: :cascade do |t|
+    t.bigint "session_id", null: false
+    t.bigint "subscription_id", null: false
+    t.index ["session_id", "subscription_id"], name: "index_sessions_subscriptions_on_session_id_and_subscription_id"
+    t.index ["subscription_id", "session_id"], name: "index_sessions_subscriptions_on_subscription_id_and_session_id"
+  end
+
+  create_table "slots", force: :cascade do |t|
+    t.bigint "teacher_id", null: false
     t.bigint "city_id", null: false
     t.time "start_time"
     t.time "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "day"
-    t.boolean "archived"
-    t.index ["city_id"], name: "index_sessions_on_city_id"
-    t.index ["instrument_class_id"], name: "index_sessions_on_instrument_class_id"
+    t.string "description"
+    t.index ["city_id"], name: "index_slots_on_city_id"
+    t.index ["teacher_id"], name: "index_slots_on_teacher_id"
   end
 
   create_table "students", force: :cascade do |t|
@@ -305,15 +323,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_03_221012) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "courses", "instruments"
+  add_foreign_key "courses", "teachers"
   add_foreign_key "d_classes", "discoveries"
   add_foreign_key "d_classes", "teachers"
-  add_foreign_key "instrument_classes", "instruments"
-  add_foreign_key "instrument_classes", "teachers"
   add_foreign_key "posts", "categories"
   add_foreign_key "posts", "events"
   add_foreign_key "seasons", "plans"
-  add_foreign_key "sessions", "cities"
-  add_foreign_key "sessions", "instrument_classes"
+  add_foreign_key "slots", "cities"
+  add_foreign_key "slots", "teachers"
   add_foreign_key "students", "payors"
   add_foreign_key "subscriptions", "seasons"
   add_foreign_key "subscriptions", "students"

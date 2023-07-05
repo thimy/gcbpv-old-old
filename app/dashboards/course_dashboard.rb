@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class PlanDashboard < Administrate::BaseDashboard
+class CourseDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -9,11 +9,9 @@ class PlanDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    class_price: Field::String.with_options(searchable: false),
-    name: Field::String,
-    obc_markup: Field::String.with_options(searchable: false),
-    outbounds_markup: Field::String.with_options(searchable: false),
-    workshop_price: Field::String.with_options(searchable: false),
+    instrument: Field::BelongsTo,
+    teacher: Field::BelongsTo,
+    archived: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -24,20 +22,19 @@ class PlanDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    name
-    class_price
-    obc_markup
-    outbounds_markup
+    id
+    instrument
+    teacher
+    archived
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    name
-    class_price
-    obc_markup
-    outbounds_markup
+    instrument
+    teacher
+    archived
     created_at
     updated_at
   ].freeze
@@ -46,10 +43,9 @@ class PlanDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    name
-    class_price
-    obc_markup
-    outbounds_markup
+    instrument
+    teacher
+    archived
   ].freeze
 
   # COLLECTION_FILTERS
@@ -64,10 +60,10 @@ class PlanDashboard < Administrate::BaseDashboard
   #   }.freeze
   COLLECTION_FILTERS = {}.freeze
 
-  # Overwrite this method to customize how plans are displayed
+  # Overwrite this method to customize how instrument classes are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(plan)
-    plan.name
+  def display_resource(course)
+    "#{course.instrument.name} avec #{course.teacher.name}"
   end
 end

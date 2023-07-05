@@ -9,11 +9,12 @@ class SeasonDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    instrument_class: Field::HasMany,
-    plan: Field::BelongsTo,
+    name: Field::String,
     start_year: Field::Number,
-    subscription: Field::HasMany,
+    course: Field::HasMany,
     workshop: Field::HasMany,
+    plan: Field::BelongsTo,
+    subscription: Field::HasMany,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -25,20 +26,20 @@ class SeasonDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    instrument_class
+    name
     plan
-    start_year
+    course
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    instrument_class
+    name
     plan
-    start_year
-    subscription
+    course
     workshop
+    subscription
     created_at
     updated_at
   ].freeze
@@ -47,10 +48,9 @@ class SeasonDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    instrument_class
-    plan
     start_year
-    subscription
+    plan
+    course
     workshop
   ].freeze
 

@@ -9,15 +9,28 @@ class TeacherDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    description: Field::Text,
-    instrument_classes: Field::HasMany,
+    description: Field::SimpleMarkdown.with_options({
+      safe_links_only: true,
+      filter_html: true,
+      with_toc_data: true,
+      hard_wrap: true,
+      link_attributes: { rel: 'follow' },
+      autolink: true,
+      tables: true,
+      no_intra_emphasis: true,
+      strikethrough: true,
+      highlight: true,
+      space_after_headers: true,
+      easymde_options: {
+        spell_checker: false,
+        hide_icons: %w[guide heading]
+      }
+    }),
+    courses: Field::HasMany,
     instruments: Field::HasMany,
     name: Field::String,
-    picture: Field::String,
-    picture_attachment: Field::HasOne,
-    picture_blob: Field::HasOne,
-    status: Field::String,
-    workshops: Field::HasMany,
+    picture: Field::Image,
+    status: Field::Select.with_options(collection: Teacher::teacher_statuses.keys),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze

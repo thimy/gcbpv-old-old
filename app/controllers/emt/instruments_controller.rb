@@ -6,8 +6,8 @@ class Emt::InstrumentsController < ApplicationController
   end
 
   def show
-    @sessions = @instrument.sessions
-    @sessions_by_city_and_day = @sessions.order(:start_time).group_by{ |session| [session.city, session.day] }
+    # @sessions = @instrument.sessions
+    # @sessions_by_city_and_day = @sessions.order(:start_time).group_by{ |session| [session.city, session.day] }
   end
 
   private

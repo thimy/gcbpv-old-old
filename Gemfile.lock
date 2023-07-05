@@ -83,6 +83,9 @@ GEM
     administrate-field-active_storage (0.4.2)
       administrate (>= 0.2.2)
       rails (>= 7.0)
+    administrate-field-i18n_enum (0.1.6)
+      administrate
+      rails (>= 4.2)
     administrate-field-image (1.2.0)
       administrate (>= 0.2.0.rc1)
     administrate-field-simple_markdown (0.7.0)
@@ -318,6 +321,7 @@ DEPENDENCIES
   activestorage-openstack
   administrate
   administrate-field-active_storage
+  administrate-field-i18n_enum
   administrate-field-image
   administrate-field-simple_markdown
   bootsnap

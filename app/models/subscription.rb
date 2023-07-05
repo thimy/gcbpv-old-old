@@ -1,7 +1,7 @@
 class Subscription < ApplicationRecord
   belongs_to :season
   belongs_to :student
-  has_and_belongs_to_many :instrument_class
+  has_and_belongs_to_many :course
   has_and_belongs_to_many :workshop
 
   VALID_STATUSES = [

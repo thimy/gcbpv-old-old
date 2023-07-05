@@ -1,6 +1,10 @@
 class Instrument < ApplicationRecord
-  has_many :instrument_classes
-  has_many :teachers, through: :instrument_classes
+  has_many :courses
+  has_many :teachers, through: :courses
 
   validates :name, presence: true
+
+  # def sessions
+  #   Session.joins(:course).where(course: {instrument: self})
+  # end
 end

@@ -9,15 +9,13 @@ class SubscriptionDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
+    student: Field::BelongsTo,
+    season: Field::BelongsTo,
     amount: Field::String.with_options(searchable: false),
     amount_paid: Field::String.with_options(searchable: false),
-    instrument_class: Field::HasMany,
-    instrument_class_id: Field::Number,
-    season: Field::BelongsTo,
-    status: Field::String,
-    student: Field::BelongsTo,
+    course: Field::HasMany,
     workshop: Field::HasMany,
-    workshop_id: Field::Number,
+    status: Field::Select.with_options(collection: Subscription::VALID_STATUSES),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -41,6 +39,8 @@ class SubscriptionDashboard < Administrate::BaseDashboard
     id
     student
     season
+    course
+    workshop
     amount
     amount_paid
     created_at
@@ -51,15 +51,13 @@ class SubscriptionDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
+    student
+    season
+    course
+    workshop
+    status
     amount
     amount_paid
-    instrument_class
-    instrument_class_id
-    season
-    status
-    student
-    workshop
-    workshop_id
   ].freeze
 
   # COLLECTION_FILTERS

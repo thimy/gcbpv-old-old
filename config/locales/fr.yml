@@ -20,7 +20,7 @@ fr:
       event:
         one: "Événement"
         other: "Événements"
-      instrument_class:
+      course:
         one: "Cours"
         other: "Cours"
       payor:
@@ -35,9 +35,9 @@ fr:
       season:
         one: "Année scolaire"
         other: "Années scolaires"
-      session:
-        one: "Cours par ville"
-        other: "Cours par ville"
+      slot:
+        one: "Disponibilité"
+        other: "Disponibilités"
       student:
         one: "Élève"
         other: "Élèves"
@@ -78,7 +78,7 @@ fr:
       event:
         name: "Nom"
         content: "Description"
-        street: "Complément d’adresse"
+        address: "Adresse"
         city: "Ville"
         start_date: "Jour et heure de début"
         end_date: "Jour et heure de fin"
@@ -87,16 +87,14 @@ fr:
       instrument:
         name: "Nom"
         teachers: "Professeurs"
-        instrument_classes: "Cours par instrument"
+        courses: "Cours par instrument"
         created_at: "Créé le"
         updated_at: "Modifié le"
-      instrument_class:
+      course:
         class_day: "Jour du cours"
-        city: "Ville"
         teacher: "Professeur"
         teacher_id: "Professeur"
-        start_time: "Heure de début"
-        end_time: "Heure de fin"
+        archived: "Archivé"
         created_at: "Créé le"
         updated_at: "Modifié le"
       plan:
@@ -124,7 +122,7 @@ fr:
         start_year: "Année de début"
         plan: "Formule"
         plan_id: "Formule"
-        instrument_class: "Cours"
+        course: "Cours"
         workshop: "Ateliers"
         teacher: "Professeur"
         subscription: "Élèves"
@@ -134,16 +132,20 @@ fr:
         season: "Année scolaire"
         created_at: "Créé le"
         updated_at: "Modifié le"
-      session:
-        instrument_class: "Cours par professeur"
-        instrument_class_id: "Cours par professeur"
+      slot:
+        slot_days:
+          monday: "lundi"
+          tuesday: "mardi"
+          wednesday: "mercredi"
+          thursday: "jeudi"
+          friday: "vendredi"
+        teacher: "Professeur"
+        teacher_id: "Professeur"
         city: "Ville"
         city_id: "Ville"
         day: "Jour"
         start_time: "Heure de début"
         end_time: "Heure de fin"
-        created_at: "Créé le"
-        updated_at: "Modifié le"
       student:
         last_name: "Nom"
         first_name: "Prénom"
@@ -161,7 +163,7 @@ fr:
         amount: "Montant"
         amount_paid: "Montant réglé"
         workshop: "Ateliers"
-        instrument_class: "Cours"
+        course: "Cours"
         payor: "Responsable légal"
         created_at: "Créé le"
         updated_at: "Modifié le"
@@ -169,8 +171,8 @@ fr:
         name: "Nom"
         picture: "Photo"
         status: "Statut"
-        instrument_classes: "Cours par instrument"
-        instrument_class:
+        courses: "Cours par instrument"
+        course:
           class_day: "Journée du cours"
         created_at: "Créé le"
         updated_at: "Modifié le"
@@ -190,7 +192,10 @@ fr:
         created_at: "Créé le"
         updated_at: "Modifié le"
       workshop:
+        name: "Nom"
         location: "Lieu"
+        teacher: "Professeur"
+        teacher_id: "Professeur"
         workshop_day: "Jour"
         start_time: "Heure de début"
         end_time: "Heure de fin"

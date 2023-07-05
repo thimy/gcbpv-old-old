@@ -26,7 +26,7 @@ class InstrumentDashboard < Administrate::BaseDashboard
         hide_icons: %w[guide heading]
       }
     }),
-    classes: Field::HasMany,
+    courses: Field::HasMany,
     name: Field::String,
     teachers: Field::HasMany,
     created_at: Field::DateTime,
@@ -42,7 +42,6 @@ class InstrumentDashboard < Administrate::BaseDashboard
     id
     name
     teachers
-    name
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

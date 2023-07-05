@@ -1,0 +1,15 @@
+<% content_for(:page_title, "Les rendez-vous") %>
+<% content_for(:page_class, "meetings") %>
+
+<%= render Global::HeroComponent.new(title: "Les rendez-vous") %>
+
+<section class="section">
+  <div class="wrapper">
+    <ul class="card-list">
+      <% @meetings.each do |meeting| %>
+        <li>
+          <%= render Global::CardComponent.new(title: meeting.name, url: emt_meeting_path(meeting.id)) %>
+        </li>
+      <% end %>
+  </div>
+</section>

@@ -53,13 +53,13 @@ class WorkshopDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
+    name
+    teacher
     description
+    workshop_day
+    start_time
     end_time
     location
-    name
-    start_time
-    teacher
-    workshop_day
   ].freeze
 
   # COLLECTION_FILTERS
