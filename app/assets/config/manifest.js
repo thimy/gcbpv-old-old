@@ -7,4 +7,8 @@
 //= link administrate-field-simple_markdown/application.js
 //= link administrate-field-active_storage/application.css
 
-//= link_tree controllers .js
+//= link_tree ../../controllers .js
+//= link controllers/application.js
+//= link controllers/hello_controller.js
+//= link controllers/menu_button_controller.js
+//= link controllers/index.js

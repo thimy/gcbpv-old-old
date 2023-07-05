@@ -13,9 +13,11 @@
         <% end %>
         <% @city = city %>
         <h3 class="h4"><%= day %></h3>
-          <% slots.each do |slot| %>
-            <p><%= "#{slot.teacher.name} #{slot.time_as_text}" %></p>
-          <% end %>
+          <ul>
+            <% slots.each do |slot| %>
+              <li><%= "#{slot.teacher.name} #{slot.time_as_text}" %></li>
+            <% end %>
+          </ul>
       <% end %>
     </div>
   </div>
