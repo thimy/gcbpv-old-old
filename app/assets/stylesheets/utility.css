@@ -2,7 +2,6 @@
   display: grid;
   gap: var(--spacing-12);
   grid-template-columns: 1fr Min(var(--content-width), calc(100% - var(--spacing-16))) 1fr;
-  grid-column-gap: var(--spacing-8);
   padding-inline: var(--global-padding);
 }
 
@@ -20,10 +19,15 @@
   grid-column: 2;
 }
 
+.wrapper > img {
+  width: 100%;
+}
+
 .wrapper > aside {
   border-radius: var(--border-radius-small);
   display: flex;
   flex-direction: column;
+  gap: var(--gap);
   grid-row: 1 / span 10;
   max-width: 35ch;
   width: 100%;

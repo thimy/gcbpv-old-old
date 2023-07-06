@@ -631,7 +631,7 @@ end
 
 Plan.destroy_all
 Plan.create!({
-    name: "Formule 2023",
+  name: "Formule 2023",
   class_price: 300,
   workshop_price: 108,
   obc_markup: 10,
@@ -639,3 +639,49 @@ Plan.create!({
 })
 
 Season.create!({ start_year: 2023, plan_id: 1 })
+
+staff = [{
+  first_name: "Fabienne",
+  last_name: "Mabon",
+  start_year: 2000,
+  role: "Coordinatrice du groupement",
+  description: "Super Fabienne s’occupe de tout",
+  is_employee: true,
+  status: "Actif"
+}, {
+  first_name: "Laurence",
+  last_name: "David",
+  start_year: 2000,
+  role: "Secrétaire-comptable",
+  description: "Les chiffres les chiffres les chiffres",
+  is_employee: true,
+  status: "Actif"
+}, {
+  first_name: "Aurélie",
+  last_name: "Brault",
+  start_year: 2000,
+  role: "Coordinatrice du centre de ressources",
+  description: "Suivi des ressources de collecte et autre",
+  is_employee: true,
+  status: "Actif"
+ }, {
+  first_name: "Goulven",
+  last_name: "Dreano",
+  start_year: 2000,
+  role: "Coordinateur des professeurs",
+  description: "Mélomane en résidence",
+  is_employee: true,
+  status: "Actif"
+}, {
+  first_name: "Milly",
+  last_name: "Felez",
+  start_year: 2022,
+  role: "Coordinatrice de l’école de musique, sa communication et ses évéments",
+  description: "Gère tout ce qui concerne l'école de musique",
+  is_employee: true,
+  status: "Actif"
+}]
+
+staff.each do |person|
+  Staff.create!(person)
+end

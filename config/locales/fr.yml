@@ -38,6 +38,9 @@ fr:
       slot:
         one: "Disponibilité"
         other: "Disponibilités"
+      staff:
+        one: "Membre"
+        other: "Membres"
       student:
         one: "Élève"
         other: "Élèves"
@@ -146,6 +149,12 @@ fr:
         day: "Jour"
         start_time: "Heure de début"
         end_time: "Heure de fin"
+      staff:
+        last_name: "Nom"
+        first_name: "Prénom"
+        start_year: "Année de début"
+        is_employee: "Employé"
+        status: "Statut"
       student:
         last_name: "Nom"
         first_name: "Prénom"

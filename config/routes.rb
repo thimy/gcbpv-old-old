@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     resources :teachers
     resources :slots
     resources :instruments
-    resources :courses
     resources :workshops
     resources :seasons
     resources :plans
@@ -17,6 +16,9 @@ Rails.application.routes.draw do
     resources :posts
     resources :categories
     resources :editions
+
+    resources :staffs
+    resources :users
   end
   
   devise_for :users
@@ -39,6 +41,8 @@ Rails.application.routes.draw do
   end
 
   get "/groupement", to: "groupement#index"
+  get "/groupement/staff", to: "groupement#staff"
+
   get "/events", to: "events#index"
   get "/bogue", to: "events#bogue"
   get "/events/:id", to: "events#show"

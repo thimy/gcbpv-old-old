@@ -4,25 +4,8 @@
 
 <section class="section">
   <div class="wrapper wrapper--text">
-    <% if @teacher.instruments.present? %>
-      <div>
-        <h4 class="h4">Instruments</h4>
-        <div class="tag-list">
-          <% @teacher.instruments.each do |instrument| %>
-            <%= link_to instrument.name, emt_instrument_path(instrument), class: "tag" %>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-    <% if @teacher.workshops.present? %>
-      <div>
-        <h4 class="h4">Ateliers</h4>
-        <div class="tag-list">
-          <% @teacher.workshops.each do |workshop| %>
-            <%= link_to workshop.name, emt_workshop_path(workshop), class: "tag" %>
-          <% end %>
-        </div>
-      </div>
+    <% if @teacher.picture.present? %>
+      <%= image_tag @teacher.picture %>
     <% end %>
     <div>
       <% if @teacher.description.present? %>
@@ -31,11 +14,28 @@
         Pas de description disponible pour le moment.
       <% end %>
     </div>
-    <% if @teacher.picture.present? %>
-      <aside data-aside-position="left">
-        <%= image_tag @teacher.picture %>
-      </aside>
-    <% end %>
+    <aside data-aside-position="left">
+      <% if @teacher.instruments.present? %>
+        <div>
+          <h4 class="h4">Instruments</h4>
+          <div class="tag-list">
+            <% @teacher.instruments.each do |instrument| %>
+              <%= link_to instrument.name, emt_instrument_path(instrument), class: "tag" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <% if @teacher.workshops.present? %>
+        <div>
+          <h4 class="h4">Ateliers</h4>
+          <div class="tag-list">
+            <% @teacher.workshops.each do |workshop| %>
+              <%= link_to workshop.name, emt_workshop_path(workshop), class: "tag" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </aside>
     <aside data-aside-position="right">
       <nav>
         <h4 class="h5">Autres professeurs</h4>

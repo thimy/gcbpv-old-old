@@ -1,0 +1,27 @@
+<% content_for(:page_title, "L’équipe") %>
+<% content_for(:page_class, "staff") %>
+
+<%= render Global::HeroComponent.new(title: "L’équipe", subtitle: "Le groupement") %>
+
+<section class="section">
+  <div class="wrapper">
+    <ul class="staff-list">
+      <% @staff.each do |member| %>
+        <li class="staff-member">
+          <% if member.picture.present? %>
+            <%= image_tag member.picture %>
+          <% end %>
+          <dl>
+            <dt>Nom<dt>
+            <dd><%= member.full_name %><dd>
+            <dt>Role<dt>
+            <dd><%= member.role %><dd>
+            <dt>Année d’arrivée<dt>
+            <dd><%= member.start_year %><dd>
+            <dt>Description<dt>
+            <dd><%= member.description %><dd>
+          <dl>
+        </li>
+      <% end %>
+  </div>
+</section>

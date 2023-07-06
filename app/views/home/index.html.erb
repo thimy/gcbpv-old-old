@@ -22,6 +22,7 @@
       <h3 class="h3">Les prochains événements à venir</h3>
       <%= link_to "Voir tous les événements", events_path, class: "event__link" %>
     </div>
+    <%= render Events::EventListComponent.new(events: @events) %>
   </div>
 </section>
 
@@ -31,5 +32,6 @@
       <h3 class="h3">Dernières actualités</h3>
       <%= link_to "Voir tous les articles", posts_path, class: "post__link" %>
     </div>
+    <%= render Posts::PostListComponent.new(posts: @posts) %>
   </div>
 </section>

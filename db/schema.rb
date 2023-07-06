@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_05_192342) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_06_111610) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,6 +47,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_05_192342) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "categories_posts", id: false, force: :cascade do |t|
+    t.bigint "category_id", null: false
+    t.bigint "post_id", null: false
+    t.index ["category_id", "post_id"], name: "index_categories_posts_on_category_id_and_post_id"
+    t.index ["post_id", "category_id"], name: "index_categories_posts_on_post_id_and_category_id"
   end
 
   create_table "cities", force: :cascade do |t|
@@ -190,8 +197,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_05_192342) do
     t.datetime "updated_at", null: false
     t.string "status"
     t.bigint "event_id"
-    t.bigint "category_id"
-    t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["event_id"], name: "index_posts_on_event_id"
   end
 
@@ -255,6 +260,19 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_05_192342) do
     t.index ["teacher_id"], name: "index_slots_on_teacher_id"
   end
 
+  create_table "staffs", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "start_year"
+    t.boolean "is_employee"
+    t.text "description"
+    t.string "picture"
+    t.string "role"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "students", force: :cascade do |t|
     t.string "last_name"
     t.string "first_name"
@@ -293,6 +311,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_05_192342) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status"
+    t.string "email"
   end
 
   create_table "users", force: :cascade do |t|
@@ -303,6 +322,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_05_192342) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_volunteer"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -327,7 +347,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_05_192342) do
   add_foreign_key "courses", "teachers"
   add_foreign_key "d_classes", "discoveries"
   add_foreign_key "d_classes", "teachers"
-  add_foreign_key "posts", "categories"
   add_foreign_key "posts", "events"
   add_foreign_key "seasons", "plans"
   add_foreign_key "slots", "cities"

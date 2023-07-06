@@ -2,11 +2,11 @@ class Emt::TeachersController < ApplicationController
   before_action :set_teacher, only: %i[ show edit update destroy ]
 
   def index
-    @teachers = Teacher.where(status: "active")
+    @teachers = Teacher.where(status: "Actif")
   end
 
   def show
-    @teachers = Teacher.where(status: "active")
+    @teachers = Teacher.where(status: "Actif")
   end
 
   private

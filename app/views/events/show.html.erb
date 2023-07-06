@@ -1,6 +1,6 @@
 <% content_for(:page_title, @event.name) %>
 
-<%= render Global::HeroComponent.new(title: @event.name) do |component| %>
+<%= render Global::HeroComponent.new(title: @event.name, subtitle: "Les événements") do |component| %>
   <% component.extra do %>
     <p class="hero__extra">
       <% if @event.end_date.present? %>

@@ -1,0 +1,15 @@
+.staff-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.staff-member {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: 1fr 5fr;
+}
+
+.staff-member img {
+  width: 100%;
+}

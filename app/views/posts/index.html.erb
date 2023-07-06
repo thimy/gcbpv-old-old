@@ -1,14 +1,16 @@
-<p style="color: green"><%= notice %></p>
+<% content_for(:page_title, "Les actualités du groupement") %>
+<% content_for(:page_class, "posts") %>
 
-<h1>Posts</h1>
+<%= render Global::HeroComponent.new(title: "Les actualités du groupement") %>
 
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New post", new_post_path %>
+<section class="section">
+  <div class="wrapper">
+    <ul class="card-list">
+      <% @posts.each do |post| %>
+        <li>
+          <%= render Global::CardComponent.new(title: post.title, url: post_path(post.id)) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</section>
