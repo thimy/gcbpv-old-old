@@ -1,0 +1,16 @@
+<% content_for(:page_title, "Les projets") %>
+<% content_for(:page_class, "projects") %>
+
+<%= render Global::HeroComponent.new(title: "Les projets", subtitle: "L’école de musique traditionnelle") %>
+
+<section class="section">
+  <div class="wrapper">
+    <p>Les projets permettent aux élèves de l’EMT de participer des activités qui sortent du cadre des cours de musique. Spectacles pour enfants, animations dans des projets municipaux, partenariats avec le conservatoire, il y en a pour tous les goûts !</p>
+    <ul class="card-list">
+      <% @projects.each do |project| %>
+        <li class="staff-project">
+          <%= render Global::CardComponent.new(title: project.name, url: emt_project_path(project.id)) %>
+        </li>
+      <% end %>
+  </div>
+</section>

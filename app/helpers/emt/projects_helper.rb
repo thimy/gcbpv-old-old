@@ -1,0 +1,2 @@
+module Emt::ProjectsHelper
+end

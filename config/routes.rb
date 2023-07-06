@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :slots
     resources :instruments
     resources :workshops
+    resources :projects
     resources :seasons
     resources :plans
     resources :cities
@@ -38,6 +39,7 @@ Rails.application.routes.draw do
     resources :teachers
     resources :instruments
     resources :meetings
+    resources :projects
   end
 
   get "/groupement", to: "groupement#index"

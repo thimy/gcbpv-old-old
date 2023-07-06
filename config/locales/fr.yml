@@ -32,6 +32,9 @@ fr:
       post:
         one: "Article"
         other: "Articles"
+      project:
+        one: "Projet"
+        other: "Projets"
       season:
         one: "Année scolaire"
         other: "Années scolaires"
@@ -120,6 +123,11 @@ fr:
         status: "Statut"
         created_at: "Créé le"
         updated_at: "Modifié le"
+      project:
+        name: "Nom"
+        season: "Années"
+        season_id: "Années"
+        archived: "Archivé"
       season:
         name: "Année"
         start_year: "Année de début"
