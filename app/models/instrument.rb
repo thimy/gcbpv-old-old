@@ -4,6 +4,7 @@ class Instrument < ApplicationRecord
 
   validates :name, presence: true
 
+  accepts_nested_attributes_for :teachers
   # def sessions
   #   Session.joins(:course).where(course: {instrument: self})
   # end

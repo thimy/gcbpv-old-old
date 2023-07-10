@@ -145,7 +145,7 @@
   --purple-10-a: hsla(284,98%,39%,0.19);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --gray-90-a: hsla(231,0%,73%,0.1);
     --gray-80-a: hsla(230,36%,76%,0.21);
@@ -216,5 +216,5 @@
     --purple-30-a: hsla(285,97%,75%,0.87);
     --purple-20-a: hsla(284,95%,83%,0.92);
     --purple-10-a: hsla(284,95%,92%,0.96);
-  }
+  } */
 }

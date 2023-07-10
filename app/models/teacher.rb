@@ -13,6 +13,8 @@ class Teacher < ApplicationRecord
 
   validates :status, inclusion: { in: teacher_statuses.keys }
 
+  accepts_nested_attributes_for :instruments
+
   def active?
     status == "Actif"
   end

@@ -27,7 +27,7 @@ class TeacherDashboard < Administrate::BaseDashboard
       }
     }),
     courses: Field::HasMany,
-    instruments: Field::HasMany,
+    instruments: Field::NestedHasMany.with_options(skip: :teachers),
     name: Field::String,
     picture: Field::Image,
     status: Field::Select.with_options(collection: Teacher::teacher_statuses.keys),

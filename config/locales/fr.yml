@@ -6,6 +6,11 @@ fr:
       long: "%d/%m/%Y %H:%M"
       short: "%d %b %Hh%M"
       hour_details: "%Hh%M"
+  administrate:
+    fields:
+      nested_has_many:
+        add: "Ajouter"
+        remove: "Supprimer"
   activerecord:
     models:
       category:
