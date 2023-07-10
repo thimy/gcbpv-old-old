@@ -27,7 +27,7 @@ class PostDashboard < Administrate::BaseDashboard
         hide_icons: %w[guide heading]
       }
     }),
-    event: Field::BelongsTo,
+    event: Field::BelongsToSearch.with_options(class: "Event"),
     status: Field::Select.with_options(collection: Post::VALID_STATUSES),
     title: Field::String,
     created_at: Field::DateTime,
@@ -41,9 +41,9 @@ class PostDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
+    title
     category
-    content
-    event
+    status
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

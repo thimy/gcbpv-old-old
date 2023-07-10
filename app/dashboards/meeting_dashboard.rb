@@ -14,7 +14,7 @@ class MeetingDashboard < Administrate::BaseDashboard
     description: Field::Text,
     meeting_day: Field::String,
     name: Field::String,
-    price: Field::String.with_options(searchable: false),
+    price: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -26,21 +26,21 @@ class MeetingDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
     id
-    amount
+    name
+    price
     archived
-    description
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
     id
-    amount
-    archived
-    description
-    meeting_day
     name
     price
+    description
+    amount
+    meeting_day
+    archived
     created_at
     updated_at
   ].freeze
@@ -49,12 +49,12 @@ class MeetingDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
-    amount
-    archived
-    description
-    meeting_day
     name
     price
+    description
+    amount
+    meeting_day
+    archived
   ].freeze
 
   # COLLECTION_FILTERS
@@ -72,7 +72,7 @@ class MeetingDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how meetings are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(meeting)
-  #   "Meeting ##{meeting.id}"
-  # end
+  def display_resource(meeting)
+    meeting.name
+  end
 end

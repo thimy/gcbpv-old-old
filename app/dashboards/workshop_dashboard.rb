@@ -14,7 +14,7 @@ class WorkshopDashboard < Administrate::BaseDashboard
     location: Field::String,
     name: Field::String,
     start_time: Field::Time,
-    teacher: Field::BelongsTo,
+    teacher: Field::BelongsToSearch.with_options(class: "Teacher"),
     workshop_day: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,

@@ -24,7 +24,6 @@ class CategoryDashboard < Administrate::BaseDashboard
     id
     name
     description
-    created_at
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

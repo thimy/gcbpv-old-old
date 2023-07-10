@@ -12,7 +12,7 @@ class EditionDashboard < Administrate::BaseDashboard
     description: Field::String,
     format: Field::String,
     name: Field::String,
-    price: Field::String.with_options(searchable: false),
+    price: Field::String,
     image: Field::Image,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,

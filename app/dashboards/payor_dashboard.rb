@@ -16,7 +16,7 @@ class PayorDashboard < Administrate::BaseDashboard
     phone: Field::String,
     postcode: Field::String,
     street_address: Field::String,
-    students: Field::HasMany,
+    students: Field::NestedHasMany.with_options(skip: :payor),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze

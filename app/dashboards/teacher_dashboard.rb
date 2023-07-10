@@ -27,9 +27,10 @@ class TeacherDashboard < Administrate::BaseDashboard
       }
     }),
     courses: Field::HasMany,
-    instruments: Field::NestedHasMany.with_options(skip: :teachers),
+    instruments: Field::HasMany,
     name: Field::String,
     picture: Field::Image,
+    slots: Field::NestedHasMany.with_options(skip: :teacher),
     status: Field::Select.with_options(collection: Teacher::teacher_statuses.keys),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -55,6 +56,7 @@ class TeacherDashboard < Administrate::BaseDashboard
     instruments
     picture
     status
+    slots
     created_at
     updated_at
   ].freeze
@@ -68,6 +70,7 @@ class TeacherDashboard < Administrate::BaseDashboard
     instruments
     picture
     status
+    slots
   ].freeze
 
   # COLLECTION_FILTERS

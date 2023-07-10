@@ -13,7 +13,7 @@ class SeasonDashboard < Administrate::BaseDashboard
     start_year: Field::Number,
     course: Field::HasMany,
     workshop: Field::HasMany,
-    plan: Field::BelongsTo,
+    plan: Field::BelongsToSearch.with_options(class: "Plan"),
     subscription: Field::HasMany,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,

@@ -4,6 +4,7 @@ class Teacher < ApplicationRecord
   has_many :courses
   has_many :instruments, through: :courses
   has_many :workshops
+  has_many :slots
   has_one_attached :picture
 
   enum teacher_status: ["Actif", "Inactif", "Caché"]
@@ -13,7 +14,7 @@ class Teacher < ApplicationRecord
 
   validates :status, inclusion: { in: teacher_statuses.keys }
 
-  accepts_nested_attributes_for :instruments
+  accepts_nested_attributes_for :slots
 
   def active?
     status == "Actif"

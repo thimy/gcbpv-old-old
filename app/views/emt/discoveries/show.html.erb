@@ -1,0 +1,15 @@
+<% content_for(:page_title, @discovery.name) %>
+
+<%= render Global::HeroComponent.new(title: @discovery.name, subtitle: "Les ateliers découverte") %>
+
+<section class="section">
+  <div class="wrapper wrapper--text">
+    <div>
+      <% if @discovery.description.present? %>
+        <%= markdown(@discovery.description) %>
+      <% else %>
+        Pas de description disponible pour le moment.
+      <% end %>
+    </div>
+  </div>
+</section>

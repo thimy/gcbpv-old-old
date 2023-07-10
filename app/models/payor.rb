@@ -8,6 +8,8 @@ class Payor < ApplicationRecord
   validates :postcode, presence: true
   validates :city, presence: true
 
+  accepts_nested_attributes_for :students
+
   def name
     "#{first_name} #{last_name}"
   end

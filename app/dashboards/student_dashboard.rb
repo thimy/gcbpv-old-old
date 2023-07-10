@@ -13,7 +13,7 @@ class StudentDashboard < Administrate::BaseDashboard
     last_name: Field::String,
     mail: Field::String,
     birthyear: Field::Number,
-    payor: Field::BelongsTo,
+    payor: Field::BelongsToSearch.with_options(class: "Payor"),
     subscription: Field::HasMany,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,

@@ -28,7 +28,7 @@ class InstrumentDashboard < Administrate::BaseDashboard
     }),
     courses: Field::HasMany,
     name: Field::String,
-    teachers: Field::NestedHasMany.with_options(skip: :instruments),
+    teachers: Field::HasMany,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze

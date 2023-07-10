@@ -9,8 +9,8 @@ class SubscriptionDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    student: Field::BelongsTo,
-    season: Field::BelongsTo,
+    student: Field::BelongsToSearch.with_options(class: "Student"),
+    season: Field::BelongsToSearch.with_options(class: "Season"),
     amount: Field::String.with_options(searchable: false),
     amount_paid: Field::String.with_options(searchable: false),
     course: Field::HasMany,

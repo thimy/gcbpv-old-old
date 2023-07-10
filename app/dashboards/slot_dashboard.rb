@@ -9,8 +9,8 @@ class SlotDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    teacher: Field::BelongsTo,
-    city: Field::BelongsTo,
+    teacher: Field::BelongsToSearch.with_options(class: "Teacher"),
+    city: Field::BelongsToSearch.with_options(class: "City"),
     day: Field::String,
     start_time: Field::Time,
     end_time: Field::Time,

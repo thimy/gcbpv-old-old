@@ -26,6 +26,7 @@ class PlanDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     name
     class_price
+    workshop_price
     obc_markup
     outbounds_markup
   ].freeze
@@ -36,6 +37,7 @@ class PlanDashboard < Administrate::BaseDashboard
     id
     name
     class_price
+    workshop_price
     obc_markup
     outbounds_markup
     created_at
@@ -48,6 +50,7 @@ class PlanDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     name
     class_price
+    workshop_price
     obc_markup
     outbounds_markup
   ].freeze

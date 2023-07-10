@@ -13,6 +13,7 @@ class Subscription < ApplicationRecord
   ]
 
   validates :season, presence: true
-  validates :student, presence: true
+  validates :student, presence: true, uniqueness: { scope: :season,
+    message: "a déjà une inscription pour cette année" }
   validates :status, presence: true, inclusion: { in: VALID_STATUSES }
 end

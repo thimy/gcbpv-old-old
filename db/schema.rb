@@ -276,10 +276,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_10_092656) do
   create_table "students", force: :cascade do |t|
     t.string "last_name"
     t.string "first_name"
-    t.bigint "payor_id", null: false
+    t.bigint "payor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "mail", default: "f"
+    t.string "mail", null: false
     t.integer "birthyear"
     t.string "email"
     t.index ["payor_id"], name: "index_students_on_payor_id"

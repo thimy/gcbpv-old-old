@@ -2,14 +2,15 @@ Rails.application.routes.draw do
   namespace :secretariat do
     root to: "subscriptions#index"
 
+    resources :payors
     resources :students
     resources :subscriptions
-    resources :payors
     resources :teachers
     resources :slots
     resources :instruments
     resources :workshops
     resources :meetings
+    resources :group_works
     resources :projects
     resources :seasons
     resources :plans

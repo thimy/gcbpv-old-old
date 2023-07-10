@@ -1,6 +1,8 @@
 class Slot < ApplicationRecord
   self.skip_time_zone_conversion_for_attributes = [:start_time, :end_time]
 
+  include WithTime
+
   belongs_to :teacher
   belongs_to :city
 
@@ -20,7 +22,11 @@ class Slot < ApplicationRecord
 
   def time_as_text
     if start_time.present?
-      "entre #{start_time.strftime("%kh%M")} et #{end_time.strftime("%kh%M")}"
+      if end_time.present?
+        "entre #{time(start_time)} et #{time(end_time)}"
+      else
+        "à partir de #{time(start_time)}"
+      end
     end
   end
 end

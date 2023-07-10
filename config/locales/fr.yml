@@ -28,9 +28,15 @@ fr:
       course:
         one: "Cours"
         other: "Cours"
+      group_work:
+        one: "Atelier autonome"
+        other: "Ateliers autonomes"
+      meeting:
+        one: "Rendez-vous"
+        other: "Rendez-vous"
       payor:
-        one: "Responsable légal"
-        other: "Responsables légaux"
+        one: "Payeur"
+        other: "Payeurs"
       plan:
         one: "Formule"
         other: "Formules"
@@ -65,6 +71,7 @@ fr:
         one: "Atelier"
         other: "Ateliers"
     attributes:
+      name: "Name"
       active: "Actif"
       inactive: "Inactif"
       hidden: "Caché"
@@ -108,6 +115,17 @@ fr:
         archived: "Archivé"
         created_at: "Créé le"
         updated_at: "Modifié le"
+      group_work:
+        archived: "Archivé"
+        name: "Nom"
+        location: "Lieu"
+        price: "Prix"
+      meeting:
+        amount: "Nombre de sessions"
+        archived: "Archivé"
+        meeting_day: "Jour du rendez-vous"
+        name: "Nom"
+        price: "Prix"
       payor:
         city: "Ville"
         last_name: "Nom"
@@ -195,7 +213,7 @@ fr:
         amount_paid: "Montant réglé"
         workshop: "Ateliers"
         course: "Cours"
-        payor: "Responsable légal"
+        payor: "Payeur"
         created_at: "Créé le"
         updated_at: "Modifié le"
       teacher:
@@ -210,6 +228,7 @@ fr:
         active: "Actif"
         inactive: "Inactif"
         hidden: "Caché"
+        slots: "Disponibilités"
       user:
         first_name: "Prénom"
         last_name: "Nom"

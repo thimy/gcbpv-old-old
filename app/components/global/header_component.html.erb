@@ -51,6 +51,9 @@
           <div class="nav__welcome">Bienvenue <%= current_user.email %></div>
           <%= inline_svg "icons/user-icon" %>
           <ul class="nav__sub-links">
+            <li class="nav__sub-item">
+            <%= link_to "Secrétariat", secretariat_root_path %>
+            </li>
             <li class="nav__sub-item">  
             <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %> 
             </li>
