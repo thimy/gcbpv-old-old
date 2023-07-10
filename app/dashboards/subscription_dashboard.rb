@@ -16,6 +16,7 @@ class SubscriptionDashboard < Administrate::BaseDashboard
     course: Field::HasMany,
     workshop: Field::HasMany,
     status: Field::Select.with_options(collection: Subscription::VALID_STATUSES),
+    information: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -43,6 +44,7 @@ class SubscriptionDashboard < Administrate::BaseDashboard
     workshop
     amount
     amount_paid
+    information
     created_at
     updated_at
   ].freeze
@@ -58,6 +60,7 @@ class SubscriptionDashboard < Administrate::BaseDashboard
     status
     amount
     amount_paid
+    information
   ].freeze
 
   # COLLECTION_FILTERS

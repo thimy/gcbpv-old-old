@@ -4,10 +4,12 @@ Rails.application.routes.draw do
 
     resources :students
     resources :subscriptions
+    resources :payors
     resources :teachers
     resources :slots
     resources :instruments
     resources :workshops
+    resources :meetings
     resources :projects
     resources :seasons
     resources :plans

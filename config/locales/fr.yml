@@ -108,6 +108,15 @@ fr:
         archived: "Archivé"
         created_at: "Créé le"
         updated_at: "Modifié le"
+      payor:
+        city: "Ville"
+        last_name: "Nom"
+        first_name: "Prénom"
+        students: "Élèves"
+        phone: "Téléphone"
+        postcode: "Code postal"
+        street_address: "Adresse"
+        mail: "Email"
       plan:
         name: "Nom"
         class_price: "Prix du cours"

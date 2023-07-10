@@ -1,7 +1,7 @@
 class Student < ApplicationRecord
   # A student can takes many classes and has their subscription paid by a payor
-  belongs_to :payor
-  
+  belongs_to :payor, optional: true
+
   validates :last_name, presence: true
   validates :first_name, presence: true
 
