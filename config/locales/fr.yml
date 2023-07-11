@@ -19,6 +19,9 @@ fr:
       city:
         one: "Ville"
         other: "Villes"
+      discovery:
+        one: "Atelier découverte"
+        other: "Ateliers découverte"
       edition:
         one: "Édition"
         other: "Éditions"
@@ -234,6 +237,7 @@ fr:
         last_name: "Nom"
         role: "Rôle"
         admin: "Admin"
+        volunteer: "Bénévole"
         active: "Actif"
         invitation_sent_at: "Invitation envoyée le"
         invitation_accepted_at: "Invitation acceptée le"

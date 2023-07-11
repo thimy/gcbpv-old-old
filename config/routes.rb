@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  namespace :pupitre do
+    resources :profiles
+    resources :workshops
+    resources :students
+    resources :slots
+    resources :projects
+    resources :meetings
+    resources :instruments
+    resources :group_works
+    resources :discoveries
+    resources :courses
+    resources :teachers
+    resources :subscriptions
+    resources :users
+
+    root to: "workshops#index"
+  end
   namespace :secretariat do
     root to: "subscriptions#index"
 

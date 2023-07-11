@@ -1,0 +1,7 @@
+<section class="main-content__body main-content__body--flush">
+  <h1>Bienvenue sur votre espace professeur</h1>
+  <h2>Vos élèves</h2>
+  <% @subscriptions.each do |subscription| %>
+    <%= subscription.student.full_name %>
+  <% end %>
+</section>

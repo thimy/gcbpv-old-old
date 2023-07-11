@@ -11,6 +11,8 @@ class Emt::InstrumentsController < ApplicationController
     # @slots_by_city_and_day = @instrument.slots.order(:start_time).group_by{ |slot| [slot.city, slot.day] }
     # @teachers = Teacher.joins(:courses, :instrument).where(course: {instrument: self})
     # @slots = Slot.joins(:teachers, :courses).where(course: {instrument: self})
+
+# <% courses = slot.teacher.courses.where(instrument_id: @instrument.id) %>
   end
 
   private
