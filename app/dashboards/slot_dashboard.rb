@@ -9,11 +9,14 @@ class SlotDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    teacher: Field::BelongsToSearch.with_options(class: "Teacher"),
+    teacher: Field::BelongsToSearch.with_options(
+      class: "Teacher",
+      searchable: true
+    ),
     city: Field::BelongsToSearch.with_options(class: "City"),
     day: Field::String,
-    start_time: Field::Time,
-    end_time: Field::Time,
+    start_time: Field::Time.with_options(format: "%H:%M"),
+    end_time: Field::Time.with_options(format: "%H:%M"),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -24,7 +27,6 @@ class SlotDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    id
     teacher
     city
     day

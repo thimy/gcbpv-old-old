@@ -31,6 +31,7 @@ class TeacherDashboard < Administrate::BaseDashboard
     name: Field::String,
     picture: Field::Image,
     slots: Field::NestedHasMany.with_options(skip: :teacher),
+    email: Field::String,
     status: Field::Select.with_options(collection: Teacher::teacher_statuses.keys),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -44,6 +45,7 @@ class TeacherDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     name
+    email
     status
   ].freeze
 
@@ -55,6 +57,7 @@ class TeacherDashboard < Administrate::BaseDashboard
     description
     instruments
     picture
+    email
     status
     slots
     created_at
@@ -69,6 +72,7 @@ class TeacherDashboard < Administrate::BaseDashboard
     description
     instruments
     picture
+    email
     status
     slots
   ].freeze

@@ -9,11 +9,23 @@ class PlanDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    class_price: Field::String.with_options(searchable: false),
+    class_price: Field::Number.with_options(
+      suffix: "€",
+      decimals: 2,
+    ),
     name: Field::String,
-    obc_markup: Field::String.with_options(searchable: false),
-    outbounds_markup: Field::String.with_options(searchable: false),
-    workshop_price: Field::String.with_options(searchable: false),
+    obc_markup: Field::Number.with_options(
+      suffix: "€",
+      decimals: 2,
+    ),
+    outbounds_markup: Field::Number.with_options(
+      suffix: "€",
+      decimals: 2,
+    ),
+    workshop_price: Field::Number.with_options(
+      suffix: "€",
+      decimals: 2,
+    ),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -34,7 +46,6 @@ class PlanDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    id
     name
     class_price
     workshop_price

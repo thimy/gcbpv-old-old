@@ -10,10 +10,10 @@ class WorkshopDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     description: Field::Text,
-    end_time: Field::Time,
+    end_time: Field::Time.with_options(format: "%H:%M"),
     location: Field::String,
     name: Field::String,
-    start_time: Field::Time,
+    start_time: Field::Time.with_options(format: "%H:%M"),
     teacher: Field::BelongsToSearch.with_options(class: "Teacher"),
     workshop_day: Field::String,
     created_at: Field::DateTime,
@@ -26,7 +26,6 @@ class WorkshopDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = %i[
-    id
     name
     workshop_day
     location
@@ -37,7 +36,6 @@ class WorkshopDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-    id
     name
     teacher
     description

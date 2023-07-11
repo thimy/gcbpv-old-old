@@ -12,7 +12,10 @@ class EditionDashboard < Administrate::BaseDashboard
     description: Field::String,
     format: Field::String,
     name: Field::String,
-    price: Field::String,
+    price: Field::Number.with_options(
+      suffix: "€",
+      decimals: 2,
+    ),
     image: Field::Image,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,

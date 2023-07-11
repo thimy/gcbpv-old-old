@@ -11,8 +11,14 @@ class SubscriptionDashboard < Administrate::BaseDashboard
     id: Field::Number,
     student: Field::BelongsToSearch.with_options(class: "Student"),
     season: Field::BelongsToSearch.with_options(class: "Season"),
-    amount: Field::String.with_options(searchable: false),
-    amount_paid: Field::String.with_options(searchable: false),
+    amount: Field::Number.with_options(
+      suffix: "€",
+      decimals: 2,
+    ),
+    amount_paid: Field::Number.with_options(
+      suffix: "€",
+      decimals: 2,
+    ),
     course: Field::HasMany,
     workshop: Field::HasMany,
     status: Field::Select.with_options(collection: Subscription::VALID_STATUSES),
