@@ -37,6 +37,9 @@ fr:
       meeting:
         one: "Rendez-vous"
         other: "Rendez-vous"
+      payment_state:
+        one: "Statut de d’inscription"
+        other: "Statuts d’inscription"
       payor:
         one: "Payeur"
         other: "Payeurs"
@@ -129,6 +132,8 @@ fr:
         meeting_day: "Jour du rendez-vous"
         name: "Nom"
         price: "Prix"
+      payment_state:
+        nom: "Nom"
       payor:
         city: "Ville"
         last_name: "Nom"
@@ -216,6 +221,7 @@ fr:
         amount_paid: "Montant réglé"
         workshop: "Ateliers"
         course: "Cours"
+        payment_state_id: "Statut d’inscription"
         payor: "Payeur"
         created_at: "Créé le"
         updated_at: "Modifié le"

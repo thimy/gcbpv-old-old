@@ -40,6 +40,7 @@ Rails.application.routes.draw do
 
     resources :staffs
     resources :users
+    resources :payment_states
   end
   
   devise_for :users

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_11_195327) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_14_073729) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -168,6 +168,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_11_195327) do
     t.boolean "archived"
   end
 
+  create_table "payment_states", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "payors", force: :cascade do |t|
     t.string "last_name"
     t.string "first_name"
@@ -292,8 +298,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_11_195327) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "amount_paid"
-    t.string "status"
     t.text "information"
+    t.bigint "payment_state_id"
+    t.index ["payment_state_id"], name: "index_subscriptions_on_payment_state_id"
     t.index ["season_id"], name: "index_subscriptions_on_season_id"
     t.index ["student_id"], name: "index_subscriptions_on_student_id"
   end
