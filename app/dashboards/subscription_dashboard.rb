@@ -9,8 +9,8 @@ class SubscriptionDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    student: Field::BelongsToSearch.with_options(class: "Student"),
-    season: Field::BelongsToSearch.with_options(class: "Season"),
+    student: Field::BelongsTo,
+    season: Field::BelongsTo,
     amount: Field::Number.with_options(
       suffix: "€",
       decimals: 2,
@@ -81,7 +81,12 @@ class SubscriptionDashboard < Administrate::BaseDashboard
   #   COLLECTION_FILTERS = {
   #     open: ->(resources) { resources.where(open: true) }
   #   }.freeze
-  COLLECTION_FILTERS = {}.freeze
+  COLLECTION_FILTERS = {
+    info: ->(resources) { resources.where(payment_state: 1)},
+    registered: ->(resources) { resources.where(payment_state: [2, 3, 4])},
+    unpaid: ->(resources) { resources.where(payment_state: 2)},
+    to_reimburse: ->(resources) { resources.where(payment_state: 5)}
+  }.freeze
 
   # Overwrite this method to customize how subscriptions are displayed
   # across all pages of the admin dashboard.

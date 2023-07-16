@@ -1,4 +1,9 @@
 fr:
+  info: "Demande d’information"
+  registered: "Inscrit"
+  unpaid: "Non réglé"
+  to_reimburse: "À rembourser"
+  reset_filters: "Réinitialiser les filtres"
   time:
     am: am
     formats:
@@ -213,8 +218,13 @@ fr:
         created_at: "Créé le"
         updated_at: "Modifié le"
       subscription:
+        archived: "Archivé"
+        location: "Lieu de l’atelier"
+        name: "Nom"
         season: "Année scolaire"
         season_id: "Année scolaire"
+        start_time: "Heure de début"
+        end_time: "Heure de fin"
         student: "Élève"
         student_id: "Élève"
         amount: "Montant"
@@ -223,6 +233,9 @@ fr:
         course: "Cours"
         payment_state_id: "Statut d’inscription"
         payor: "Payeur"
+        teacher_id: "Professeur"
+        workshop_day: "Jour de l’atelier"
+        payment_state: "Statut du paiement"
         created_at: "Créé le"
         updated_at: "Modifié le"
       teacher:

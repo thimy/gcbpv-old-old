@@ -11,9 +11,9 @@ class StudentDashboard < Administrate::BaseDashboard
     id: Field::Number,
     first_name: Field::String,
     last_name: Field::String,
-    mail: Field::String,
+    email: Field::String,
     birthyear: Field::Number,
-    payor: Field::BelongsToSearch.with_options(class: "Payor"),
+    payor: Field::BelongsTo,
     subscription: Field::HasMany,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -28,7 +28,7 @@ class StudentDashboard < Administrate::BaseDashboard
     id
     first_name
     last_name
-    mail
+    email
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -37,7 +37,7 @@ class StudentDashboard < Administrate::BaseDashboard
     id
     first_name
     last_name
-    mail
+    email
     birthyear
     payor
     created_at
@@ -50,7 +50,7 @@ class StudentDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     first_name
     last_name
-    mail
+    email
     birthyear
     payor
   ].freeze
