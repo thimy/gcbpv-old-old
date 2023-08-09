@@ -1,25 +1,23 @@
 Rails.application.routes.draw do
   namespace :pupitre do
     resources :profiles
+    resources :slots
+    resources :courses
     resources :workshops
     resources :students
-    resources :slots
     resources :projects
     resources :meetings
     resources :instruments
     resources :group_works
     resources :discoveries
-    resources :courses
-    resources :teachers
-    resources :subscriptions
-    resources :users
 
-    root to: "workshops#index"
+    root to: "profiles#index"
   end
   namespace :secretariat do
     root to: "subscriptions#index"
 
     resources :payors
+    resources :sessions
     resources :students
     resources :subscriptions
     resources :teachers
@@ -72,5 +70,10 @@ Rails.application.routes.draw do
   get "/centre-de-ressources", to: "resources#index", as: "resources"
   get "/centre-de-ressources/editions", to: "resources#editions", as: "editions"
   get "/centre-de-ressources/editions/:id", to: "resources#edition", as: "edition"
+
+  namespace :account, path: "compte" do
+    get "", to: "dashboard#index", as: "/"
+    resource :settings, only: [:show, :update]
+  end
 
 end

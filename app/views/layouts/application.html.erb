@@ -23,7 +23,7 @@
       </div>
     <% end %>
     <main class="main-content">
-      <%= yield %>
+      <%= content_for?(:content) ? yield(:content) : yield %>
     </main>
     <%= render(Global::FooterComponent.new) %>
   </body>

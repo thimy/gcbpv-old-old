@@ -183,7 +183,7 @@
   }
 
   .nav__button {
-    display: block;
+    display: flex;
   }
 
   .nav__links {

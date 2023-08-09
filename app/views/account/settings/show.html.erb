@@ -1,0 +1,8 @@
+<% content_for(:page_title, "Mon compte") %>
+<% content_for(:page_class, "account") %>
+
+<%= simple_form_for(@user, url: account_settings_path) do |f| %>
+  <%= f.input :email, label: "Email" %>
+  <%= f.input :password, label: "Mot de passe" %>
+  <%= f.button :submit, value: "Modifier mes informations", class: "button" %>
+<% end %>

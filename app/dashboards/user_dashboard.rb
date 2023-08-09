@@ -13,8 +13,8 @@ class UserDashboard < Administrate::BaseDashboard
     encrypted_password: Field::String,
     admin: Field::Boolean,
     volunteer: Field::Boolean,
-    student: Field::BelongsToSearch.with_options(class: "Student"),
-    teacher: Field::BelongsToSearch.with_options(class: "Teacher"),
+    student: Field::BelongsTo,
+    teacher: Field::BelongsTo,
     remember_created_at: Field::DateTime,
     reset_password_sent_at: Field::DateTime,
     reset_password_token: Field::String,
@@ -31,7 +31,7 @@ class UserDashboard < Administrate::BaseDashboard
     id
     email
     encrypted_password
-    is_volunteer
+    volunteer
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -79,7 +79,7 @@ class UserDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how users are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(user)
-  #   "User ##{user.id}"
-  # end
+  def display_resource(user)
+    user.email
+  end
 end

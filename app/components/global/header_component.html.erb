@@ -51,6 +51,13 @@
           <div class="nav__welcome">Bienvenue <%= current_user.email %></div>
           <%= inline_svg "icons/user-icon" %>
           <ul class="nav__sub-links">
+            <li class="nav__sub-item">
+              <% if current_user.teacher? %>
+                <%= link_to "Mon espace", pupitre_root_path %>
+              <% else %>
+                <%= link_to "Mon espace", profile_root_path %>
+              <% end %>
+            </li>
             <% if current_user.admin? %>
               <li class="nav__sub-item">
               <%= link_to "Secrétariat", secretariat_root_path %>
@@ -60,7 +67,8 @@
             <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %> 
             </li>
           </ul>
-        <% else %>
+        </li>
+      <% else %>
         <li class="nav__item user">
           <%= link_to "Se connecter", new_user_session_path, class: "button" %> 
         </li>

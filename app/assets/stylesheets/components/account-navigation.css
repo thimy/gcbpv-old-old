@@ -1,0 +1,7 @@
+.account-navigation {
+  display: flex;
+  gap: var(--gap);
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

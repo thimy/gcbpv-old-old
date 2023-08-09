@@ -11,7 +11,7 @@ class User < ApplicationRecord
     teacher.present?
   end
 
-  def teacher?
+  def student?
     student.present?
   end
 

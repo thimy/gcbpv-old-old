@@ -31,12 +31,22 @@
 <% if defined?(dashboard_from_resource(page.resource_name)::COLLECTION_FILTERS) && dashboard_from_resource(page.resource_name)::COLLECTION_FILTERS.size > 0 %>
   <section class="main-content__body filters">
       <h2>Filtres</h2>
-
       <% dashboard_from_resource(page.resource_name)::COLLECTION_FILTERS.each do |filter_name, _| %>
-        <%= link_to(t(
-          filter_name),
-          params.merge(search: [params[:search], "#{filter_name}:"].compact.join(" ")).permit(:search)
-        ) %>
+        <% if params[:search].present? && params[:search].include?(filter_name.to_s) %>
+          <%= link_to(
+            params.merge(search: [params[:search].gsub!("+#{filter_name}:", "")].compact.join(" ")).permit(:search)
+          ) do %>
+            <input type="checkbox" checked="checked">
+            <%= t(filter_name) %>
+          <% end %>
+        <% else %>
+          <%= link_to(
+            params.merge(search: [params[:search], "#{filter_name}:"].compact.join(" ")).permit(:search)
+          ) do %>
+            <input id="<%= filter_name %>" type="checkbox">
+            <%= t(filter_name) %>
+          <% end %>
+        <% end %>
 
         ⋅
       <% end %>

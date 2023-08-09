@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_16_172256) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_08_175032) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -244,20 +244,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_16_172256) do
   end
 
   create_table "sessions", force: :cascade do |t|
+    t.bigint "course_id", null: false
+    t.bigint "subscription_id", null: false
+    t.bigint "slot_id", null: false
+    t.time "session_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "archived"
-    t.bigint "slot_id"
-    t.bigint "course_id"
     t.index ["course_id"], name: "index_sessions_on_course_id"
     t.index ["slot_id"], name: "index_sessions_on_slot_id"
-  end
-
-  create_table "sessions_subscriptions", id: false, force: :cascade do |t|
-    t.bigint "session_id", null: false
-    t.bigint "subscription_id", null: false
-    t.index ["session_id", "subscription_id"], name: "index_sessions_subscriptions_on_session_id_and_subscription_id"
-    t.index ["subscription_id", "session_id"], name: "index_sessions_subscriptions_on_subscription_id_and_session_id"
+    t.index ["subscription_id"], name: "index_sessions_on_subscription_id"
   end
 
   create_table "slots", force: :cascade do |t|
@@ -337,17 +332,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_16_172256) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "volunteer"
-    t.string "login"
-    t.bigint "student_id"
-    t.bigint "payor_id"
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.bigint "teacher_id"
     t.boolean "admin"
-    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+    t.bigint "teacher_id"
+    t.bigint "student_id"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["payor_id"], name: "index_users_on_payor_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["student_id"], name: "index_users_on_student_id"
     t.index ["teacher_id"], name: "index_users_on_teacher_id"
@@ -376,6 +364,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_16_172256) do
   add_foreign_key "d_classes", "teachers"
   add_foreign_key "posts", "events"
   add_foreign_key "seasons", "plans"
+  add_foreign_key "sessions", "courses"
+  add_foreign_key "sessions", "slots"
+  add_foreign_key "sessions", "subscriptions"
   add_foreign_key "slots", "cities"
   add_foreign_key "slots", "teachers"
   add_foreign_key "students", "payors"

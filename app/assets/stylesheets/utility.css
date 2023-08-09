@@ -11,7 +11,7 @@
 }
 
 .wrapper--form {
-  --content-width: 45ch;
+  --content-width: var(--form-width);
 }
 
 .wrapper > * {

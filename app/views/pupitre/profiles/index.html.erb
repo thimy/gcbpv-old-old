@@ -1,7 +1,32 @@
 <section class="main-content__body main-content__body--flush">
   <h1>Bienvenue sur votre espace professeur</h1>
-  <h2>Vos élèves</h2>
-  <% @subscriptions.each do |subscription| %>
-    <%= subscription.student.full_name %>
-  <% end %>
+  <h2>Votre emploi du temps</h2>
+  <table>
+    <thead>
+      <% @subscriptions.each do |subscription| %>
+        <% day = nil %>
+        <% subscription.sessions.each do |session| %>
+          <% unless day.present? && session.slot.day == day %>
+            <th>
+              <%= session.slot.day %>
+              <% day = session.slot.day %>
+            </th>
+          <% end %>
+        <% end %>
+      <% end %>
+    </thead>
+    <tbody>
+      <% @subscriptions.each do |subscription| %>
+        <% day = nil %>
+        <% subscription.sessions.each do |session| %>
+          <% unless day.present? && session.slot.day == day %>
+            <td>
+              <%= subscription.student.full_name %> à <%= session.formatted_time %>
+              <% day = session.slot.day %>
+            </td>
+          <% end %>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
 </section>

@@ -1,0 +1,11 @@
+.account main {
+  padding-block: var(--spacing-12);
+}
+
+.account h1 {
+  margin: 0;
+}
+
+.account form {
+  max-width: var(--form-width);
+}
