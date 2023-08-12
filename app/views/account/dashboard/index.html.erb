@@ -1,1 +1,26 @@
-Pouet
+<% content_for(:page_title, "Mon compte") %>
+
+<% if current_user.student? %>
+  <% if @sessions.size %>
+    <div>
+      <h2>Mes cours</h2>
+      <% @sessions.each do |session| %>
+        <div>
+          <h3><%= session.course.name %></h3>
+          Le <%= session.slot.day %> de <%= time(session.start_time) %> à <%= time(session.end_time) %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <% if @workshops.size %>
+    <div>
+      <h2>Mes ateliers</h2>
+      <% @workshops.each do |workshop| %>
+        <div>
+          <h3><%= workshop.name %> avec <%= workshop.teacher.name %></h3>
+          <time><%= workshop.date_and_time %></time>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>

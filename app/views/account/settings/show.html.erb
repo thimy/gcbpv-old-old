@@ -1,5 +1,4 @@
-<% content_for(:page_title, "Mon compte") %>
-<% content_for(:page_class, "account") %>
+<% content_for(:page_title, "Mes réglages") %>
 
 <%= simple_form_for(@user, url: account_settings_path) do |f| %>
   <%= f.input :email, label: "Email" %>

@@ -73,7 +73,7 @@ Rails.application.routes.draw do
 
   namespace :account, path: "compte" do
     get "", to: "dashboard#index", as: "/"
-    resource :settings, only: [:show, :update]
+    resource "reglages", controller: :settings, only: [:show, :update], as: "settings"
   end
 
 end

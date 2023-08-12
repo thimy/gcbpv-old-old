@@ -2,6 +2,9 @@ class Account::SettingsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :show, :update]
   layout "account"
 
+  def index
+  end
+
   def show
     @user = current_user
   end

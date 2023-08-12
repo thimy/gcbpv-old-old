@@ -10,7 +10,8 @@ class SessionDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     course: Field::BelongsTo,
-    session_time: Field::Time,
+    start_time: Field::Time,
+    end_time: Field::Time,
     slot: Field::BelongsTo,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -24,7 +25,8 @@ class SessionDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     course
-    session_time
+    start_time
+    end_time
     slot
   ].freeze
 
@@ -33,7 +35,8 @@ class SessionDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     id
     course
-    session_time
+    start_time
+    end_time
     slot
     created_at
     updated_at
@@ -44,7 +47,8 @@ class SessionDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     course
-    session_time
+    start_time
+    end_time
     slot
   ].freeze
 

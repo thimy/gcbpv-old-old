@@ -50,12 +50,12 @@
 
   --form-width: 45ch;
 
-  /* @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: dark) {
     --bg-color: var(--black);
     --bg-color-transparent: rgba(var(--black-rgb), 0.9);
     --bg-color-secondary: var(--gray-80);
     --text-color: var(--white);
     --link-hover-color: var(--blue-60-a);
     
-  } */
+  }
 }
