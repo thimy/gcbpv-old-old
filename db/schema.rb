@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_11_212841) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_12_194840) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -100,6 +100,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_11_212841) do
     t.boolean "archived"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "day"
+    t.time "start_time"
+    t.time "end_time"
+    t.bigint "city_id"
+    t.index ["city_id"], name: "index_d_classes_on_city_id"
     t.index ["discovery_id"], name: "index_d_classes_on_discovery_id"
     t.index ["teacher_id"], name: "index_d_classes_on_teacher_id"
   end
@@ -336,7 +341,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_11_212841) do
     t.boolean "admin"
     t.bigint "teacher_id"
     t.bigint "student_id"
+    t.bigint "payor_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["payor_id"], name: "index_users_on_payor_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["student_id"], name: "index_users_on_student_id"
     t.index ["teacher_id"], name: "index_users_on_teacher_id"

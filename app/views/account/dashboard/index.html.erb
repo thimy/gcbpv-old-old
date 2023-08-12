@@ -1,26 +1,48 @@
 <% content_for(:page_title, "Mon compte") %>
 
 <% if current_user.student? %>
-  <% if @sessions.size %>
-    <div>
-      <h2>Mes cours</h2>
+  <div>
+    <h2>Mes cours</h2>
+    <% if @sessions.size %>
       <% @sessions.each do |session| %>
         <div>
           <h3><%= session.course.name %></h3>
-          Le <%= session.slot.day %> de <%= time(session.start_time) %> à <%= time(session.end_time) %>
+          <p>Le <%= session.slot.day %> de <%= time(session.start_time) %> à <%= time(session.end_time) %></p>
         </div>
       <% end %>
-    </div>
-  <% end %>
-  <% if @workshops.size %>
-    <div>
-      <h2>Mes ateliers</h2>
+    <% else %>
+      <p>Vous n'êtes inscrit à aucun cours.</p>
+    <% end %>
+  </div>
+  <div>
+    <h2>Mes ateliers</h2>
+    <% if @workshops.size %>
       <% @workshops.each do |workshop| %>
         <div>
           <h3><%= workshop.name %> avec <%= workshop.teacher.name %></h3>
           <time><%= workshop.date_and_time %></time>
         </div>
       <% end %>
+    <% else %>
+      <p>Vous n'êtes inscrit à aucun atelier.</p>
+    <% end %>
     </div>
-  <% end %>
+<% end %>
+<% if current_user.teacher? %>
+  <div>
+    <h2>Mes cours</h2>
+    <% @teacher_sessions.each do |session| %>
+      <h3><%= session.course.instrument.name %> avec <%= session.subscription.student.full_name %></h3>
+      <p>Le <%= session.slot.day %> de <%= time(session.start_time) %> à <%= time(session.end_time) %></p>
+    <% end %>
+  </div>
+  <div>
+    <h2>Mes ateliers</h2>
+    <% @teacher_workshops.each do |workshop| %>
+      <div>
+        <h3><%= workshop.name %></h3>
+        <time><%= workshop.date_and_time %></time>
+      </div>
+    <% end %>
+  </div>
 <% end %>

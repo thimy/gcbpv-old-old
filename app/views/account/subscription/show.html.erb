@@ -1,0 +1,40 @@
+<% content_for(:page_title, "Récapitulatif d’inscription") %>
+
+<div class="subscriptions">
+  <% @subscriptions.each do |subscription| %>
+    <h2><%= subscription.student.full_name %></h2>
+    <table>
+      <tbody>
+        <% subscription.sessions.each_with_index do |session, index| %>
+          <tr>
+            <td><%= session.course.name %></td>
+            <td><%= subscription.workshop[index].present? ? subscription.workshop[index].name : "" %></td>
+            <td><%= number_to_currency(@plan.class_price) %></td>
+          </tr>
+        <% end %>
+        <% if subscription.sessions.size < subscription.workshop.size %>
+          <% for i in (subscription.sessions.size+1)..subscription.workshop.size do %>
+            <tr>
+              <td></td>
+              <td><%= subscription.workshop[i - 1].name %></td>
+              <td><%= number_to_currency(@plan.workshop_price) %></td>
+            </tr>
+          <% end %>
+        <% end %>
+        <% subscription.d_class.each do |d_class| %>
+          <tr>
+            <td colspan=2><%= d_class.name %></td>
+            <td><%= number_to_currency(d_class.discovery.price) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan=2>Total</td>
+          <td><%= number_to_currency(subscription.sessions_and_workshops_total) %></td>
+        </tr>
+      </tfoot>
+    </table>
+  <% end %>
+  <h2>Total : <%= number_to_currency(@total) %></h2>
+</div>

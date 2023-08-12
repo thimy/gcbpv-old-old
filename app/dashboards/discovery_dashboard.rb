@@ -63,7 +63,7 @@ class DiscoveryDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how discoveries are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(discovery)
-  #   "Discovery ##{discovery.id}"
-  # end
+  def display_resource(discovery)
+    discovery.name
+  end
 end

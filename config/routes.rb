@@ -23,6 +23,8 @@ Rails.application.routes.draw do
     resources :teachers
     resources :slots
     resources :instruments
+    resources :discoveries
+    resources :d_classes
     resources :workshops
     resources :meetings
     resources :group_works
@@ -74,6 +76,7 @@ Rails.application.routes.draw do
   namespace :account, path: "compte" do
     get "", to: "dashboard#index", as: "/"
     resource "reglages", controller: :settings, only: [:show, :update], as: "settings"
+    resource "inscription", controller: :subscription, only: [:show, :update], as: "subscription"
   end
 
 end

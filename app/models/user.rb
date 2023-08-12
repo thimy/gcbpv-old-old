@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   belongs_to :teacher, optional: true
   belongs_to :student, optional: true
+  belongs_to :payor, optional: true
 
   def teacher?
     teacher.present?
@@ -13,6 +14,10 @@ class User < ApplicationRecord
 
   def student?
     student.present?
+  end
+
+  def payor?
+    payor.present?
   end
 
   def admin?

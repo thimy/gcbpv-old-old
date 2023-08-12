@@ -15,6 +15,7 @@ class UserDashboard < Administrate::BaseDashboard
     volunteer: Field::Boolean,
     student: Field::BelongsTo,
     teacher: Field::BelongsTo,
+    payor: Field::BelongsTo,
     remember_created_at: Field::DateTime,
     reset_password_sent_at: Field::DateTime,
     reset_password_token: Field::String,
@@ -44,6 +45,7 @@ class UserDashboard < Administrate::BaseDashboard
     volunteer
     teacher
     student
+    payor
     reset_password_sent_at
     reset_password_token
     created_at
@@ -60,6 +62,7 @@ class UserDashboard < Administrate::BaseDashboard
     volunteer
     teacher
     student
+    payor
     reset_password_sent_at
     reset_password_token
   ].freeze

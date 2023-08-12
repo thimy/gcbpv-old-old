@@ -9,3 +9,20 @@
 .account form {
   max-width: var(--form-width);
 }
+
+.subscriptions table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.subscriptions table td {
+  padding: var(--spacing-2);
+}
+
+.subscriptions table td:last-child {
+  text-align: right;
+}
+
+.subscriptions table tfoot {
+  border-top: var(--border-default);
+}

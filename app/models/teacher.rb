@@ -4,7 +4,7 @@ class Teacher < ApplicationRecord
   has_many :courses
   has_many :instruments, through: :courses
   has_many :workshops
-  has_many :slots
+  has_many :slots, -> { group 'slot.day' }
   has_one_attached :picture
 
   enum teacher_status: ["Actif", "Inactif", "Caché"]

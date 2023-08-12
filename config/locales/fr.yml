@@ -27,6 +27,9 @@ fr:
       discovery:
         one: "Atelier découverte"
         other: "Ateliers découverte"
+      d_class:
+        one: "Session découverte"
+        other: "Sessions découverte"
       edition:
         one: "Édition"
         other: "Éditions"
