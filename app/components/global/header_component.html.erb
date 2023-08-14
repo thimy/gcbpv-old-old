@@ -54,8 +54,8 @@
             <li class="nav__sub-item">
               <% if current_user.teacher? %>
                 <%= link_to "Mon espace", pupitre_root_path %>
-              <% else %>
-                <%= link_to "Mon espace", profile_root_path %>
+              <% elsif  %>
+                <%= link_to "Mon espace", account_path %>
               <% end %>
             </li>
             <% if current_user.admin? %>

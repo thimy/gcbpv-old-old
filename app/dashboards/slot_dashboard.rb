@@ -14,7 +14,7 @@ class SlotDashboard < Administrate::BaseDashboard
       searchable: true
     ),
     city: Field::BelongsToSearch.with_options(class: "City"),
-    day: Field::String,
+    day: Field::Select.with_options(collection: DayOfWeek::DAYS_OF_WEEK),
     start_time: Field::Time.with_options(format: "%H:%M"),
     end_time: Field::Time.with_options(format: "%H:%M"),
     created_at: Field::DateTime,

@@ -8,4 +8,12 @@ class Session < ApplicationRecord
   def formatted_time
     time(session_time)
   end
+
+  def time_slot
+    if start_time.present?
+      "de #{time(start_time)} à #{time(end_time)}"
+    else
+      "à définir"
+    end
+  end
 end

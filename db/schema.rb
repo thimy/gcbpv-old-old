@@ -10,9 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_12_194840) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_13_201303) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  # Custom types defined in this database.
+  # Note that some types may not work with other database engines. Be careful if changing database.
+  create_enum "days_of_week", ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday", "tbd"]
+  create_enum "frequency", ["always", "every_two_weeks", "even_weeks", "odd_weeks", "once_per_month", "six_times", "flexible"]
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -100,11 +105,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_12_194840) do
     t.boolean "archived"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "day"
     t.time "start_time"
     t.time "end_time"
     t.bigint "city_id"
+    t.enum "day", enum_type: "days_of_week"
+    t.enum "frequency", enum_type: "frequency"
     t.index ["city_id"], name: "index_d_classes_on_city_id"
+    t.index ["day"], name: "index_d_classes_on_day"
     t.index ["discovery_id"], name: "index_d_classes_on_discovery_id"
     t.index ["teacher_id"], name: "index_d_classes_on_teacher_id"
   end
@@ -268,9 +275,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_12_194840) do
     t.time "end_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "day"
     t.string "description"
+    t.enum "day", enum_type: "days_of_week"
+    t.enum "frequency", enum_type: "frequency"
     t.index ["city_id"], name: "index_slots_on_city_id"
+    t.index ["day"], name: "index_slots_on_day"
     t.index ["teacher_id"], name: "index_slots_on_teacher_id"
   end
 
@@ -353,14 +362,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_12_194840) do
     t.string "name"
     t.bigint "teacher_id", null: false
     t.text "description"
-    t.string "workshop_day"
     t.time "start_time"
     t.time "end_time"
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "archived"
+    t.enum "workshop_day", enum_type: "days_of_week"
+    t.enum "frequency", enum_type: "frequency"
     t.index ["teacher_id"], name: "index_workshops_on_teacher_id"
+    t.index ["workshop_day"], name: "index_workshops_on_workshop_day"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

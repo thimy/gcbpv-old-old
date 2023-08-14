@@ -15,7 +15,8 @@ class WorkshopDashboard < Administrate::BaseDashboard
     name: Field::String,
     start_time: Field::Time.with_options(format: "%H:%M"),
     teacher: Field::BelongsToSearch.with_options(class: "Teacher"),
-    workshop_day: Field::String,
+    workshop_day: Field::Select.with_options(collection: DayOfWeek::DAYS_OF_WEEK),
+    frequency: Field::Select.with_options(collection: Frequency::FREQUENCY),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -28,6 +29,7 @@ class WorkshopDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     name
     workshop_day
+    frequency
     location
     start_time
     end_time
@@ -40,6 +42,7 @@ class WorkshopDashboard < Administrate::BaseDashboard
     teacher
     description
     workshop_day
+    frequency
     start_time
     end_time
     location
@@ -55,6 +58,7 @@ class WorkshopDashboard < Administrate::BaseDashboard
     teacher
     description
     workshop_day
+    frequency
     start_time
     end_time
     location

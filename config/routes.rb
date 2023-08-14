@@ -73,7 +73,7 @@ Rails.application.routes.draw do
   get "/centre-de-ressources/editions", to: "resources#editions", as: "editions"
   get "/centre-de-ressources/editions/:id", to: "resources#edition", as: "edition"
 
-  namespace :account, path: "compte" do
+  namespace :account, path: "compte", as: "account" do
     get "", to: "dashboard#index", as: "/"
     resource "reglages", controller: :settings, only: [:show, :update], as: "settings"
     resource "inscription", controller: :subscription, only: [:show, :update], as: "subscription"

@@ -7,7 +7,9 @@
       <% @sessions.each do |session| %>
         <div>
           <h3><%= session.course.name %></h3>
-          <p>Le <%= session.slot.day %> de <%= time(session.start_time) %> à <%= time(session.end_time) %></p>
+          <p>
+            Le <%= I18n.t(session.slot.day) %> <%= session.time_slot %>
+          </p>
         </div>
       <% end %>
     <% else %>
@@ -20,7 +22,7 @@
       <% @workshops.each do |workshop| %>
         <div>
           <h3><%= workshop.name %> avec <%= workshop.teacher.name %></h3>
-          <time><%= workshop.date_and_time %></time>
+          <time><%= workshop.date_and_time.capitalize %> <%= I18n.t(workshop.frequency) %></time>
         </div>
       <% end %>
     <% else %>
@@ -31,9 +33,11 @@
 <% if current_user.teacher? %>
   <div>
     <h2>Mes cours</h2>
-    <% @teacher_sessions.each do |session| %>
-      <h3><%= session.course.instrument.name %> avec <%= session.subscription.student.full_name %></h3>
-      <p>Le <%= session.slot.day %> de <%= time(session.start_time) %> à <%= time(session.end_time) %></p>
+    <% @teacher_sessions.each do |day, sessions| %>
+      <h3><%= I18n.t(day).capitalize %></h3>
+      <% sessions.each do |session| %>
+        <p><%= session.course.instrument.name %> avec <%= session.subscription.student.full_name %>  <%= session.time_slot %></p>
+      <% end %>
     <% end %>
   </div>
   <div>
@@ -41,7 +45,7 @@
     <% @teacher_workshops.each do |workshop| %>
       <div>
         <h3><%= workshop.name %></h3>
-        <time><%= workshop.date_and_time %></time>
+        <time><%= workshop.date_and_time.capitalize %> <%= I18n.t(workshop.frequency) %></time>
       </div>
     <% end %>
   </div>

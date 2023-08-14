@@ -25,7 +25,7 @@ class Workshop < ApplicationRecord
       if time_period.present?
         "#{workshop_day} #{time_period}"
       else
-        "#{workshop_day} (horaires à définir)"
+        "#{I18n.t(workshop_day)} (horaires à définir)"
       end
     else
       if time_period.present?

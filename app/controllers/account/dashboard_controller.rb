@@ -10,7 +10,7 @@ class Account::DashboardController < ApplicationController
 
     if current_user.teacher?
       @teacher = Teacher.find(current_user.teacher_id)
-      @teacher_sessions = Session.where(course: Course.where(teacher: @teacher)).includes(:slot)
+      @teacher_sessions = Session.where(course: Course.where(teacher: @teacher)).includes(:slot).group_by { |session| session.slot.day }.transform_values { |values| values.flatten }
       @teacher_workshops = Workshop.where(teacher: @teacher).joins(:subscription)
     end
   end

@@ -19,7 +19,7 @@ class Slot < ApplicationRecord
 
   def day_as_text
     if day.present?
-      "le #{day}"
+      "le #{I18n.t(day)}"
     end
   end
 

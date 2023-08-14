@@ -39,21 +39,21 @@ end
 
 Instrument.destroy_all
 instruments = [
-  { name: "Accordéon diatonique", description: "L’accordéon diatonique est un instrument de musique à clavier, utilisant des anches libres, excitées par un vent variable fourni par le soufflet actionné par le musicien1. Il désigne les différentes variantes d’accordéon bi-sonoreN 1 organisées selon une ou plusieurs gammes diatoniques (à la différence de l’accordéon chromatique), même s’il existe des accordéons diatoniques qui ne sont pas bi-sonores comme l’accordéon diatonique russe, le garmon.\r\n\r\nSi certains modèles d’accordéon possèdent toutes les notes de la gamme chromatique (comme certains modèles continentaux à trois rangées ou les accordéons irlandais), ils conservent une organisation par gammes diatoniques.\r\n\r\nOn utilise principalement l’accordéon diatonique dans les musiques traditionnelles ou populaires. D’origine européenne, l’accordéon diatonique est présent dans beaucoup de traditions à travers le monde." },
-  { name: "Accordéon à touches piano", description: "Un accordéon à touches piano est doté d’un clavier droit tel celui d’un clavier de piano ou d’orgue. Le mécanisme et le mode de fonctionnement de la main droite se rapprochent plus d’un toucher pour orgue que pour piano, puisque ce sont tous deux des instruments à vent. Le terme « accordéon-piano » est dû à Guido Deiro vers 19101. Quant au registre de main gauche, il peut être équipé de tous les types de nomenclatures possibles.\r\n\r\nPar rapport au clavier de piano, les touches sont plus arrondies, plus petites et plus légères au toucher (la pression requise pour enfoncer est moindre qu’une touche de piano). Celles-ci sont placées à la verticale sur le côté, tournées vers le centre et les ’jeux’, les rendant toutes accessibles d’une seule main lorsqu’on manipule l’accordéon." },
-  { name: "Binioù", description: "Similaire à une cornemuse, il est composé d’un tuyau en bois avec une anche simple et un sac à air.\r\n\r\nFigure incontournable de la scène musicale bretonne, le binioù est fréquemment associé à la bombarde (c’est ce que l’on désigne sous le terme de « sonneurs de couple » pour accompagner les danses traditionnelles bretonnes), et se retrouve intégré aux formations musicales appelées bagad (bagadou au pluriel)." },
-  { name: "Bombarde", description: "La bombarde est un instrument de musique à vent à anche double de la famille des hautbois, employé dans la musique ancienne et la musique bretonne. Le mot « bombarde » provient du latin bombus, signifiant « bourdonnement » ou « bruit sourd ».\r\n\r\nIl s’agit d’une variante de hautbois populaire spécifique à la Bretagne. En breton l’instrument s’appelle ar vombard (mutation de bombard) ou an talabard. Un joueur de bombarde s’appelle un bombarder (bombardir en Pays Vannetais), mais le terme de talabarder a été plus récemment adopté dans le milieu des bagadoù.\r\n\r\nLa bombarde est traditionnellement associée au biniou pour former ce qu’on appelle un couple de sonneurs. On peut également en jouer au sein d’orchestres plus ou moins étoffés. Un pupitre de bombardes, associé à des percussions, des cornemuses et des caisses claires écossaises, forment un ensemble appelé bagad (bagadoù au pluriel en breton)." },
-  { name: "Chant", description: "Le chant représente l’ensemble de la production de sons musicaux produite par la voix humaine. La personne qui génère le chant est appelée chanteur, chanteuse, ou vocaliste. À l’EMT sont enseignés le chant de Haute-Bretagne, le chant breton et la technique vocale." },
-  { name: "Clarinette", description: "La clarinette (du provençal clarin désignant un hautbois) est un instrument de musique à vent de la famille des bois caractérisé par son anche simple et sa perce quasi cylindrique. Elle aurait été créée vers 1690 par Johann Christoph Denner (1655-1707) à Nuremberg sur la base d’un instrument à anche simple plus ancien : le « chalumeau ». La clarinette soprano (en si♭) est le modèle le plus commun.\r\n\r\nLa perce cylindrique de la clarinette la distingue du hautbois et du saxophone, tous deux à perce conique, et lui confère une aptitude au quintoiement. Son timbre chaud dans le registre grave, peut s’avérer extrêmement brillant voire perçant dans l’aigu.\r\n\r\nDe tous les instruments à vent de sa famille, la clarinette possède la plus grande tessiture avec trois octaves plus une sixte mineure, soit 45 notes en tout. Elle se décline en une famille d’instruments presque tous transpositeurs, depuis la clarinette contrebasse jusqu’à la clarinette piccolo, couvrant ainsi toute l’étendue d’un orchestre symphonique. À l’exception des percussions, la clarinette est l’instrument qui possède la plus grande famille. " },
-  { name: "Cornemuse écossaise", description: "La cornemuse écossaise, ou pìob-mhòr en gaélique écossais (grande cornemuse), ou great Highland bagpipe en anglais (grande cornemuse des Highlands), est un instrument à vent d’Écosse répandu à travers l’ancien empire britannique. C’est une cornemuse comportant trois bourdons (un basse et deux ténors) à anche simple, et un chanter muni d’une anche double. " },
-  { name: "Flûte traversière", description: "La flûte traversière est un instrument à vent de la famille des bois. La flûte traversière partage avec les instruments de la famille des flûtes la méthode de production du son : l’air soufflé est mis en vibration par un biseau disposé à l’embouchure. Son fonctionnement est toutefois assez différent de celui des flûtes à bec et est plus proche de celui de la quena et plus largement des flûtes à encoche, instruments pour lesquels c’est le musicien qui conduit l’air au biseau. " },
-  { name: "Guitare", description: "La guitare est un instrument à cordes pincées. Les cordes sont disposées parallèlement à la table d’harmonie et au manche, généralement coupé de frettes, sur lesquelles on appuie les cordes, d’une main, pour produire des notes différentes. L’autre main pince les cordes, soit avec les ongles et le bout des doigts, soit avec un plectre (ou médiator). La guitare a le plus souvent six cordes." },
-  { name: "Harpe celtique", description: "La harpe celtique est un instrument de musique à cordes ancien, répandu en Irlande (cláirseach), en Écosse (clársach), au Pays de Galles (telyn), en Bretagne (telenn), pour jouer et accompagner la musique celtique. Elle jouit d’un regain de popularité en Bretagne depuis les années 1950. Plus petite que la harpe de concert, elle est plus maniable. Elle possède un répertoire propre né de l’époque où elle était l’instrument des musiciens ambulants. Elle fait notamment partie des symboles de l’Irlande." },
-  { name: "Percussions", description: "Les instruments de percussion — souvent appelés simplement percussion, au féminin — sont des instruments de musique dont l’émission sonore résulte de la frappe ou du grattage d’une membrane ou d’un matériau résonnant. Les instruments de percussion ont probablement constitué les tout premiers instruments de musique et font partie intégrante de la plupart des genres musicaux. On les trouve en effet depuis la musique traditionnelle jusqu’à la musique classique." },
-  { name: "Saxophone", description: "Le saxophone est un instrument de musique à vent, appartenant à la famille des bois. Il a été inventé par le Belge Adolphe Sax et breveté à Paris le 21 mars 1846.\r\n\r\nLe saxophone est généralement en laiton, bien qu’il en existe certains en cuivre, en argent, en plastique ou plaqués en or. " },
-  { name: "Tin whistle", description: "Le tin whistle, aussi appelé tin(-)whistle, whistle, penny whistle, Irish whistle, feadóg, feadóg stáin, ou flûte irlandaise au Québec, est un instrument à vent de type bois. Il s’agit d’une flûte droite à six trous, généralement en métal et couramment utilisée dans la musique des îles Britanniques (Angleterre, Écosse, Pays de Galles et Irlande). Elle dispose d’un conduit permettant de canaliser l’air émis par le musicien vers le biseau. Ce type de conception se retrouve également avec le flageolet et la flûte à bec. Un joueur de tin whistle est appelé tin whistler ou simplement whistler dans la langue du pays d’origine. Le tin whistle est également désigné par le terme généraliste de flûte irlandaise." },
-  { name: "Uillean pipes", description: "Uilleann pipes est le nom contemporain donné à la cornemuse irlandaise (píb uilleann en gaélique, pib-ilin en breton). Le terme uilleann (/ˈɪlən/), (génitif de uille qui signifie coude en gaélique), n’est utilisé que depuis le XXe siècle. L’instrument était auparavant connu sous le nom de union Pipes, terme utilisé depuis le XVIIIe siècle ; une rumeur persistante voudrait que la dénomination union soit due à des connotations politiques, telles que l’Acte d’Union (1800) imposé par l’Angleterre, mais l’instrument étant attesté bien avant cette date, cette explication ne tient pas. Il est en revanche possible qu’il s’agisse de l’union de la chanterelle et des régulateurs." },
-  { name: "Violon", description: "Le violon est un instrument de musique à cordes frottées. Constitué de 71 pièces de bois (érable, buis, ébène, etc.) collées ou assemblées les unes aux autres. Le violon possède quatre cordes accordées généralement à la quinte, que l’instrumentiste, appelé violoniste, frotte avec un archet ou pince avec l’index ou le pouce (en pizzicato).\r\n\r\nDans les formations de musique classique comme le quatuor à cordes ou l’orchestre symphonique, le violon est l’instrument le plus petit et de tessiture la plus aiguë parmi sa famille ; celle-ci inclut l'alto, le violoncelle et la contrebasse. Sa création remonte au XVIe siècle. Très vite popularisé, il occupe une place importante dans la musique classique occidentale : de grands compositeurs ont écrit pour cet instrument (concertos, musique de chambre, pièces symphoniques, etc.) voire en jouaient eux-mêmes (Vivaldi, Bach, Mozart, etc.). Certains violonistes du XIXe siècle, tels que Paganini, ont acquis une grande renommée." },
+  { id: 1, name: "Accordéon diatonique", description: "L’accordéon diatonique est un instrument de musique à clavier, utilisant des anches libres, excitées par un vent variable fourni par le soufflet actionné par le musicien1. Il désigne les différentes variantes d’accordéon bi-sonoreN 1 organisées selon une ou plusieurs gammes diatoniques (à la différence de l’accordéon chromatique), même s’il existe des accordéons diatoniques qui ne sont pas bi-sonores comme l’accordéon diatonique russe, le garmon.\r\n\r\nSi certains modèles d’accordéon possèdent toutes les notes de la gamme chromatique (comme certains modèles continentaux à trois rangées ou les accordéons irlandais), ils conservent une organisation par gammes diatoniques.\r\n\r\nOn utilise principalement l’accordéon diatonique dans les musiques traditionnelles ou populaires. D’origine européenne, l’accordéon diatonique est présent dans beaucoup de traditions à travers le monde." },
+  { id: 2, name: "Accordéon à touches piano", description: "Un accordéon à touches piano est doté d’un clavier droit tel celui d’un clavier de piano ou d’orgue. Le mécanisme et le mode de fonctionnement de la main droite se rapprochent plus d’un toucher pour orgue que pour piano, puisque ce sont tous deux des instruments à vent. Le terme « accordéon-piano » est dû à Guido Deiro vers 19101. Quant au registre de main gauche, il peut être équipé de tous les types de nomenclatures possibles.\r\n\r\nPar rapport au clavier de piano, les touches sont plus arrondies, plus petites et plus légères au toucher (la pression requise pour enfoncer est moindre qu’une touche de piano). Celles-ci sont placées à la verticale sur le côté, tournées vers le centre et les ’jeux’, les rendant toutes accessibles d’une seule main lorsqu’on manipule l’accordéon." },
+  { id: 3, name: "Binioù", description: "Similaire à une cornemuse, il est composé d’un tuyau en bois avec une anche simple et un sac à air.\r\n\r\nFigure incontournable de la scène musicale bretonne, le binioù est fréquemment associé à la bombarde (c’est ce que l’on désigne sous le terme de « sonneurs de couple » pour accompagner les danses traditionnelles bretonnes), et se retrouve intégré aux formations musicales appelées bagad (bagadou au pluriel)." },
+  { id: 4, name: "Bombarde", description: "La bombarde est un instrument de musique à vent à anche double de la famille des hautbois, employé dans la musique ancienne et la musique bretonne. Le mot « bombarde » provient du latin bombus, signifiant « bourdonnement » ou « bruit sourd ».\r\n\r\nIl s’agit d’une variante de hautbois populaire spécifique à la Bretagne. En breton l’instrument s’appelle ar vombard (mutation de bombard) ou an talabard. Un joueur de bombarde s’appelle un bombarder (bombardir en Pays Vannetais), mais le terme de talabarder a été plus récemment adopté dans le milieu des bagadoù.\r\n\r\nLa bombarde est traditionnellement associée au biniou pour former ce qu’on appelle un couple de sonneurs. On peut également en jouer au sein d’orchestres plus ou moins étoffés. Un pupitre de bombardes, associé à des percussions, des cornemuses et des caisses claires écossaises, forment un ensemble appelé bagad (bagadoù au pluriel en breton)." },
+  { id: 5, name: "Chant", description: "Le chant représente l’ensemble de la production de sons musicaux produite par la voix humaine. La personne qui génère le chant est appelée chanteur, chanteuse, ou vocaliste. À l’EMT sont enseignés le chant de Haute-Bretagne, le chant breton et la technique vocale." },
+  { id: 6, name: "Clarinette", description: "La clarinette (du provençal clarin désignant un hautbois) est un instrument de musique à vent de la famille des bois caractérisé par son anche simple et sa perce quasi cylindrique. Elle aurait été créée vers 1690 par Johann Christoph Denner (1655-1707) à Nuremberg sur la base d’un instrument à anche simple plus ancien : le « chalumeau ». La clarinette soprano (en si♭) est le modèle le plus commun.\r\n\r\nLa perce cylindrique de la clarinette la distingue du hautbois et du saxophone, tous deux à perce conique, et lui confère une aptitude au quintoiement. Son timbre chaud dans le registre grave, peut s’avérer extrêmement brillant voire perçant dans l’aigu.\r\n\r\nDe tous les instruments à vent de sa famille, la clarinette possède la plus grande tessiture avec trois octaves plus une sixte mineure, soit 45 notes en tout. Elle se décline en une famille d’instruments presque tous transpositeurs, depuis la clarinette contrebasse jusqu’à la clarinette piccolo, couvrant ainsi toute l’étendue d’un orchestre symphonique. À l’exception des percussions, la clarinette est l’instrument qui possède la plus grande famille. " },
+  { id: 7, name: "Cornemuse écossaise", description: "La cornemuse écossaise, ou pìob-mhòr en gaélique écossais (grande cornemuse), ou great Highland bagpipe en anglais (grande cornemuse des Highlands), est un instrument à vent d’Écosse répandu à travers l’ancien empire britannique. C’est une cornemuse comportant trois bourdons (un basse et deux ténors) à anche simple, et un chanter muni d’une anche double. " },
+  { id: 8, name: "Flûte traversière", description: "La flûte traversière est un instrument à vent de la famille des bois. La flûte traversière partage avec les instruments de la famille des flûtes la méthode de production du son : l’air soufflé est mis en vibration par un biseau disposé à l’embouchure. Son fonctionnement est toutefois assez différent de celui des flûtes à bec et est plus proche de celui de la quena et plus largement des flûtes à encoche, instruments pour lesquels c’est le musicien qui conduit l’air au biseau. " },
+  { id: 9, name: "Guitare", description: "La guitare est un instrument à cordes pincées. Les cordes sont disposées parallèlement à la table d’harmonie et au manche, généralement coupé de frettes, sur lesquelles on appuie les cordes, d’une main, pour produire des notes différentes. L’autre main pince les cordes, soit avec les ongles et le bout des doigts, soit avec un plectre (ou médiator). La guitare a le plus souvent six cordes." },
+  { id: 10, name: "Harpe celtique", description: "La harpe celtique est un instrument de musique à cordes ancien, répandu en Irlande (cláirseach), en Écosse (clársach), au Pays de Galles (telyn), en Bretagne (telenn), pour jouer et accompagner la musique celtique. Elle jouit d’un regain de popularité en Bretagne depuis les années 1950. Plus petite que la harpe de concert, elle est plus maniable. Elle possède un répertoire propre né de l’époque où elle était l’instrument des musiciens ambulants. Elle fait notamment partie des symboles de l’Irlande." },
+  { id: 11, name: "Percussions", description: "Les instruments de percussion — souvent appelés simplement percussion, au féminin — sont des instruments de musique dont l’émission sonore résulte de la frappe ou du grattage d’une membrane ou d’un matériau résonnant. Les instruments de percussion ont probablement constitué les tout premiers instruments de musique et font partie intégrante de la plupart des genres musicaux. On les trouve en effet depuis la musique traditionnelle jusqu’à la musique classique." },
+  { id: 12, name: "Saxophone", description: "Le saxophone est un instrument de musique à vent, appartenant à la famille des bois. Il a été inventé par le Belge Adolphe Sax et breveté à Paris le 21 mars 1846.\r\n\r\nLe saxophone est généralement en laiton, bien qu’il en existe certains en cuivre, en argent, en plastique ou plaqués en or. " },
+  { id: 13, name: "Tin whistle", description: "Le tin whistle, aussi appelé tin(-)whistle, whistle, penny whistle, Irish whistle, feadóg, feadóg stáin, ou flûte irlandaise au Québec, est un instrument à vent de type bois. Il s’agit d’une flûte droite à six trous, généralement en métal et couramment utilisée dans la musique des îles Britanniques (Angleterre, Écosse, Pays de Galles et Irlande). Elle dispose d’un conduit permettant de canaliser l’air émis par le musicien vers le biseau. Ce type de conception se retrouve également avec le flageolet et la flûte à bec. Un joueur de tin whistle est appelé tin whistler ou simplement whistler dans la langue du pays d’origine. Le tin whistle est également désigné par le terme généraliste de flûte irlandaise." },
+  { id: 14, name: "Uillean pipes", description: "Uilleann pipes est le nom contemporain donné à la cornemuse irlandaise (píb uilleann en gaélique, pib-ilin en breton). Le terme uilleann (/ˈɪlən/), (génitif de uille qui signifie coude en gaélique), n’est utilisé que depuis le XXe siècle. L’instrument était auparavant connu sous le nom de union Pipes, terme utilisé depuis le XVIIIe siècle ; une rumeur persistante voudrait que la dénomination union soit due à des connotations politiques, telles que l’Acte d’Union (1800) imposé par l’Angleterre, mais l’instrument étant attesté bien avant cette date, cette explication ne tient pas. Il est en revanche possible qu’il s’agisse de l’union de la chanterelle et des régulateurs." },
+  { id: 15, name: "Violon", description: "Le violon est un instrument de musique à cordes frottées. Constitué de 71 pièces de bois (érable, buis, ébène, etc.) collées ou assemblées les unes aux autres. Le violon possède quatre cordes accordées généralement à la quinte, que l’instrumentiste, appelé violoniste, frotte avec un archet ou pince avec l’index ou le pouce (en pizzicato).\r\n\r\nDans les formations de musique classique comme le quatuor à cordes ou l’orchestre symphonique, le violon est l’instrument le plus petit et de tessiture la plus aiguë parmi sa famille ; celle-ci inclut l'alto, le violoncelle et la contrebasse. Sa création remonte au XVIe siècle. Très vite popularisé, il occupe une place importante dans la musique classique occidentale : de grands compositeurs ont écrit pour cet instrument (concertos, musique de chambre, pièces symphoniques, etc.) voire en jouaient eux-mêmes (Vivaldi, Bach, Mozart, etc.). Certains violonistes du XIXe siècle, tels que Paganini, ont acquis une grande renommée." },
 ]
 
 instruments.each do |instrument|
@@ -131,112 +131,121 @@ end
 workshops = [{
   name: "Danse, chant et musique pour les 7-11 ans",
   teacher_id: 1,
-  workshop_day: "Mercredi",
+  workshop_day: "wednesday",
   location: "Allaire"
 }, {
   name: "Chant en breton pour les 7-11 ans",
   teacher_id: 15,
-  workshop_day: "Mardi ou mercredi",
+  workshop_day: "tuesday",
   location: "Redon ou Allaire/Peillac"
 }, {
   name: "Atelier Duo (enfants, ados ou adultes)",
   teacher_id: 5,
-  workshop_day: "Mardi",
+  workshop_day: "tuesday",
   location: "La Chapelle de Brain"
 }, {
   name: "Percussions pour les 9-18 ans",
   teacher_id: 1,
-  workshop_day: "Jeudi",
+  workshop_day: "thursday",
   location: "La Gacilly"
 }, {
   name: "Pratique d’ensemble ou fanfare pour débutants (7-12 ans)",
   teacher_id: 2,
-  workshop_day: "Lundi",
+  workshop_day: "monday",
   location: "Plessé"
 }, {
   name: "Atelier Duo (enfants, ados ou adultes)",
   teacher_id: 999,
-  description: "6 séances environ en période inter-vacances",
+  frequency: "six_times",
   location: "Redon"
 }, {
   name: "Percussions (9 ans et +)",
   teacher_id: 1,
-  workshop_day: "Samedi (toutes les deux semaines)",
+  workshop_day: "saturday",
+  frequency: "every_two_weeks",
   location: "Redon"
 }, {
   name: "Découverte de la musique médiévale",
   teacher_id: 3,
-  workshop_day: "Mercredi (toutes les deux semaines)",
+  workshop_day: "wednesday",
+  frequency: "even_weeks",
   location: "Redon"
 }, {
   name: "Atelier jeunes ”collecté connecté” (12 ans et +)",
   teacher_id: 2,
+  workshop_day: "tbd",
   description: "Niveau intermédiaire/avancé",
   location: "Redon"
 }, {
   name: "Arrangements / création / impro",
   teacher_id: 2,
-  workshop_day: "Jeudi",
+  workshop_day: "thursday",
   location: "Redon"
 }, {
   name: "Brigade d’animation de rue",
   teacher_id: 2,
-  workshop_day: "Jeudi",
+  workshop_day: "thursday",
   location: "Redon"
 }, {
   name: "Musique du monde",
   teacher_id: 1,
-  workshop_day: "Samedi (toutes les deux semaines)",
+  workshop_day: "saturday",
+  frequency: "every_two_weeks",
   location: "Redon"
 }, {
   name: "Ensemble de harpes",
   teacher_id: 4,
-  workshop_day: "Samedi (1 fois par mois)",
+  workshop_day: "saturday",
+  frequency: "once_per_month",
   location: "Redon"
 }, {
   name: "Ensemble adultes",
   teacher_id: 5,
-  workshop_day: "Mardi",
+  workshop_day: "tuesday",
   location: "La Chapelle de Brain"
 }, {
   name: "Chant Haute-Bretagne",
   teacher_id: 14,
-  workshop_day: "Mercredi",
+  workshop_day: "wednesday",
   location: "Redon"
 }, {
   name: "Technique vocale et travail de l’interprétation",
   teacher_id: 6,
-  workshop_day: "Toutes les deux semaines",
+  frequency: "every_two_weeks",
   location: "Redon ou La Gacilly"
 }, {
   name: "Atelier irlandais",
   teacher_id: 5,
-  workshop_day: "Mardi (toutes les deux semaines)",
+  workshop_day: "tuesday",
+  frequency: "odd_weeks",
   location: "Redon"
 }, {
   name: "”Slow session” irlandaise",
   teacher_id: 5,
-  workshop_day: "Mardi",
+  workshop_day: "tuesday",
+  frequency: "odd_weeks",
   location: "Redon"
 }, {
   name: "Ensemble vocal ”Chants du Pays et d’ailleurs”",
   teacher_id: 999,
-  workshop_day: "Mardi (toutes les deux semaines)",
+  workshop_day: "tuesday",
+  frequency: "every_two_weeks",
   location: "Redon"
 }, {
   name: "La Chantième Compagnie",
   teacher_id: 13,
-  workshop_day: "Mardi",
+  workshop_day: "tuesday",
   location: "Redon"
 }, {
   name: "L’HAPPY NOIRE",
   teacher_id: 15,
-  workshop_day: "Mercredi",
+  workshop_day: "wednesday",
   location: "Redon"
 }, {
   name: "Carte Blanche",
   teacher_id: 12,
-  workshop_day: "Toutes les deux semaines",
+  workshop_day: "tbd",
+  frequency: "every_two_weeks",
   location: "Redon"
 }]
 
@@ -249,13 +258,13 @@ meetings = [{
   name: "Accordéon diatonique",
   description: "6 figures d’accordéonistes intervenants",
   amount: 6,
-  meeting_day: "Samedi",
+  meeting_day: "saturday",
   price: 140
 }, {
   name: "Chant traditionnel",
   description: "6 figures du chant traditionnel intervenants",
   amount: 6,
-  meeting_day: "Samedi",
+  meeting_day: "saturday",
   price: 140
 }, {
   name: "Guitare",
@@ -281,7 +290,7 @@ meetings = [{
   name: "Uillean pipes",
   description: "Animé par Loïc Joucla",
   amount: 6,
-  meeting_day: "Samedi",
+  meeting_day: "saturday",
   price: 200
 }]
 
@@ -330,189 +339,189 @@ slots = [
   {
     teacher_id: 1,
     city_id: 1,
-    day: "Lundi",
+    day: "monday",
     start_time: Time.strptime("17:00", "%H:%M"),
     end_time: Time.strptime("22:00", "%H:%M"),
   },
   {
     teacher_id: 1,
     city_id: 2,
-    day: "Mercredi",
+    day: "wednesday",
     start_time: Time.strptime("16:45", "%H:%M"),
     end_time: Time.strptime("17:30", "%H:%M"),
   },
   {
     teacher_id: 1,
     city_id: 2,
-    day: "Mercredi",
+    day: "wednesday",
     start_time: Time.strptime("19:45", "%H:%M"),
     end_time: Time.strptime("21:00", "%H:%M"),
   },
   {
     teacher_id: 1,
     city_id: 4,
-    day: "Jeudi",
+    day: "thursday",
     start_time: Time.strptime("17:00", "%H:%M"),
     end_time: Time.strptime("18:15", "%H:%M"),
   },
   {
     teacher_id: 1,
     city_id: 4,
-    day: "Jeudi",
+    day: "thursday",
     start_time: Time.strptime("19:45", "%H:%M"),
     end_time: Time.strptime("22:30", "%H:%M"),
   },
   {
     teacher_id: 1,
     city_id: 5,
-    day: "Mercredi",
+    day: "wednesday",
     start_time: Time.strptime("12:45", "%H:%M"),
     end_time: Time.strptime("13:30", "%H:%M"),
   },
   {
     teacher_id: 2,
     city_id: 1,
-    day: "Lundi",
+    day: "monday",
     start_time: Time.strptime("13:00", "%H:%M"),
     end_time: Time.strptime("17:00", "%H:%M"),
   },
   {
     teacher_id: 2,
     city_id: 1,
-    day: "Lundi",
+    day: "monday",
     start_time: Time.strptime("20:30", "%H:%M"),
     end_time: Time.strptime("22:30", "%H:%M"),
   },
   {
     teacher_id: 2,
     city_id: 1,
-    day: "Jeudi",
+    day: "thursday",
     start_time: Time.strptime("16:30", "%H:%M"),
     end_time: Time.strptime("18:00", "%H:%M"),
   },
   {
     teacher_id: 2,
     city_id: 1,
-    day: "Jeudi",
+    day: "thursday",
     start_time: Time.strptime("18:45", "%H:%M"),
     end_time: Time.strptime("20:00", "%H:%M"),
   },
   {
     teacher_id: 2,
     city_id: 1,
-    day: "Jeudi",
+    day: "thursday",
     start_time: Time.strptime("20:45", "%H:%M"),
     end_time: Time.strptime("22:30", "%H:%M"),
   },
   {
     teacher_id: 2,
     city_id: 7,
-    day: "Lundi",
+    day: "monday",
     start_time: Time.strptime("17:30", "%H:%M"),
     end_time: Time.strptime("20:00", "%H:%M"),
   },
   {
     teacher_id: 3,
     city_id: 1,
-    day: "Mercredi",
+    day: "wednesday",
     start_time: Time.strptime("17:00", "%H:%M"),
     end_time: Time.strptime("20:00", "%H:%M"),
   },
   {
     teacher_id: 3,
     city_id: 6,
-    day: "Mercredi",
+    day: "wednesday",
     start_time: Time.strptime("18:00", "%H:%M"),
     end_time: Time.strptime("21:00", "%H:%M"),
   },
   {
     teacher_id: 4,
     city_id: 1,
-    day: "Mercredi",
+    day: "wednesday",
     start_time: Time.strptime("10:00", "%H:%M"),
     end_time: Time.strptime("20:00", "%H:%M"),
   },
   {
     teacher_id: 5,
     city_id: 1,
-    day: "Mercredi",
+    day: "wednesday",
     start_time: Time.strptime("10:30", "%H:%M"),
     end_time: Time.strptime("14:00", "%H:%M"),
   },
   {
     teacher_id: 5,
     city_id: 2,
-    day: "Mercredi",
+    day: "wednesday",
     start_time: Time.strptime("17:20", "%H:%M"),
     end_time: Time.strptime("22:00", "%H:%M"),
   },
   {
     teacher_id: 5,
     city_id: 3,
-    day: "Mardi",
+    day: "tuesday",
     start_time: Time.strptime("17:30", "%H:%M"),
     end_time: Time.strptime("22:00", "%H:%M"),
   },
   {
     teacher_id: 5,
     city_id: 4,
-    day: "Mercredi",
+    day: "wednesday",
     start_time: Time.strptime("15:00", "%H:%M"),
     end_time: Time.strptime("16:40", "%H:%M"),
   },
   {
     teacher_id: 5,
     city_id: 7,
-    day: "Lundi",
+    day: "monday",
     start_time: Time.strptime("19:00", "%H:%M"),
     end_time: Time.strptime("22:00", "%H:%M"),
   },
   {
     teacher_id: 6,
     city_id: 1,
-    day: "Lundi",
+    day: "monday",
     start_time: Time.strptime("15:00", "%H:%M"),
     end_time: Time.strptime("20:40", "%H:%M"),
   },
   {
     teacher_id: 6,
     city_id: 4,
-    day: "Mercredi",
+    day: "wednesday",
     start_time: Time.strptime("17:00", "%H:%M"),
     end_time: Time.strptime("20:00", "%H:%M"),
   },
   {
     teacher_id: 7,
     city_id: 1,
-    day: "Mardi",
+    day: "tuesday",
     start_time: Time.strptime("20:00", "%H:%M"),
     end_time: Time.strptime("22:00", "%H:%M"),
   },
   {
     teacher_id: 7,
     city_id: 9,
-    day: "Mardi",
+    day: "tuesday",
     start_time: Time.strptime("20:00", "%H:%M"),
     end_time: Time.strptime("22:00", "%H:%M"),
   },
   {
     teacher_id: 7,
     city_id: 2,
-    day: "Mardi",
+    day: "tuesday",
     start_time: Time.strptime("17:30", "%H:%M"),
     end_time: Time.strptime("19:30", "%H:%M"),
   },
   {
     teacher_id: 7,
     city_id: 4,
-    day: "Mercredi",
+    day: "wednesday",
     start_time: Time.strptime("18:45", "%H:%M"),
     end_time: Time.strptime("22:00", "%H:%M"),
   },
   {
     teacher_id: 8,
     city_id: 1,
-    day: "Lundi",
+    day: "monday",
     start_time: Time.strptime("17:00", "%H:%M"),
     end_time: Time.strptime("22:00", "%H:%M"),
     description: "Tous les 15 jours"
@@ -525,40 +534,40 @@ slots = [
   {
     teacher_id: 9,
     city_id: 1,
-    day: "Mercredi",
+    day: "wednesday",
     description: "Horaires à définir selon les inscriptions"
   },
   {
     teacher_id: 9,
     city_id: 4,
-    day: "Mercredi",
+    day: "wednesday",
     description: "Horaires à définir selon les inscriptions"
   },
   {
     teacher_id: 10,
     city_id: 1,
-    day: "Mardi",
+    day: "tuesday",
     start_time: Time.strptime("10:00", "%H:%M"),
     end_time: Time.strptime("14:00", "%H:%M"),
   },
   {
     teacher_id: 10,
     city_id: 1,
-    day: "Mardi",
+    day: "tuesday",
     start_time: Time.strptime("17:00", "%H:%M"),
     end_time: Time.strptime("21:00", "%H:%M"),
   },
   {
     teacher_id: 10,
     city_id: 2,
-    day: "Mercredi",
+    day: "wednesday",
     start_time: Time.strptime("15:30", "%H:%M"),
     end_time: Time.strptime("20:30", "%H:%M"),
   },
   {
     teacher_id: 11,
     city_id: 1,
-    day: "Vendredi",
+    day: "friday",
     description: "Horaires à définir selon les inscriptions – tous les 15 jours"
   },
   {
@@ -574,41 +583,41 @@ slots = [
   {
     teacher_id: 12,
     city_id: 7,
-    day: "Lundi",
+    day: "monday",
     start_time: Time.strptime("17:30", "%H:%M"),
     end_time: Time.strptime("21:00", "%H:%M"),
   },
   {
     teacher_id: 13,
     city_id: 1,
-    day: "Jeudi",
+    day: "thursday",
     start_time: Time.strptime("15:30", "%H:%M"),
     end_time: Time.strptime("20:30", "%H:%M"),
   },
   {
     teacher_id: 13,
     city_id: 8,
-    day: "Jeudi",
+    day: "thursday",
     start_time: Time.strptime("15:30", "%H:%M"),
     end_time: Time.strptime("20:30", "%H:%M"),
   },
   {
     teacher_id: 14,
     city_id: 1,
-    day: "Mercredi",
+    day: "wednesday",
     start_time: Time.strptime("15:00", "%H:%M"),
     end_time: Time.strptime("21:30", "%H:%M"),
   },
   {
     teacher_id: 15,
     city_id: 2,
-    day: "Mardi",
+    day: "tuesday",
     description: "Horaires à confirmer"
   },
   {
     teacher_id: 15,
     city_id: 5,
-    day: "Mardi",
+    day: "tuesday",
     description: "Horaires à confirmer"
   },
 ]
@@ -684,4 +693,97 @@ staff = [{
 
 staff.each do |person|
   Staff.create!(person)
+end
+
+Payor.create!(
+  id: 1,
+  last_name: "Kieu",
+  first_name: "Thimy",
+  street_address: "28 rue de Pont Miny",
+  postcode: "44460",
+  city: "Fégréac",
+  phone: "0633779190",
+  mail: "thimy@pm.me"
+)
+
+students = [{
+  id: 1,
+  last_name: "Kieu",
+  first_name: "Thimy",
+  payor_id: 1,
+  birthyear: 1987,
+  email: "thimy@pm.me"
+}, {
+  id: 2,
+  last_name: "Fouques",
+  first_name: "Hugo",
+  payor_id: 1,
+  birthyear: 1989,
+  email: "thimy@pm.me"
+}]
+
+students.each do |student|
+  Student.create!(student)
+end
+
+User.create!(
+  id: 1,
+  email: "thimy@pm.me",
+  password: "De6ebrey",
+  payor_id: 1,
+  teacher_id: 1,
+  student_id: 1,
+  volunteer: true,
+  admin: true
+)
+
+payment_states = [{
+  name: "Demande d’information"
+}, {
+  name: "Inscrit - à régler"
+}, {
+  name: "Inscrit - réglé"
+}, {
+  name: "À rembourser"
+}]
+
+payment_states.each do |payment_state|
+  PaymentState.create!(payment_state)
+end
+
+subscriptions = [{
+  id: 1,
+  season_id: 1,
+  student_id: 1,
+  payment_state_id: 2
+}, {
+  id: 2,
+  season_id: 1,
+  student_id: 2,
+  payment_state_id: 2
+}]
+
+subscriptions.each do |subscription|
+  Subscription.create!(subscription)
+end
+
+sessions = [{
+  id: 1,
+  course_id: 2,
+  subscription_id: 1,
+  slot_id: 1
+}, {
+  id: 2,
+  course_id: 8,
+  subscription_id: 1,
+  slot_id: 13
+}, {
+  id: 3,
+  course_id: 9,
+  subscription_id: 2,
+  slot_id: 15
+}]
+
+sessions.each do |session|
+  Session.create!(session)
 end
