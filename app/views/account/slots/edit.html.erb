@@ -1,0 +1,49 @@
+<h1>Editing event</h1>
+<%= simple_form_for(@slot, url: account_slot_path) do |form| %>
+  <% if @slot.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@slot.errors.count, "error") %> prohibited this slot from being saved:</h2>
+
+      <ul>
+        <% @slot.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :city, style: "display: block" %>
+    <%= form.collection_select :city_id, City.all, :id, :name %>
+  </div>
+
+  <div>
+    <%= form.label :day, style: "display: block" %>
+    <%= form.select :day, DayOfWeek::DAYS_OF_WEEK %>
+  </div>
+
+  <div>
+    <%= form.label :frequency, style: "display: block" %>
+    <%= form.select :frequency, Frequency::FREQUENCY %>
+  </div>
+
+  <div>
+    <%= form.label :start_time, style: "display: block" %>
+    <%= form.input_field :start_time, as: :time %>
+  </div>
+
+  <div>
+    <%= form.label :end_time, style: "display: block" %>
+    <%= form.input_field :end_time, as: :time %>
+  </div>
+
+  <div>
+    <%= form.button :submit, value: "Modifier ce créneau de disponibilité", class: "button" %>
+  </div>
+<% end %>
+
+<br>
+
+<div>
+  <%= link_to "Back to slots", account_slots_path %>
+</div>

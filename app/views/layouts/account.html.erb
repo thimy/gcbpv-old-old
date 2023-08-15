@@ -4,7 +4,7 @@
   <div class="wrapper">
     <header>
       <h1>Mon compte</h1>
-      <%= render Account::NavigationComponent.new %>
+      <%= render Account::NavigationComponent.new(current_user: current_user) %>
     </header>
     <%= yield %>
   </div>

@@ -1,0 +1,26 @@
+<% content_for(:page_title, "Mes disponibilités") %>
+
+<table>
+  <thead>
+    <tr>
+      <td>Ville</td>
+      <td>Jour</td>
+      <td>Fréquence</td>
+      <td>Heure de début</td>
+      <td>Heure de fin</td>
+      <td><%= link_to "Ajouter un créneau", new_account_slot_path %></td>
+    </tr>
+  </thead>
+  <% @slots.each do |slot| %>
+    <tbody>
+      <tr>
+        <td><%= slot.city.name %></td>
+        <td><%= I18n.t(slot.day).capitalize %></td>
+        <td><%= I18n.t(slot.frequency) %></td>
+        <td><%= time(slot.start_time) %></td>
+        <td><%= time(slot.end_time) %></td>
+        <td><%= link_to "Éditer ce créneau", edit_account_slot_path(slot.id) %></td>
+      </tr>
+    </tbody>
+  <% end %>
+</table>

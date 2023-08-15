@@ -1,5 +1,5 @@
 class Account::SubscriptionController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :show, :update]
+  before_action :authenticate_user!
   layout "account"
 
   def show

@@ -77,6 +77,7 @@ Rails.application.routes.draw do
     get "", to: "dashboard#index", as: "/"
     resource "reglages", controller: :settings, only: [:show, :update], as: "settings"
     resource "inscription", controller: :subscription, only: [:show, :update], as: "subscription"
+    resources "disponibilites", controller: :slots, as: "slots"
   end
 
 end
