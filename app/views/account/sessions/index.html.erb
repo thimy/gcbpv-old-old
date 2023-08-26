@@ -1,0 +1,31 @@
+<% content_for(:page_title, "Mes disponibilités") %>
+
+<table>
+  <thead>
+    <tr>
+      <td>Nom</td>
+      <td>Prénom</td>
+      <td>Email</td>
+      <td>Ville</td>
+      <td>Jour</td>
+      <td>Fréquence</td>
+      <td>Heure de début</td>
+      <td>Heure de fin</td>
+    </tr>
+  </thead>
+  <% @sessions.each do |session| %>
+    <tbody>
+      <tr>
+        <td><%= session.subscription.student.first_name %></td>
+        <td><%= session.subscription.student.last_name %></td>
+        <td><%= session.subscription.student.email %></td>
+        <td><%= session.slot.city.name %></td>
+        <td><%= I18n.t(session.slot.day).capitalize %></td>
+        <td><%= I18n.t(session.slot.frequency) %></td>
+        <td><%= time(session.start_time) %></td>
+        <td><%= time(session.end_time) %></td>
+        <td><%= link_to "Voir la fiche", account_session_path(session.id) %></td>
+      </tr>
+    </tbody>
+  <% end %>
+</table>

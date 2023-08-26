@@ -1,9 +1,9 @@
 class Season < ApplicationRecord
   # A season describes one school term
-  has_many :subscription
-  has_and_belongs_to_many :course
-  has_and_belongs_to_many :workshop
-  has_and_belongs_to_many :project
+  has_many :subscriptions
+  has_and_belongs_to_many :courses
+  has_and_belongs_to_many :workshops
+  has_many :projects, through: :project_instances
   belongs_to :plan
 
   validates :start_year, presence: true

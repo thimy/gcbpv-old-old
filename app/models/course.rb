@@ -2,8 +2,8 @@ class Course < ApplicationRecord
   # association table to link teachers to many instruments
   belongs_to :instrument
   belongs_to :teacher
-  has_and_belongs_to_many :season
-  has_and_belongs_to_many :subscription
+  has_and_belongs_to_many :seasons
+  has_and_belongs_to_many :subscriptions
 
   def name
     "#{instrument.name} avec #{teacher.name}"

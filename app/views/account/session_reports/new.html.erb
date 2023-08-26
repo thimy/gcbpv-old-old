@@ -1,0 +1,41 @@
+<h1>Ajouter une session de cours</h1>
+<%= simple_form_for(@report, url: account_session_reports_path) do |form| %>
+  <% if @report.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(@report.errors.count, "error") %> prohibited this session from being saved:</h2>
+
+      <ul>
+        <% @report.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :date, style: "display: block" %>
+    <%= form.input_field :date, as: :date %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.input_field :description %>
+  </div>
+
+  <div>
+    <% form.simple_fields_for :tune_file do |files_form| %>
+      <%= files_form.label "Nom de la chanson", style: "display: block" %>
+      <%= files_form.input :name %>
+
+      <%= files_form.label "Ajouter une description", style: "display: block" %>
+      <%= files_form.input :description, as: :text %>
+
+      <%= files_form.label "Ajouter un fichier", style: "display: block" %>
+      <%= files_form.input :file, as: :file %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.button :submit, value: "Ajouter cette session de cours", class: "button" %>
+  </div>
+<% end %>

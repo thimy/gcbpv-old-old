@@ -1,0 +1,21 @@
+<h1><%= @session.subscription.student.full_name %></h1>
+<table>
+  <thead>
+    <tr>
+      <td>Date</td>
+      <td>Description</td>
+      <td><%= link_to "Ajouter une session de cours", new_account_session_report_path(@session.id) %></td>
+    </tr>
+  </thead>
+  <% if @session.try(&:reports).present? %>
+    <% @session.reports.each do |report| %>
+      <tbody>
+        <tr>
+          <td><%= report.date %></td>
+          <td><%= report.description %></td>
+          <td><%= link_to "Éditer cette session", edit_account_session_report_path(@session.id) %></td>
+        </tr>
+      </tbody>
+    <% end %>
+  <% end %>
+</table>

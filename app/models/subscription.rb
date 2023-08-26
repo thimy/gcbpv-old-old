@@ -2,10 +2,10 @@ class Subscription < ApplicationRecord
   belongs_to :season
   belongs_to :student
   belongs_to :payment_state
-  has_and_belongs_to_many :course
-  has_and_belongs_to_many :workshop
+  has_and_belongs_to_many :courses
+  has_and_belongs_to_many :workshops
   has_many :sessions
-  has_and_belongs_to_many :d_class
+  has_and_belongs_to_many :d_classes
 
   accepts_nested_attributes_for :sessions
 
@@ -16,10 +16,10 @@ class Subscription < ApplicationRecord
   def sessions_and_workshops_total
     total = 0
     total += sessions.size * Season.last.plan.class_price
-    extra_workshops = workshop.size - sessions.size
+    extra_workshops = workshops.size - sessions.size
     total += extra_workshops * Season.last.plan.workshop_price if extra_workshops > 0
     sum = 0
-    d_class.map{|dc| sum += dc.discovery.price}
+    d_classes.map{|dc| sum += dc.discovery.price}
     total += sum
   end
 end

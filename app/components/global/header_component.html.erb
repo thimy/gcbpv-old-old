@@ -1,12 +1,10 @@
 <header class="main-header">
-  <div class="main-header__title">
-    <%= link_to root_path do %>
-      <%= inline_svg "chestnut"  %>
-    <% end %>
-  </div>
   <nav class="nav">
     <%= render Global::MenuButtonComponent.new %>
     <ul class="nav__links">
+      <li class="nav__item">
+        <%= link_to "Accueil", root_path %>
+      </li>
       <li class="nav__item">
         <%= link_to "Le groupement", groupement_path %>
       </li>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_13_201303) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_27_134039) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -225,6 +225,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_13_201303) do
     t.index ["event_id"], name: "index_posts_on_event_id"
   end
 
+  create_table "project_instances", force: :cascade do |t|
+    t.bigint "project_id"
+    t.bigint "season_id"
+    t.index ["project_id"], name: "index_project_instances_on_project_id"
+    t.index ["season_id"], name: "index_project_instances_on_season_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -233,11 +240,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_13_201303) do
     t.boolean "archived"
   end
 
-  create_table "projects_seasons", id: false, force: :cascade do |t|
-    t.bigint "project_id", null: false
-    t.bigint "season_id", null: false
-    t.index ["project_id", "season_id"], name: "index_projects_seasons_on_project_id_and_season_id"
-    t.index ["season_id", "project_id"], name: "index_projects_seasons_on_season_id_and_project_id"
+  create_table "reports", force: :cascade do |t|
+    t.date "date"
+    t.bigint "session_id", null: false
+    t.text "description"
+    t.index ["session_id"], name: "index_reports_on_session_id"
+  end
+
+  create_table "reports_tune_files", id: false, force: :cascade do |t|
+    t.bigint "report_id", null: false
+    t.bigint "tune_file_id", null: false
+    t.index ["report_id", "tune_file_id"], name: "index_reports_tune_files_on_report_id_and_tune_file_id"
+    t.index ["tune_file_id", "report_id"], name: "index_reports_tune_files_on_tune_file_id_and_report_id"
   end
 
   create_table "seasons", force: :cascade do |t|
@@ -263,6 +277,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_13_201303) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.time "end_time"
+    t.enum "frequency", enum_type: "frequency"
     t.index ["course_id"], name: "index_sessions_on_course_id"
     t.index ["slot_id"], name: "index_sessions_on_slot_id"
     t.index ["subscription_id"], name: "index_sessions_on_subscription_id"
@@ -328,6 +343,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_13_201303) do
     t.index ["workshop_id"], name: "index_subscriptions_workshops_on_workshop_id"
   end
 
+  create_table "teacher_projects", force: :cascade do |t|
+    t.bigint "teacher_id"
+    t.bigint "project_instance_id"
+    t.index ["project_instance_id"], name: "index_teacher_projects_on_project_instance_id"
+    t.index ["teacher_id"], name: "index_teacher_projects_on_teacher_id"
+  end
+
   create_table "teachers", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -336,6 +358,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_13_201303) do
     t.datetime "updated_at", null: false
     t.string "status"
     t.string "email"
+  end
+
+  create_table "tune_files", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "file"
+    t.bigint "teacher_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["teacher_id"], name: "index_tune_files_on_teacher_id"
+  end
+
+  create_table "tunes", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
   end
 
   create_table "users", force: :cascade do |t|
@@ -382,6 +419,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_13_201303) do
   add_foreign_key "d_classes", "discoveries"
   add_foreign_key "d_classes", "teachers"
   add_foreign_key "posts", "events"
+  add_foreign_key "reports", "sessions"
   add_foreign_key "seasons", "plans"
   add_foreign_key "sessions", "courses"
   add_foreign_key "sessions", "slots"
@@ -391,5 +429,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_13_201303) do
   add_foreign_key "students", "payors"
   add_foreign_key "subscriptions", "seasons"
   add_foreign_key "subscriptions", "students"
+  add_foreign_key "tune_files", "teachers"
   add_foreign_key "workshops", "teachers"
 end

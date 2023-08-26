@@ -7,7 +7,7 @@ class Post < ApplicationRecord
 
   belongs_to :event, optional: true
   belongs_to :category, optional: true
-  has_and_belongs_to_many :category
+  has_and_belongs_to_many :categories
 
   def public?
     status == "Public"

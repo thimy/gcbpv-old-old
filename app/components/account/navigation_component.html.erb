@@ -2,6 +2,7 @@
   <li><%= link_to "Index", account_path %></li>
   <li><%= link_to "Mes réglages", account_settings_path %></li>
   <% if @current_user.teacher? %>
+    <li><%= link_to "Mes cours", account_sessions_path %></li>
     <li><%= link_to "Mes disponibilités", account_slots_path %></li>
   <% end %>
   <% if @current_user.payor? %>

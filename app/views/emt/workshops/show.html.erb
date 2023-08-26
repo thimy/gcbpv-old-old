@@ -6,7 +6,7 @@
   <div class="wrapper wrapper--text">
     <%= render Global::CardComponent.new(title: "Animé par #{@workshop.teacher.name}", url: emt_teacher_path(@workshop.teacher_id)) %>
     <div class="text-container">
-      <p><%= @workshop.date_and_time %>.</p>
+      <p><%= @workshop.date_and_time.capitalize %>.</p>
       <%= markdown(@workshop.description) %>
     </div>
   </div>

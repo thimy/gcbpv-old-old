@@ -1,3 +1,3 @@
 class Project < ApplicationRecord
-  has_and_belongs_to_many :season
+  has_many :projects, through: :project_instances
 end

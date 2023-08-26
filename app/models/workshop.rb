@@ -3,9 +3,9 @@ class Workshop < ApplicationRecord
   include WithTime
 
   belongs_to :teacher
-  has_many :subscription
-  has_and_belongs_to_many :season
-  has_and_belongs_to_many :subscription
+  has_many :subscriptions
+  has_and_belongs_to_many :seasons
+  has_and_belongs_to_many :subscriptions
 
   validates :name, presence: true
   validates :teacher_id, presence: true
@@ -23,7 +23,7 @@ class Workshop < ApplicationRecord
   def date_and_time
     if workshop_day.present?
       if time_period.present?
-        "#{workshop_day} #{time_period}"
+        "#{I18n.t(workshop_day)} #{time_period}"
       else
         "#{I18n.t(workshop_day)} (horaires à définir)"
       end

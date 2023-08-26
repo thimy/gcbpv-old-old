@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :instruments
     resources :group_works
     resources :discoveries
+    resources :teachers
+    resources :cities
 
     root to: "profiles#index"
   end
@@ -41,6 +43,7 @@ Rails.application.routes.draw do
     resources :staffs
     resources :users
     resources :payment_states
+    resources :configurations, only: [:index, :show, :edit, :update]
   end
   
   devise_for :users
@@ -75,6 +78,9 @@ Rails.application.routes.draw do
 
   namespace :account, path: "compte", as: "account" do
     get "", to: "dashboard#index", as: "/"
+    resources "cours", controller: :sessions, as: "sessions"
+    # get "cours/:id/session", to: "account_sessions#new", param: :id
+    resources "cours/:session_id/sessions", controller: :session_reports, as: "session_reports"
     resource "reglages", controller: :settings, only: [:show, :update], as: "settings"
     resource "inscription", controller: :subscription, only: [:show, :update], as: "subscription"
     resources "disponibilites", controller: :slots, as: "slots"
