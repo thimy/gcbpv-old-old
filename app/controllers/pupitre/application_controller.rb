@@ -6,9 +6,9 @@
 # you're free to overwrite the RESTful controller actions.
 module Pupitre
   class ApplicationController < Administrate::ApplicationController
-    before_action :authenticate_admin
+    before_action :authenticate_teacher
 
-    def authenticate_admin
+    def authenticate_teacher
       authenticate_user! && current_user.teacher?
     end
 
