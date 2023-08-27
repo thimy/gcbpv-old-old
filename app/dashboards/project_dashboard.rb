@@ -12,7 +12,7 @@ class ProjectDashboard < Administrate::BaseDashboard
     archived: Field::Boolean,
     description: Field::Text,
     name: Field::String,
-    season: Field::HasMany,
+    seasons: Field::HasMany,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -25,7 +25,7 @@ class ProjectDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     id
     name
-    season
+    seasons
     description
     archived
   ].freeze
@@ -35,7 +35,7 @@ class ProjectDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     id
     name
-    season
+    seasons
     description
     archived
     created_at
@@ -47,7 +47,7 @@ class ProjectDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = %i[
     name
-    season
+    seasons
     description
     archived
   ].freeze
@@ -67,7 +67,7 @@ class ProjectDashboard < Administrate::BaseDashboard
   # Overwrite this method to customize how projects are displayed
   # across all pages of the admin dashboard.
   #
-  # def display_resource(project)
-  #   "Project ##{project.id}"
-  # end
+  def display_resource(project)
+    project.name
+  end
 end
