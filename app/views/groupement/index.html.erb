@@ -5,10 +5,9 @@
 
 <section class="section">
   <div class="wrapper wrapper--text">
-    <h2 class="h2">L’histoire</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-    <h2 class="h2">Les actions du groupement</h2>
-    <div class="card-list">
+    <p>Collecter, sauvegarder, transmettre et valoriser le patrimoine culturel… C'est cela qui anime notre association depuis 1975.
+    <h2 class="h2">Les pôles d’activité du groupement</h2>
+    <div class="card-list" data-list-type="column">
       <%= render Global::CardComponent.new(title: "L’école de musique traditionnelle", url: emt_path) %>
       <%= render Global::CardComponent.new(title: "La Bogue d’Or et les événements", url: events_path) %>
       <%= render Global::CardComponent.new(title: "Le centre de ressources", url: resources_path) %>
