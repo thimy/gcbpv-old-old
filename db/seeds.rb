@@ -294,7 +294,7 @@ workshops = [{
   end_time: Time.strptime("21:30", "%H:%M"),
   frequency: "every_two_weeks",
   location: "Redon",
-  description: "Découverte et pratique du chant traditionnel de Haute-Bretagne (mélodies, marches, danses).  Le kan ha diskan est du chant en couple et en breton, technique de chant très particulière qu’on retrouve en Basse-Bretagne basée sur le chant/contre-chant.\r\n\r\n
+  description: "Découverte et pratique du chant traditionnel de Haute-Bretagne (mélodies, marches, danses). Le kan ha diskan est du chant en couple et en breton, technique de chant très particulière qu’on retrouve en Basse-Bretagne basée sur le chant/contre-chant.\r\n\r\n
   Ouverture sur d’autres répertoires traditionnels."
 }, {
   name: "Ensemble adultes",
