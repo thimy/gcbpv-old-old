@@ -3,7 +3,61 @@
   --white-rgb: 255, 255, 255;
   --black: #000000;
   --black-rgb: 0, 0, 0;
-  
+
+  --primary: #ca6702;
+  --tertiary: #5e6d25;
+  --secondary: #d2c55c;
+
+  --mandy-9: #795E54;
+  --mandy-8: #967669;
+  --mandy-7: #B48E7F;
+  --mandy-6: #D0A696;
+  --mandy-5: #edbeac;
+  --mandy-4: #F2CABB;
+  --mandy-3: #F6D7CB;
+  --mandy-2: #FAE4DC;
+  --mandy-1: #FDF1ED;
+
+  --barley-9: #565329;
+  --barley-8: #6B6734;
+  --barley-7: #7F7B3F;
+  --barley-6: #938E4B;
+  --barley-5: #a7a157;
+  --barley-4: #BAB577;
+  --barley-3: #CDC998;
+  --barley-2: #DEDBB9;
+  --barley-1: #EFEEDC;
+
+  --piper-9: #72270B;
+  --piper-8: #8D3210;
+  --piper-7: #A73D16;
+  --piper-6: #C0481C;
+  --piper-5: #d85423;
+  --piper-4: #E3754B;
+  --piper-3: #ED9676;
+  --piper-2: #F5B8A2;
+  --piper-1: #FBDBCF;
+
+  --saffron-9: #805D15;
+  --saffron-8: #9F731D;
+  --saffron-7: #BE8925;
+  --saffron-6: #DB9F2E;
+  --saffron-5: #f7b538;
+  --saffron-4: #FCC55C;
+  --saffron-3: #FFD482;
+  --saffron-2: #FFE3AA;
+  --saffron-1: #FFF1D3;
+
+  --paradiso-9: #144242;
+  --paradiso-8: #1A5152;
+  --paradiso-7: #206161;
+  --paradiso-6: #277070;
+  --paradiso-5: #2e7e7f;
+  --paradiso-4: #56999A;
+  --paradiso-3: #7FB4B5;
+  --paradiso-2: #A9CECE;
+  --paradiso-1: #D4E7E7;
+
   --gray-90: #0C0E19;
   --gray-80: #1C2035;
   --gray-70: #303651;
@@ -14,36 +68,16 @@
   --gray-20: #E6E8F0;
   --gray-10: #F4F6F9;
 
-  --gray-90-a: hsla(231,0%,3%,0.96);
-  --gray-80-a: hsla(231,31%,7%,0.9);
-  --gray-70-a: hsla(230,55%,9%,0.82);
-  --gray-60-a: hsla(228,80%,10%,0.71);
-  --gray-50-a: hsla(227,87%,11%,0.59);
-  --gray-40-a: hsla(227,86%,15%,0.41);
-  --gray-30-a: hsla(225,99%,15%,0.22);
-  --gray-20-a: hsla(228,91%,22%,0.1);
-  --gray-10-a: hsla(216,59%,33%,0.05);
-
   --green-90: #071d0d;
   --green-80: #0d391a;
   --green-70: #145628;
   --green-60: #1b7335;
   --green-50: #208a3f;
   --green-40: #28ac4f;
-  --green-30: #6edd8f;
-  --green-20: #9ee9b4;
-  --green-10: #cff4da;
+  --green-30: #d8f5a2;
+  --green-20: #e9fac8;
+  --green-10: #f4fce3;
   
-  --green-90-a: hsla(136,0%,5%,0.98);
-  --green-80-a: hsla(138,38%,9%,0.95);
-  --green-70-a: hsla(139,60%,15%,0.93);
-  --green-60-a: hsla(138,77%,20%,0.9);
-  --green-50-a: hsla(138,88%,24%,0.88);
-  --green-40-a: hsla(138,94%,31%,0.85);
-  --green-30-a: hsla(138,98%,38%,0.57);
-  --green-20-a: hsla(138,94%,40%,0.39);
-  --green-10-a: hsla(138,98%,39%,0.19);
-
   --yellow-90: #372c03;
   --yellow-80: #6e5705;
   --yellow-70: #a68308;
@@ -53,16 +87,6 @@
   --yellow-30: #f9df80;
   --yellow-20: #fbe9ab;
   --yellow-10: #fdf4d5;
-
-  --yellow-90-a: hsla(48,0%,10%,0.99);
-  --yellow-80-a: hsla(47,36%,22%,0.99);
-  --yellow-70-a: hsla(47,63%,32%,0.97);
-  --yellow-60-a: hsla(47,79%,44%,0.97);
-  --yellow-50-a: hsla(47,90%,48%,0.83);
-  --yellow-40-a: hsla(47,94%,48%,0.67);
-  --yellow-30-a: hsla(47,98%,48%,0.5);
-  --yellow-20-a: hsla(46,100%,48%,0.33);
-  --yellow-10-a: hsla(46,94%,49%,0.17);
 
   --red-90: #2c0c06;
   --red-80: #58180c;
@@ -74,16 +98,6 @@
   --red-20: #f2b0a4;
   --red-10: #f9d7d1;
 
-  --red-90-a: hsla(9,0%,8%,0.98);
-  --red-80-a: hsla(9,36%,16%,0.96);
-  --red-70-a: hsla(8,62%,24%,0.93);
-  --red-60-a: hsla(9,78%,33%,0.91);
-  --red-50-a: hsla(9,90%,42%,0.88);
-  --red-40-a: hsla(9,94%,43%,0.72);
-  --red-30-a: hsla(9,98%,43%,0.54);
-  --red-20-a: hsla(9,98%,43%,0.36);
-  --red-10-a: hsla(9,89%,46%,0.19);
-
   --blue-90: #081525;
   --blue-80: #10294a;
   --blue-70: #183e6e;
@@ -93,16 +107,6 @@
   --blue-30: #72a2e0;
   --blue-20: #a1c1eb;
   --blue-10: #d0e0f5;
-
-  --blue-90-a: hsla(212,0%,6%,0.97);
-  --blue-80-a: hsla(214,36%,12%,0.94);
-  --blue-70-a: hsla(213,62%,19%,0.91);
-  --blue-60-a: hsla(214,78%,26%,0.88);
-  --blue-50-a: hsla(214,88%,34%,0.85);
-  --blue-40-a: hsla(214,95%,39%,0.74);
-  --blue-30-a: hsla(214,96%,40%,0.56);
-  --blue-20-a: hsla(214,99%,40%,0.37);
-  --blue-10-a: hsla(214,92%,41%,0.19);
 
   --pink-90: #310e17;
   --pink-80: #611c2e;

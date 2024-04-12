@@ -5,6 +5,7 @@ class Course < ApplicationRecord
   has_and_belongs_to_many :seasons
   has_and_belongs_to_many :subscriptions
   has_many :students, through: :subscriptions
+  has_many :sessions
 
   def name
     "#{instrument.name} avec #{teacher.name}"

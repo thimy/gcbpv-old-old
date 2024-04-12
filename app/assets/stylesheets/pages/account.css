@@ -1,5 +1,22 @@
 .account main {
-  padding-block: var(--spacing-12);
+  display: grid;
+  grid-template-columns: 300px auto;
+
+  header, .content {
+    padding: var(--spacing-6);
+  }
+
+  .content {
+    display: grid;
+    gap: var(--gap-medium);
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bento-card {
+    background: white;
+    border-radius: var(--border-radius-large);
+    padding: var(--spacing-3) var(--spacing-8) var(--spacing-8);
+  }
 }
 
 .account h1 {

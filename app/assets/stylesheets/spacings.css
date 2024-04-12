@@ -37,4 +37,8 @@
   --spacing-20-minus: calc(var(--spacing-unit) * -20); /* -80px */
   --spacing-24-minus: calc(var(--spacing-unit) * -24); /* -96px */
   --spacing-30-minus: calc(var(--spacing-unit) * -30); /* -120px */
+
+  --gap-small: var(--spacing-3);
+  --gap-medium: var(--spacing-6);
+  --gap-large: var(--spacing-12);
 }

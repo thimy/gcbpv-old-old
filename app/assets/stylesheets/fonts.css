@@ -55,3 +55,8 @@
   src: url("Satoshi/Satoshi-VariableItalic.ttf") format("ttf-variations");
   font-style: italic;
 }
+
+@font-face {
+  font-family: "Garden Grown";
+  src: url("GardenGrown-Regular.ttf");
+}

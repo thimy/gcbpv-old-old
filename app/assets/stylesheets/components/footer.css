@@ -1,5 +1,5 @@
 .footer {
-  background-color: var(--brand);
+  background-color: var(--barley-6);
   color: var(--black);
   gap: var(--spacing-16);
   padding-block: calc(var(--gap) * 2);

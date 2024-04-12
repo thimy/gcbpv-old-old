@@ -32,7 +32,7 @@ class TeacherDashboard < Administrate::BaseDashboard
     picture: Field::Image,
     slots: Field::NestedHasMany.with_options(skip: :teacher),
     email: Field::String,
-    status: Field::Select.with_options(collection: Teacher::teacher_statuses.keys),
+    status: Field::Select.with_options(collection: Teacher::TEACHER_STATUSES),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze

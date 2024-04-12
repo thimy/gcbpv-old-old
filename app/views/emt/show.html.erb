@@ -1,0 +1,44 @@
+<% content_for(:page_title, "Les tarifs") %>
+<% content_for(:page_class, "emt") %>
+
+<%= render Global::HeroComponent.new(title: "L’offre d’enseignement") %>
+
+<section class="section">
+  <div class="wrapper">
+    <div>
+      <h2 class="h2">Les cycles de cours</h2>
+      <h3 class="h3">Tarif d’un cours</h3>
+      <p></p>
+      <table>
+        <thead>
+          <tr>
+            <th>-18 ans</th>
+            <th>Adultes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= number_to_currency(@season.plan.kids_class_price) %></td>
+            <td><%= number_to_currency(@season.plan.class_price) %></td>
+          </tr>
+        </tbody>
+      </table>
+      <h3 class="h3">Cycle 1 – Durée : 1 à 3 ans</h3>
+      <p>L’entrée dans ce cycle se formalise par le choix de l’élève de pratiquer un instrument défini.</p>
+      <p>L’élève va débuter l’apprentissage de l’instrument, apprendre à connaitre le répertoire, les danses et chants traditionnels, et démarrer la pratique collective avec différents projets musicaux.</p>
+      <h3 class="h3">Cycle 2 – Durée : 2 à 4 ans</h3>
+      <p>Ce cycle contribuera au développement artistique et musical personnel de l’élève en favorisant une bonne ouverture culturelle, l’appropriation d’un langage musical, l’acquisition des bases d’une pratique autonome, et en aidant l’élève à mieux tenir sa place dans une pratique collective.</p>
+      <p>Ce cycle vise à accompagner l’élève vers une autonomie dans sa pratique musicale, et l’aidera à développer son expression propre, son interprétation, son style.</p>
+    </div>
+    <div>
+      <h2 class="h2">Hors-cycle</h2>
+      <h3 class="h3">Atelier de pratique musicale d’ensemble (<%= number_to_currency(@season.plan.workshop_price) %>/an)</h3>
+      <p>Séances 45 min/semaine ou 1h30 tous les 15 jours</p>
+      <h3 class="h3">Ateliers découverte</h3>
+        <% @discoveries.each do |discovery| %>
+          <h4><%= discovery.name %> (<%= number_to_currency(discovery.price) %>)</h4>
+          <p><%= discovery.description %></p>
+        <% end %>
+    </div>
+  </div>
+</section>

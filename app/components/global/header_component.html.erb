@@ -50,11 +50,7 @@
           <%= inline_svg "icons/user-icon" %>
           <ul class="nav__sub-links">
             <li class="nav__sub-item">
-              <% if current_user.teacher? %>
-                <%= link_to "Mon espace", pupitre_root_path %>
-              <% elsif  %>
-                <%= link_to "Mon espace", account_path %>
-              <% end %>
+              <%= link_to "Mon espace", account_path %>
             </li>
             <% if current_user.admin? %>
               <li class="nav__sub-item">

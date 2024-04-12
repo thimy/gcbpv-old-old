@@ -4,20 +4,29 @@
   gap: var(--gap);
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  min-height: 30rem;
+  min-height: 40rem;
   padding-block: var(--spacing-10);
   position: relative;
 }
 
 .home .hero__title {
   font-family: var(--title-font-family);
-  font-weight: 200;
+  font-size: 2rem;
+  padding-inline: 4rem;
+  text-align: left;
+}
+
+.home .hero__main {
+  align-items: end;
+  justify-content: start;
+  padding: 0;
 }
 
 .home .hero__title mark {
   background: 0;
   color: currentColor;
-  font-weight: 500;
+  font-family: "Garden Grown";
+  font-size: 8rem;
   text-decoration: underline;
   text-decoration-color: var(--link-hover-color);
   text-decoration-skip-ink: none;
@@ -40,6 +49,7 @@
 }
 
 .hero__column {
+  --link-hover-color: var(--barley-6);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -55,12 +65,13 @@
   text-decoration-line: none;
   transition: all ease-out 0.2s;
   z-index: 5;
+
+  &:hover {
+    filter: revert;
+    margin-left: -2rem;;
+  }
 }
 
-.hero__column:hover {
-  filter: revert;
-  margin-left: -2rem;;
-}
 
 .hero__column-title {
   font-family: var(--title-font-family);
@@ -110,8 +121,8 @@
   justify-content: space-between;
 }
 
-.event__link {
-  color: var(--white);
+.posts {
+  background-color: var(--piper-4);
 }
 
 @media (max-width: 1000px) {

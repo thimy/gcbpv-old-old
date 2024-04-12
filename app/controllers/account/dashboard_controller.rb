@@ -10,8 +10,10 @@ class Account::DashboardController < ApplicationController
 
     if current_user.teacher?
       @teacher = Teacher.find(current_user.teacher_id)
-      @teacher_sessions = Session.where(course: Course.where(teacher: @teacher)).includes(:slot).group_by { |session| session.slot.day }.transform_values { |values| values.flatten }
-      @teacher_workshops = Workshop.where(teacher: @teacher).joins(:subscriptions)
+      # @teacher_sessions = Session.where(course: Course.where(teacher: @teacher)).includes(:slot).group_by { |session| session.slot.day }.transform_values { |values| values.flatten }
+      @teacher_sessions = @teacher.sessions.includes(:slot).group_by { |session| session.slot.day }.transform_values { |values| values.flatten }
+      # @teacher_workshops = Workshop.where(teacher: @teacher).joins(:subscriptions)
+      @teacher_workshops = @teacher.workshops.joins(:subscriptions)
     end
   end
 end

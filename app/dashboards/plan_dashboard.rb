@@ -13,6 +13,10 @@ class PlanDashboard < Administrate::BaseDashboard
       suffix: "€",
       decimals: 2,
     ),
+    kids_class_price: Field::Number.with_options(
+      suffix: "€",
+      decimals: 2,
+    ),
     name: Field::String,
     obc_markup: Field::Number.with_options(
       suffix: "€",
@@ -38,6 +42,7 @@ class PlanDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = %i[
     name
     class_price
+    kids_class_price
     workshop_price
     obc_markup
     outbounds_markup
@@ -48,6 +53,7 @@ class PlanDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = %i[
     name
     class_price
+    kids_class_price
     workshop_price
     obc_markup
     outbounds_markup
@@ -61,6 +67,7 @@ class PlanDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     name
     class_price
+    kids_class_price
     workshop_price
     obc_markup
     outbounds_markup

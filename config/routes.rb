@@ -57,6 +57,8 @@ Rails.application.routes.draw do
   resources :events
 
   get "/emt", to: "emt#index"
+  get "/emt/enseignement", to: "emt#show"
+
   namespace :emt do
     resources :discoveries
     resources :workshops

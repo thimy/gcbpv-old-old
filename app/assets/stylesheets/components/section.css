@@ -6,6 +6,5 @@
 }
 
 .section[data-scheme="dark"] {
-  background-color: var(--blue-80);
-  color: var(--white);
+  background-color: var(--paradiso-3);
 }

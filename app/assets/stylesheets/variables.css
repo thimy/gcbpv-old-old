@@ -8,13 +8,13 @@
 
   --text-color: var(--black);
 
-  --text-font-family: "Montserrat";
-  --text-font-weight: 400;
+  --text-font-family: "Mohr";
+  --text-font-weight: 300;
 
   --title-font-family: "Mohr";
   --title-font-weight: 500;
 
-  --link-hover-color: var(--blue-20-a);
+  --link-hover-color: var(--mandy-5);
 
   --bg-color: var(--white);
   --bg-color-transparent: rgba(var(--white-rgb), 0.9);

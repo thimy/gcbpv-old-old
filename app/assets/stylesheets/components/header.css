@@ -1,4 +1,5 @@
 .main-header {
+  --link-hover-color: var(--saffron-3);
   align-items: center;
   background-color: var(--bg-color-transparent);
   display: flex;
@@ -47,7 +48,12 @@
   border-radius: var(--border-radius-small);
   display: inline-flex;
   flex-shrink: 0;
+  gap: var(--spacing-2);
   position: relative;
+
+  svg {
+    width: 1rem;
+  }
 }
 
 .nav__item.user {
@@ -56,8 +62,7 @@
   justify-content: end;
 }
 
-.nav__item a,
-.nav__item svg {
+.nav__item a {
   padding: var(--spacing-4) var(--spacing-4);
   text-decoration: none;
   text-decoration-color: var(--link-hover-color);

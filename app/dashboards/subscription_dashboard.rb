@@ -19,10 +19,10 @@ class SubscriptionDashboard < Administrate::BaseDashboard
       suffix: "€",
       decimals: 2,
     ),
-    course: Field::HasMany,
+    courses: Field::HasMany,
     sessions: Field::NestedHasMany.with_options(skip: :session),
-    workshop: Field::HasMany,
-    d_class: Field::HasMany,
+    workshops: Field::HasMany,
+    d_classes: Field::HasMany,
     payment_state: Field::BelongsTo,
     information: Field::Text,
     created_at: Field::DateTime,
@@ -49,10 +49,10 @@ class SubscriptionDashboard < Administrate::BaseDashboard
     id
     student
     season
-    course
+    courses
     sessions
-    workshop
-    d_class
+    workshops
+    d_classes
     payment_state
     amount
     amount_paid
@@ -67,10 +67,10 @@ class SubscriptionDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
     student
     season
-    course
+    courses
     sessions
-    workshop
-    d_class
+    workshops
+    d_classes
     payment_state
     amount
     amount_paid
